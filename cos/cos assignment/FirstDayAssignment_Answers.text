@@ -1,0 +1,157 @@
+Section 1
+
+
+
+
+
+1. List all the files and sub directories of the directory /bin.
+
+cd ~
+cd bin
+ls
+
+
+
+2. List all the files including hidden files in your current directory.
+
+ls -a
+
+
+
+3. List all the files starting with letter ‘r’ in your current directory.
+
+ls r*.*
+
+
+
+4. List all the files having three characters in their names, from your current directory.
+
+ls ???.*
+
+
+
+5. List all the files with extension .doc in your current directory.
+
+
+ls *.doc
+
+
+
+
+6. List all the files having the first letter of their name within the range ‘l’ to‘s’, from
+your current directory.
+
+ls [l-s]*.*
+
+
+7(i) Create a file text1 and read its input from keyboard.
+
+
+cat > text1.text
+
+
+7(ii) Display the content of text1 file in the console
+
+cat text1.text // to read the input 
+
+
+
+
+8. Copy the contents of file text1 to another file text2.
+
+
+cp -i text1.text text2.text
+
+
+
+
+9. Append the contents of file text2 to file text1.
+
+
+cat >> text1.text text2.text
+
+
+
+
+
+10. Count the number of files in the current directory.
+
+ls|wc -w
+
+
+
+
+
+12. From file text1 print all lines starting from 10th line
+
+
+tail +10 text.text
+
+
+
+
+13. Find the number of users currently logged on to the system.
+
+who|wc -l
+
+
+
+14. Delete all the files with their names starting with "tmp"
+
+
+rm tmp*
+
+
+
+
+
+
+
+
+Section 2:
+
+
+
+1. Count the total number of words in file text1.
+
+
+wc -w text1.text
+
+-> wc -> word count
+-> -w for word 
+-> -l for line count
+-> -c for char count
+
+
+
+2. List the contents of ls command page wise.
+
+
+
+3. Create a file FILE2 with some text in it. Increase the no. of hard links to the file FILE2 to 3 and check the inode number and link count for those names.
+
+
+
+4. Using one single command, display the output of “who” and “pwd” commands.
+
+
+
+who;pwd
+
+
+
+
+5. Display the system date in following format:
+Today is Friday, 17 May 96
+
+
+
+
+
+
+
+
+
+
+
+
