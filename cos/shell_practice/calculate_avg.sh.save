@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Program to find the average of 3 numbers"
+
+read -p "Enter first number : "  number1

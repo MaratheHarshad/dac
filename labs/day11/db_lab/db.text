@@ -1,0 +1,93 @@
+file is a collection of bits and bytes
+
+rdbms shows data in tabular form as like word file shows data in txt format
+
+rdbms -> allows us to read data in minimum time
+      -> retrieval of data is quite faster in rdbms
+      
+
+normalization -> the objective of normalization to make a primary key more stronger
+              -> process the raw data
+
+
+relation is action between 2 objects
+
+rdbms
+
+
+row -> tuple
+column -> field |  attributes ( properties of relationship )
+primary key -> uniquely identifies the row 
+foreign key -> refferential integrity constant
+            -> (integrity) means data must be as per standard ( no redundancy )
+            -> referential means maintens the relationship between tables
+
+redudancy never be eliminated it can be reduced
+
+
+
+
+
+
+
+DataDictionary 
+-> meta data about database
+
+
+Language groups
+
+1) Data Definition language 
+
+    addressing the definition of database
+
+** how does db implement e.f codd rule
+
+
+not a single database can bypass the db security
+
+
+create , alter, drop , truncat
+
+2) Data manipulating language
+
+    insert, updte, delete
+
+
+3) Data Retrieval Language
+
+    select  
+
+4) Data Control Language
+
+    grant , revoke
+
+5) Transaction Control language
+
+    commit -> permanently saving the changes
+    undo -> rollback the changes
+
+
+
+
+ACID
+
+Atomicity
+failed or succeed Transaction
+taken care by -> transactions
+
+Consistency
+transaction never going the read the processing data
+
+
+Isolation
+
+
+Durability
+once the data save permanently not going lost that data
+taken care by -> 
+
+
+
+
+
+
