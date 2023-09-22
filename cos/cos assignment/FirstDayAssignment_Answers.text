@@ -144,14 +144,117 @@ who;pwd
 5. Display the system date in following format:
 Today is Friday, 17 May 96
 
+-> not a exact answer but
+
+echo "today is `date`"
+
+
+7. Display the following message on the monitor.
+The long listing of my home dir ………… is …………
+(Hint: Use ls – l and pwd commands)
+
+
+-> echo "The long listing of my home dir `pwd` is `ls -l`"
+
+
+
+8. Use find command to locate the following within your home directory tree:
+
+
+a) Files with extension .c or .pl
+
+-> find -type f -name "*.c" -o -name "*.pl"
+
+
+
+b) Directories having permission 755
+
+-> 
+
+
+c) Files having permission 655
+
+-> find -perm 655 
+
+d) Files having inode number 12122
+
+-> how to find the inode number of files
+
+-> ls -li
+
+-> Files having inode number 12122
+
+-> find -inum 12122
+
+
+
+
+e) Files which have not been accessed for more than a year and save the list in Old_File
+
+
+
+f) Files whose size is greater than 1024 bytes
+
+-> find -type f -size +1024
+ 
+(+1024) to find > 1024 kb
+(-1024) to find files < 1024 kb
+
+
+
+
+
+**************************************************************************************************************************
+
+
+
+Section 3 :
+
+
+1. Using vi editor:
+a) Create a file “Data1.txt
+
+vi Data1.txt
+
+b) Save the file and exit from the vi editor.
+
+esc
+:
+wq
+enter
+
+
+c) Open the vi editor without specifying a file name
+d) Write some text and and save it to a file “MyData2.txt”
+
+vi MyData2.txt
+i // for insert mode
+write text
+
+e) Repeat point ( c ) but after writing some text don’t save and just exit “vi”
+
+
+esc 
+:
+q
+enter
+
+// to exit without saving the file
 
 
 
 
 
 
+2. Create a file using vi editor and enter the following text in it:
 
 
-
+Unix Unix Unix Unix Unix
+Unix is multi user operating system, Unix is multi tasking o\perating system
+Everything on Unix is a file.
+Unix File structure is hierarchical like an upside down tree.
+Regular files cannot contain another file, or directory
+Directory File Contains directory(s) and/or file(s) within itDevice files are used to represent physical devices.
+Symbolic link is an indirect pointer to a file
 
 
