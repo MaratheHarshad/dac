@@ -258,3 +258,52 @@ Directory File Contains directory(s) and/or file(s) within itDevice files are us
 Symbolic link is an indirect pointer to a file
 
 
+
+a) Save the file without exiting vi.
+
+
+esc
+:wq
+enter
+
+
+
+b) Display the line number from within vi
+
+esc
+:set number
+enter
+
+
+c) Move first three lines of the file to the end of the file.
+
+
+
+d) Copy 5th line and paste above the first line.
+
+
+
+e) Search the word Unix in forward direction
+
+not exact answer maybe
+
+:/Unix
+n (for next occurrence)
+
+
+f) Search the word Unix in backward direction
+
+:?Unix
+n (press n for next occurrence)
+
+
+
+g) Replace all the occurrences of the word Unix with UnixOS
+
+sed -i "s/Unix/UnixOS/g" file.txt
+
+// i -> flag is important to commit changes in file
+// /g -> would substitute all the occurrences of the word
+
+
+

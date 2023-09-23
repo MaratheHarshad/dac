@@ -1,0 +1,57 @@
+    1. List only the directories in your current directory
+    
+    	
+	ls -d */
+	
+	or 
+	
+	ls -l | grep "^d"
+    
+    
+    
+    Q) Display the count of files in the current directory
+    
+    	ls -l | grep -c "^-"
+    
+    
+    
+    
+    
+    
+    
+    2. Display the name and count of the directories in the current directory.
+    
+    	ls -d */; ls -l | grep -c "^d"
+    	
+    	(ls -d */ -> display all the directories in current directory)
+    	(; -> is used to execute 1 or more commands)
+    	(ls -l | grep -c "^d" -> displays the count of directories in current folder)
+    
+    
+    3. Find out whether the users with a pattern “itp9” in their names have logged in ?
+    	
+    	
+    	// not sure correct or not
+    	
+    	who|cut -d " " -f1|fgrep itp9
+    	
+    	
+    	
+    
+    4. Find out whether a particular user “itp9” has logged in ?
+    	
+    	
+    	n=$( users | grep -c "itp9" );  if [[ $n -eq 1 ]]; then echo "yes"; else echo "no"; fi
+    	
+    	
+    
+    5. Assign a value “Black” to var1 and then display the following message on the terminal using this variable.
+    
+                        Black belt is associated with karate
+                        
+                        
+                        
+                        
+                        
+                        
+        

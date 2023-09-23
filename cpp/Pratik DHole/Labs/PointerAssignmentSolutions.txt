@@ -1,0 +1,198 @@
+POinters Assignmnet Solutions
+
+Write C++ program to swap two numbers using pointers
+#include <iostream>
+using namespace std;
+ 
+//Swap function to swap 2 numbers
+void swap(int *num1, int *num2) {
+   int temp;
+   //Copy the value of num1 to some temp variable
+   temp = *num1;
+ 
+   //Copy the value of num2 to num1
+   *num1 = *num2;
+ 
+   //Copy the value of num1 stored in temp to num2
+   *num2 = temp;
+}
+ 
+int main() {
+   int num1, num2;
+ 
+   //Inputting 2 numbers from user
+   cout<<"\nEnter the first number : ";
+   cin>>num1;
+   cout<<"\nEnter the Second number : ";
+   cin>>num2;
+ 
+   //Passing the addresses of num1 and num2
+   swap(&num1, &num2);
+ 
+   //Printing the swapped values of num1 and num2
+   cout<<"\nFirst number : "<< num1;
+   cout<<"\nSecond number: "<<num2;
+ 
+   return (0);
+}
+
+2) Write C++ program to add two numbers using pointers
+
+#include <iostream>
+using namespace std;
+ 
+int main() {
+ 
+    int num1, num2, *ptr1, *ptr2, sum=0;
+    cout<<"Enter the two number :";
+    cin>>num1>>num2;
+    ptr1 = &num1;
+    ptr2 = &num2;
+    sum = *ptr1 + *ptr2;
+    cout<<"Sum of the two number is "<<sum;
+ 
+    return 0;
+ 
+}
+
+3) Write C++ program to Sum of Array Elements using Pointers
+#include <iostream>
+using namespace std;
+ 
+int main() {
+ 
+   int arr[5], i, sum = 0;
+    int *ptr;
+ 
+    cout << "Enter any 5 numbers :";
+    for (i = 0; i < 5; i++) {
+        cin >> arr[i];
+    }
+ 
+    ptr = arr;
+    for (i = 0; i < 5; i++) {
+        sum = sum + *(ptr + i);
+    }
+ 
+    cout << "\nSum of array elements :" << sum;
+ 
+    return 0;
+ 
+}
+
+4) Write C++ program to Sum of Array Elements using Pointers 
+#include <iostream>
+#define MAX_SIZE 100 // Maximum size of the string
+using namespace std;
+ 
+int main() {
+ 
+    char text[MAX_SIZE];
+    char * str = text;
+    int count = 0;
+ 
+    // Inputtin string from user
+    cout<<"Enter any string: ";
+    cin>>text;
+ 
+    // Iterating though last element of the string
+    while(*(str++) != '\0') count++;
+ 
+    cout<<"Length of "<<text<<" is "<<count;
+ 
+    return 0;
+}
+
+5) Write C++ program to find length of string using pointer
+#include <iostream>
+#define MAX_SIZE 100 // Maximum size of the string
+using namespace std;
+ 
+int main() {
+ 
+    char text[MAX_SIZE];
+    char * str = text;
+    int count = 0;
+ 
+    // Inputtin string from user
+    cout<<"Enter any string: ";
+    cin>>text;
+ 
+    // Iterating though last element of the string
+    while(*(str++) != '\0') count++;
+ 
+    cout<<"Length of "<<text<<" is "<<count;
+ 
+    return 0;
+}
+
+6) Write C++ program to copy one string to another string using pointer
+#include <iostream>
+#define MAX_SIZE 100 // Maximum size of the string
+using namespace std;
+ 
+int main() {
+ 
+    char text1[MAX_SIZE], text2[MAX_SIZE];
+    char * str1 = text1;
+    char * str2 = text2;
+ 
+    // Inputting string from user
+    cout<<"Enter any string: "<<endl;
+    cin>>text1;
+ 
+    // Coping text1 to text2 character by character
+    while(*(str2++) = *(str1++));
+ 
+    cout<<"First string: "<<text1<<endl;;
+    cout<<"Second string: "<<text2<<endl;
+ 
+    return 0;
+}
+
+7) Write C++ program to concatenate two strings using pointer
+#include <iostream>
+#define MAX_SIZE 100 // Maximum size of the string
+using namespace std;
+ 
+int main() {
+ 
+    char str1[MAX_SIZE], str2[MAX_SIZE];
+    char * s1 = str1;
+    char * s2 = str2;
+ 
+    // Inputting 2 strings from user
+    cout<<"Enter 1st string: ";
+    cin>>str1;
+    cout<<"Enter 2nd string: ";
+    cin>>str2;
+ 
+    // Moving till the end of str1
+    while(*(++s1));
+ 
+    // Coping str2 to str1
+    while(*(s1++) = *(s2++));
+ 
+    cout<<"Concatenated string:"<<str1;
+ 
+    return 0;
+ 
+}
+8) Write C++ program to print the elements of the array in reverse order using a pointer
+#include <iostream>
+using namespace std;
+ 
+int main() {
+ 
+   int arr[5],i;
+     int *p=arr;
+     cout<<"Enter five numbers separated by space:";
+     cin>>*p>>*(p+1)>>*(p+2)>>*(p+3)>>*(p+4);
+     cout<<"Your entered numbers in reverse order are:\n";
+     for(i=4;i>=0;i--)
+        cout<<*(p+i)<<endl;
+ 
+ 
+     return 0;
+ 
+}
