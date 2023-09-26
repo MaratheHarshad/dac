@@ -54,4 +54,26 @@
                         
                         
                         
+        var1=Black
+        echo "$var1 belt is associatd with karate"
         
+        
+        
+        
+        
+        
+        
+        
+         6. Create the file employee.txt having colon (: ) separated fields. 
+         
+		The fields of the record are: enumber, ename, eposition, esal, edoj, edept. 
+		And now answer the following:
+		a. List all the employees along with a row number
+		b. Sort the file as per the names
+		c. List top three salaried employees
+		d. Remove duplicate records from the file
+		e. List dept. no along with no. of employees working in each dept.
+		f. Sort the file in descending order of salary
+        
+        
+

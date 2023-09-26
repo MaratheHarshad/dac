@@ -1,0 +1,119 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| pgdac              |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> create database college;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use college;
+Database changed
+mysql> select database() from dual;
++------------+
+| database() |
++------------+
+| college    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> create table student
+    -> (roll int,
+    -> name varchar(10),
+    -> class varchar(10),
+    -> marks float,
+    -> age int)
+    -> ;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_college |
++-------------------+
+| student           |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> desc student;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| roll  | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| class | varchar(10) | YES  |     | NULL    |       |
+| marks | float       | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table student modify column marks int;
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| roll  | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| class | varchar(10) | YES  |     | NULL    |       |
+| marks | int         | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table student drop column age;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| roll  | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| class | varchar(10) | YES  |     | NULL    |       |
+| marks | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> truncate table student;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_college |
++-------------------+
+| student           |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> drop table student;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> drop college;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'college' at line 1
+mysql> drop database college;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| pgdac              |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
