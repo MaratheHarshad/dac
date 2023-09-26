@@ -11,6 +11,7 @@ public:
 	void Write();
 	bool operator==(Date obj2);
 */
+
 #include<iostream>
 using namespace std;
 
