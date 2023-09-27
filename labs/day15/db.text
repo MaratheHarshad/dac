@@ -1,0 +1,89 @@
+The entity that generates relationship ... 
+
+cardinality
+relationship among 2 entities
+
+1 to many relationship
+1 to 1 relationship
+
+
+dept to employee -> 1 to many relationship
+employee to dept -> many to 1 relationship
+
+employee table 
+
+
+and
+
+
+dept table
+
+
+
+
+
+
+->create database b1db;
+
+->use d1db;
+
+->create table emp (empid int, empname varchar(20), eaddress varchar(20), managerid integer, hiredate date);
+->create table dept (deptid int, 
+
+
+// char -> fixed width -> length always be fixed -> char(10) length always be 10 -> if time is an issude char is used
+// varchar-> variable width -> length of entered variable -> if spacce is an issue varchar is used
+
+if more than 50% attributes are getting shared, then we should combine 2 different objects (like science student, and commerce student) are different objects
+as a database developer we should attemp to minimize the number of tables in database
+
+
+// check whether database exits into information_schema table
+
+-> use information_schema;
+
+-> show tables;
+
+// here exists table -> TABLES
+
+// desc means show the table defination
+-> desc tables;
+
+-> select  table_name  (selection)
+   from TABLES  (projection)
+   where table_schema='b1db' (condition)
+   
+// every database dictionary is present into information_schema db
+// information schema contains the record of databases (data dictionary)
+
+
+
+-> use b1db;
+
+
+-> desc dept;
+
+
+-> alter table emp add column deptid integer;
+
+
+-> desc emp;
+
+
+-> alter table emp add constraint pkemp primary key(empid);
+
+
+-> alter table dept add constraint pkdept primary key(deptid);
+
+
+-> alter table emp add constraint fkemp foreign key(deptid) references dept(deptid);
+
+
+
+
+
+
+
+
+
+
