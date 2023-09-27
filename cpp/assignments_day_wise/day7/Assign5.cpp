@@ -44,10 +44,10 @@ int main(){
     
     read(arr,size);
 
-    cout<<"Enter the number of elements you want to search in array"<<endl;
+    cout<<"Enter the element you want to search in array"<<endl;
     cin>>number;
 
-    cout<<"Size of array in main "<<sizeof(arr)/sizeof(int)<<endl;
+    // cout<<"Size of array in main "<<sizeof(arr)/sizeof(int)<<endl;
 
 
     if(search(arr , size , number)){

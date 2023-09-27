@@ -1,17 +1,9 @@
+// Given a positive integer N, find its reverse.
 
-// 1. Given a positive integer N, find its reverse.
-// For example:
-// N = 534
-// Reverse = 435
-// N = 5
-// Reverse = 5
-
-
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-
-int reverse(int iNo)
+int reverse_Num(int iNo)
 {
     int Ans = 0;
     int iDigit = 0;
@@ -30,21 +22,19 @@ int reverse(int iNo)
 
 int main()
 {
-    int input=0;
+    int iN=0;
 
     // input validation
     do{
 
         cout<<"Enter the positive number\n";
-        cin>>input;
+        cin>>iN;
 
-    }while(input < 1);
+    }while(iN < 1);
     
-    int Ans = reverse(input);
+    int Ans = reverse_Num(iN);
 
     cout<<"Reverse number is "<<Ans<<"\n";
 
     return 0;
 }
-
-

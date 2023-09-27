@@ -59,6 +59,54 @@ class Date
 
 
 
+    bool operator > (Date &other){
+
+
+        if(this->year > other.year){
+            return true;
+        }else if(this->year == other.year){
+
+            if(this->month > other.month){
+                return true;
+            }else if(this->month == other.month){
+
+                if(this->day > other.day){
+                    return true;
+                }else{
+                    return false;
+                }
+
+            }else{
+                return false;
+            }
+
+        }else{
+            return false;
+        }
+
+        
+        
+        if((this->day == other.day) && (this->month == other.month) && (this->year == other.year)){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
+
+     bool operator < (Date &other){
+        
+        if(*this == other){
+            return false;
+        }
+
+        return !(*this > other);
+     }
+
+
+
 };
 int main()
 {
@@ -73,6 +121,20 @@ int main()
         cout<<"same "<<endl;
     }else{
         cout<<"not same"<<endl;
+    }
+
+
+    if (D1 > D2){
+        cout<<"D1 is after D2\n";
+    }else{
+        cout<<"D2 is after D1\n";
+    }
+
+
+     if (D1 < D2){
+        cout<<"D1 is before D2\n";
+    }else{
+        cout<<"D2 is before D1\n";
     }
 
     return 0;

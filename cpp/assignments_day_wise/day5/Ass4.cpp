@@ -9,27 +9,28 @@ A palindrome. (Reverse is 545 and not same as 545)
 #include<iostream>
 using namespace std;
 
-int reverse_the_Number(int iNo)
+int reverse(int iNo)
 {
-    int iDigit=0;
-    int iRev=0;
+    int Ans = 0;
+    int iDigit = 0;
 
-    while(iNo!=0)
-    {
-        iDigit=iNo%10;
+    while(iNo != 0){
 
-        iRev=iRev*10 + iDigit;
-
-        iNo = iNo / 10; 
+        iDigit = iNo % 10;
+        Ans = Ans * 10 + iDigit;
+        iNo = iNo / 10;
     }
-    cout<<"Reverse number is "<<iRev<<endl;
-    return iRev; 
+    
+    return Ans;
+
 }
-void check_pallindrome(int iNo)
+
+
+void isPalindrome(int iNo)
 {
     int iReverse=0;
 
-    iReverse=reverse_the_Number(iNo);
+    iReverse=reverse(iNo);
     
     if(iReverse==iNo)
     {
@@ -47,7 +48,7 @@ int main()
         cin>>iNo;
     }while(iNo<0);
 
-    check_pallindrome(iNo);
+    isPalindrome(iNo);
 
     return 0;
 }

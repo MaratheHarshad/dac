@@ -34,9 +34,25 @@ class BigInt {
 		return false;
 	}
 
+	bool operator != (BigInt obj2) {
+		if (num != obj2.num) {
+			return true;
+		}
+		return false;
+	}
+
     bool operator > (BigInt obj2){
 
         if(num > obj2.num){
+            return true;
+        }
+
+        return false;
+    }
+
+	bool operator < (BigInt obj2){
+
+        if(num < obj2.num){
             return true;
         }
 
@@ -62,6 +78,13 @@ int main() {
     }else{
         cout<<"object 2 is greater than 1\n";
     }
+
+
+	if (i != j){
+		cout<<"object 1 is not equal to object 2\n";
+	}else{
+		cout<<"object 1 is equal to  object 2\n";
+	}
 
 	return 0;
 }

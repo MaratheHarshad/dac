@@ -1,36 +1,24 @@
 /*
-2. Find prime numbers between two positive integers N and M, including N and M.
-For example:
-N = 3
-M = 10
-Prime Numbers = 3 5 7
-*/
-
-
-/*
 Find prime number between two positive integers and print them
 */
 
 #include<iostream>
 using namespace std;
 
-
-
-bool isPrime(int iNumber)
+int check_Prime(int iNumber)
 {
     int iCnt=1;
 
-    for(iCnt=2; iCnt<=(iNumber/2) ;iCnt++)
+    for(iCnt=2; iCnt<iNumber; iCnt++)
     {
         if((iNumber%iCnt)==0)
         {
-            return false;
+            return 1;
         }
     }
 
-    return true;
+    return 0;
 }
-
 void print_Prime_Bet(int iM,int iN)
 {
     for(int iCnt=iM;iCnt<=iN;iCnt++)
@@ -40,8 +28,9 @@ void print_Prime_Bet(int iM,int iN)
             continue;
         }
         
-        
-        if(isPrime(iCnt)){
+        int iRet = check_Prime(iCnt);
+
+        if(iRet == 0){
             cout<<iCnt<<" ";
         }
     }
@@ -55,13 +44,12 @@ int main()
         cin>>M>>N;
 
     }while(M > N || (M < 0 || N < 0));
+    
      
     print_Prime_Bet(M,N) ;
 
     return 0;
 }
-
-
 
 
 

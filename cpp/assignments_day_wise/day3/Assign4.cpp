@@ -47,18 +47,6 @@ int main()
     return 0;
 }
 
-// 2 10
-
-// 3     10
-
-
-// 3  0 prime
-// 4  1 Np
-// 5  0 prime
-// 6   1 np
-
-
-
 
 
 

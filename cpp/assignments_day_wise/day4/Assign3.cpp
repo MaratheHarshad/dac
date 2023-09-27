@@ -19,12 +19,16 @@ int main()
     int M,N;
     int iRet=0;
 
-    cout<<"Enter the numbers"<<endl;
-    cin>>M>>N;
+    do{
+        cout<<"Enter the positive numbers M and N (M should less than N)"<<endl;
+        cin>>M>>N;
+
+    }while(M > N || (M < 0 || N < 0));
+    
      
     iRet=print_Sum_Bet(M,N) ;
 
-    cout<<"Summation between M And N is"<<iRet<<endl;
+    cout<<"Summation between M And N is "<<iRet<<endl;
 
     return 0;
 }

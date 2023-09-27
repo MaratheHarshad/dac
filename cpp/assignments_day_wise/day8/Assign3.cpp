@@ -5,7 +5,9 @@
    Accept string function definition
 
 */
+
 #include<iostream>
+#include<stdio.h>
 using namespace std;
 
 bool Compare(char s1[], char s2[])
@@ -21,11 +23,13 @@ bool Compare(char s1[], char s2[])
         return false;
       }
      }    
+
+     return true;
 }
 
-void Accept(char S1[],int i)
+void Accept(char S1[])
 {
-    cin.get(S1, i);
+    gets(S1);
 }
 
 int main()
@@ -34,10 +38,10 @@ int main()
     char str2[30];
      
     cout<<"Enter string 1 : \n";
-    Accept(str1,30);
+    Accept(str1);
 
     cout<<"Enter string 2 : \n";
-    Accept(str2,30);
+    Accept(str2);
 
     bool result  = Compare(str1,str2);
 

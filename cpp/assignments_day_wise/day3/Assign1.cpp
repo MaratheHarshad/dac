@@ -13,7 +13,7 @@ void print_Factors(int iNumber)
     {
         if((iNumber%iCnt)==0)
         {
-            cout<<iCnt<<"\t";
+            cout<<iCnt<<" ";
         }
     }
 }

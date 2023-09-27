@@ -1,0 +1,44 @@
+// 4. In the given string, convert all lower case chanracters to upper case.
+// void ToUpper(char s[]);
+
+#include<iostream>
+#include<stdio.h>
+using namespace std;
+
+void ToUpper(char s1[])
+{
+     while(*s1!='\0')
+     {
+
+        if((int)(*s1) > 90)
+        {
+            *s1 = (char)((int)(*s1) - 32);
+        }
+
+        s1++;
+
+     }    
+   
+}
+
+void Accept(char S1[])
+{
+    gets(S1);
+}
+
+int main()
+{
+    char str1[30];
+   
+    cout<<"Enter string  : \n";
+    Accept(str1);
+
+    cout<<str1<<" before toUpper"<<endl;
+
+    ToUpper(str1);
+
+    cout<<str1<<" after toUpper"<<endl;
+
+    
+    return 0;
+}

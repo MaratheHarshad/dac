@@ -6,13 +6,13 @@ using namespace std;
 
 int count_Digits(int iNum)
 {
-    int iDigit = 0;
+    
     int iCnt=0;
+
     while(iNum!=0)
     {
-    iDigit = iNum%10;
-    iNum = iNum/10;
-    iCnt++;
+        iNum = iNum/10;
+        iCnt++;
     }
 
     return iCnt;
