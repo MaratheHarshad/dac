@@ -1,0 +1,263 @@
+never ever create database as per your appliation
+
+always design your database as per your application
+
+
+
+
+continue after prv day
+
+->select sysdate()
+
+it is a function which is going to show me the date in the system
+
+-> insert into emp values (101, 'John', 'Pune', NULL,'2023-01-01', 10);
+
+
+NULL is not 0, not empty
+NULL MEANS IT IS NOTHING
+
+-> insert into dept values (10, 'Accounts', 'Pune');
+
+-> insert into dept values (20, 'HR', 'Banglore');
+
+-> insert into dept values (30, 'Insurance', 'Banglore');
+
+-> select * from dept;
+
+-> select * from emp;
+
+
+-> insert into emp values (102, 'King', 'Banglore', 101,'2023-01-02', 10);
+
+
+-> rollback;
+
+// rollback means rollback the previous changes
+// initially autocommit is on i.e it does't work
+
+
+-> select * from emp;
+
+
+-> set autocommit=0;
+
+-> insert into emp values (103, 'Kocchar 'Mumbai', 101,'2023-01-02', 10);
+
+
+-> rollback;
+
+// not work  because we haven't start transaction
+
+
+-> select * from emp;
+
+-> select * from dept;
+
+
+-> insert into emp values (104, 'Kocchar 'Mumbai', 101,'2023-01-02', 40);
+
+
+
+-> use information_schema;
+
+-> show tables;
+
+-> desc TABLE_CONSTRAINTS;
+
+
+
+
+-> select constraint_name, table_name from table_constraints where constraint_schema='b1db';
+
+
+-> select constraint_name,constraint_type,  table_name from table_constraints where constraint_schema='b1db';
+
+
+
+-> desc referential_constraint;
+
+
+
+-> select constraint_name,constraint_type,  table_name from referential_contraints where constraint_schema='b1db';
+
+
+
+
+
+
+-> use b1db;
+
+-> show tables;
+
+-> desc dept;
+
+-> desc emp;
+
+
+-> alter table emp add constraint fkdept foreign key(deptid) references dept(deptid)
+
+
+
+
+-> insert into emp values (105, 'Smith 'UK', 102,'2023-01-02', 100);
+
+
+
+-> alter table emp add constraint foreign key(deptid) references dept(deptid)
+
+
+
+-> use information_schema;
+
+
+> select constraint_name,  table_name from referential_contraints where constraint_schema='b1db';
+
+
+storage engines
+
+// by default storage engine always going to be innodb
+
+MYISAM - > go with database performance  -> doesn't exist primary key to foreign key relationship -> for data ware housing myisam is prefared
+
+MyISAM Stores data in single table i.e it doesn't allows primary key to foreign key relationship
+
+INNODB - > allows to have transction processing
+
+//
+
+if we change the default storage engine
+existing table storage engine doesn't change
+
+
+
+// in windows
+
+-> use b1db;
+
+> alter table emp add constraint fkdept foreign key(deptid) references dept(deptid);
+
+
+
+
+-> use information_schema;
+
+-> desc referential_constraints;
+
+
+> select constraint_name,  table_name from referential_contraints where constraint_schema='b1db';
+
+
+// still foregin key is not created
+
+
+
+-> use b1db;
+
+
+
+-> select * from emp;
+
+-> select * from dept;
+
+
+-> delete from emp where empid in (104,105);
+
+
+> alter table emp add constraint fkdept foreign key(deptid) references dept(deptid);
+
+
+
+
+-> use information_schema;
+
+-> desc referential_constraints;
+
+
+> select constraint_name,  table_name from referential_contraints where constraint_schema='b1db';
+
+
+// still foregin key is not created
+
+
+
+-> use b1db;
+
+
+
+-> select * from emp;
+
+-> select * from dept;
+
+
+-> insert into emp (empid, deptid) values (104, 40);
+
+
+
+
+if we change the default storage engine
+existing table storage engine doesn't change
+
+
+
+
+-> drop table emp;
+
+-> drop table dept;
+
+
+-> create table emp (empid integer primary key, deptid integer);
+-> create table dept (deptid integer primary key);
+
+
+> alter table emp add constraint fkdept foreign key(deptid) references dept(deptid);
+
+
+
+
+-> insert into emp (empid, deptid) values (104, 40);
+
+// show error
+// we cannot insert data initially in child table
+
+
+case study 1:
+
+1) /etc/mysql/my.conf.d/mysqld.cnf
+// write below statement(2) in this file(mysqld.cnf)
+2) default_storage_engine = myisam
+3) restart the service
+4) create table t1, t2 with pk, fk
+5) insert the rows in child table first
+6) observe the messages
+
+
+
+// how to set default storage engine
+
+in mysql server
+
+SHOW STORAGE ENGINES;
+SET DEFAULT_STORAGE_ENGINES = MyISAM
+
+
+
+
+
+
+case study 2:
+
+
+emp  	  	dept 		location
+
+m 		1  m 		1
+
+fk		pk fk		pk
+
+empid(pk)	deptid		locid
+empname		deptname	locationname
+salary		location	pincode
+address         
+managerid
+hiredate
+deptid

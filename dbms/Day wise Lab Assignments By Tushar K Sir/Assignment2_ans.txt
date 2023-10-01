@@ -5,7 +5,7 @@ mysql> show databases;
 | information_schema |
 | mysql              |
 | performance_schema |
-| pgdac              |
+| pgdac      
 | sys                |
 +--------------------+
 5 rows in set (0.01 sec)

@@ -14,6 +14,7 @@ echo  "Enter + for addition"
 echo  "Enter - for sub"
 echo  "Enter / for div"
 echo  "Enter * for mul"
+echo  "Enter any other character to exit"
 
 read symbol
 
@@ -37,14 +38,12 @@ elif [ "$symbol" =  "*" ];
 		echo $number1 \* $number2 | bc
 
 else
-	echo "Enter a valid character"
+	break
 
 fi
 
 count=$(( $count + 1 ))
 
 done
-
-
 
 

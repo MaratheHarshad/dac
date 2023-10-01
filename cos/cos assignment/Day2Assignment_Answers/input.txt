@@ -1,0 +1,5 @@
+his is a String
+we have to ignore 
+the string 
+ignore 
+ignore the string ignore
