@@ -1,0 +1,20 @@
+steps: to grant the permission to mysql user locally
+
+inside mysql server create user
+
+
+mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+
+mysql> SHOW GRANTS FOR 'username'@'host';
+
+
+
+To switch to newly created user
+
+open new terminal
+
+:home/> mysql -u username -p
+
+mysql>
+
+// here we can see the separate list of databases for this user
