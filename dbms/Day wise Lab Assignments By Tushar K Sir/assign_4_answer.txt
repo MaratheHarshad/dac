@@ -1,0 +1,1086 @@
+dac@dac-Veriton-M200-H310:~/dac_hm/cpp viva$ sudo mysql -u root
+[sudo] password for dac: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.34-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cdacdb             |
+| college            |
+| college1           |
+| d1db               |
+| information_schema |
+| lalit_prashant     |
+| myXdata            |
+| mysql              |
+| performance_schema |
+| pgdac              |
+| sys                |
+| t2do               |
++--------------------+
+12 rows in set (0.00 sec)
+
+mysql> use college;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_college |
++-------------------+
+| student1          |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select * from student1;
++------+---------+-------+-------+------+
+| roll | name    | class | marks | age  |
++------+---------+-------+-------+------+
+|    1 | Vaibhav | FE    |  70.2 |   22 |
+|    2 | lalit   | SE    |  80.2 |   24 |
+|    3 | Vishal  | FE    |  70.2 |   32 |
+|    4 | Rakesh  | SE    |  80.2 |   34 |
++------+---------+-------+-------+------+
+4 rows in set (0.00 sec)
+
+mysql> desc student1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| roll  | int         | YES  |     | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
+| class | varchar(3)  | YES  |     | NULL    |       |
+| marks | float       | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> use pgdac;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cdacdb             |
+| college            |
+| college1           |
+| d1db               |
+| information_schema |
+| lalit_prashant     |
+| myXdata            |
+| mysql              |
+| performance_schema |
+| pgdac              |
+| sys                |
+| t2do               |
++--------------------+
+12 rows in set (0.00 sec)
+
+mysql> show tables;
++-----------------+
+| Tables_in_pgdac |
++-----------------+
+| dept            |
+| emp             |
+| student         |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from student;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      9 | Nayan      |    67 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> update student set marks = 100 where rollno = 9;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from student;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> update student set class if (class  = "F.E", "FE", "SE");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if (class  = "F.E", "FE", "SE")' at line 1
+mysql> use college;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> create table if not exists students_3 select * from pgdac.student;
+Query OK, 10 rows affected (0.02 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select database() from dual;
++------------+
+| database() |
++------------+
+| college    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> selec * from students_3;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selec * from students_3' at line 1
+mysql> select * from students_3;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select * from students_3;
+^C
+mysql> select * from students_3;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select sum(rollno) from students_3;
++-------------+
+| sum(rollno) |
++-------------+
+|          55 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(marks) from students_3;
++------------+
+| avg(marks) |
++------------+
+|    75.7000 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select name, avg(marks) from students_3;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'college.students_3.name'; this is incompatible with sql_mode=only_full_group_by
+mysql> select name, avg(marks) from students_3 group by name;
++------------+------------+
+| name       | avg(marks) |
++------------+------------+
+| Lalit      |    80.0000 |
+| pasha bhai |    70.0000 |
+| vishal     |    65.0000 |
+| vaibhav    |    87.0000 |
+| khagesh    |    83.0000 |
+| Prashant   |    85.0000 |
+| Yash       |    67.0000 |
+| Harish     |    85.0000 |
+| Nayan      |   100.0000 |
+| krushna    |    35.0000 |
++------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select name, max(marks) from students_3 group by name;
++------------+------------+
+| name       | max(marks) |
++------------+------------+
+| Lalit      |         80 |
+| pasha bhai |         70 |
+| vishal     |         65 |
+| vaibhav    |         87 |
+| khagesh    |         83 |
+| Prashant   |         85 |
+| Yash       |         67 |
+| Harish     |         85 |
+| Nayan      |        100 |
+| krushna    |         35 |
++------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select name, max(marks) from students_3 group by marks;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'college.students_3.name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select name, max(marks) from s
+[1]+  Stopped                 sudo mysql -u root
+dac@dac-Veriton-M200-H310:~/dac_hm/cpp viva$ sudo mysql -u root
+[sudo] password for dac: 
+\\Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.34-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cdacdb             |
+| college            |
+| college1           |
+| d1db               |
+| information_schema |
+| lalit_prashant     |
+| myXdata            |
+| mysql              |
+| performance_schema |
+| pgdac              |
+| sys                |
+| t2do               |
++--------------------+
+12 rows in set (0.01 sec)
+
+mysql> use college;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_college |
++-------------------+
+| student1          |
+| students_3        |
++-------------------+
+2 rows in set (0.00 sec)
+
+mysql> alter table students_3 rename to student;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_college |
++-------------------+
+| student           |
+| student1          |
++-------------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from student1;
++------+---------+-------+-------+------+
+| roll | name    | class | marks | age  |
++------+---------+-------+-------+------+
+|    1 | Vaibhav | FE    |  70.2 |   22 |
+|    2 | lalit   | SE    |  80.2 |   24 |
+|    3 | Vishal  | FE    |  70.2 |   32 |
+|    4 | Rakesh  | SE    |  80.2 |   34 |
++------+---------+-------+-------+------+
+4 rows in set (0.01 sec)
+
+mysql> select * from student;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+10 rows in set (0.01 sec)
+
+mysql> select name, max(marks) from student group by class;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'college.student.name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select name, max(marks) from student;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'college.student.name'; this is incompatible with sql_mode=only_full_group_by
+mysql> select max(marks) from student;
++------------+
+| max(marks) |
++------------+
+|        100 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select name , max(marks), class from student1 group by class;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'college.student1.name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select name , max(marks) from student1 group by name;
++---------+------------+
+| name    | max(marks) |
++---------+------------+
+| Vaibhav |       70.2 |
+| lalit   |       80.2 |
+| Vishal  |       70.2 |
+| Rakesh  |       80.2 |
++---------+------------+
+4 rows in set (0.01 sec)
+
+mysql> select name, max(marks) from student1;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'college.student1.name'; this is incompatible with sql_mode=only_full_group_by
+mysql> select name, max(marks) from student1 group by class;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'college.student1.name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select name, max(marks) from student1 group by marks;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'college.student1.name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> 
+mysql> select * from student1;
++------+---------+-------+-------+------+
+| roll | name    | class | marks | age  |
++------+---------+-------+-------+------+
+|    1 | Vaibhav | FE    |  70.2 |   22 |
+|    2 | lalit   | SE    |  80.2 |   24 |
+|    3 | Vishal  | FE    |  70.2 |   32 |
+|    4 | Rakesh  | SE    |  80.2 |   34 |
++------+---------+-------+-------+------+
+4 rows in set (0.00 sec)
+
+mysql> select roll, class from student1;
++------+-------+
+| roll | class |
++------+-------+
+|    1 | FE    |
+|    2 | SE    |
+|    3 | FE    |
+|    4 | SE    |
++------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select name from student1 where marks = (select max(marks) from student1);
++--------+
+| name   |
++--------+
+| lalit  |
+| Rakesh |
++--------+
+2 rows in set (0.00 sec)
+
+mysql> select name from student1 where marks = (select max(marks) from student1) group by class;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'college.student1.name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mysql> select * from student1;
++------+---------+-------+-------+------+
+| roll | name    | class | marks | age  |
++------+---------+-------+-------+------+
+|    1 | Vaibhav | FE    |  70.2 |   22 |
+|    2 | lalit   | SE    |  80.2 |   24 |
+|    3 | Vishal  | FE    |  70.2 |   32 |
+|    4 | Rakesh  | SE    |  80.2 |   34 |
++------+---------+-------+-------+------+
+4 rows in set (0.00 sec)
+
+mysql> insert into student1 values (5, "Vishal", "SE", 77.2, 23);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select distinct name, roll, class, marks , age from student1;
++---------+------+-------+-------+------+
+| name    | roll | class | marks | age  |
++---------+------+-------+-------+------+
+| Vaibhav |    1 | FE    |  70.2 |   22 |
+| lalit   |    2 | SE    |  80.2 |   24 |
+| Vishal  |    3 | FE    |  70.2 |   32 |
+| Rakesh  |    4 | SE    |  80.2 |   34 |
+| Vishal  |    5 | SE    |  77.2 |   23 |
++---------+------+-------+-------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from student where name like "%yan"
+    -> ;
++--------+-------+-------+-------+------+
+| rollno | name  | marks | class | age  |
++--------+-------+-------+-------+------+
+|      9 | Nayan |   100 | S.E   |   20 |
++--------+-------+-------+-------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from student;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select max(marks),class from student group by class;
++------------+-------+
+| max(marks) | class |
++------------+-------+
+|         85 | F.E   |
+|        100 | S.E   |
+|         65 | T.E   |
++------------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select max(marks),name,class from student group by class,name;
++------------+------------+-------+
+| max(marks) | name       | class |
++------------+------------+-------+
+|         80 | Lalit      | F.E   |
+|         70 | pasha bhai | S.E   |
+|         65 | vishal     | T.E   |
+|         87 | vaibhav    | S.E   |
+|         83 | khagesh    | S.E   |
+|         85 | Prashant   | F.E   |
+|         67 | Yash       | S.E   |
+|         85 | Harish     | F.E   |
+|        100 | Nayan      | S.E   |
+|         35 | krushna    | S.E   |
++------------+------------+-------+
+10 rows in set (0.00 sec)
+
+mysql> select max(marks),name,class from student group by class;
+ERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'college.student.name' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select name from student where (select max(marks),name,class from student group by class);
+ERROR 1241 (21000): Operand should contain 1 column(s)
+mysql> select name,marks,class from student where (select max(marks),class from student group by class);
+ERROR 1241 (21000): Operand should contain 1 column(s)
+mysql> select name
+mysql> select name from student where marks in ( select max(marks), class from student group by class);
+ERROR 1241 (21000): Operand should contain 1 column(s)
+mysql> select name from student where marks in (select max(marks) from student group by class);
++----------+
+| name     |
++----------+
+| vishal   |
+| Prashant |
+| Harish   |
+| Nayan    |
++----------+
+4 rows in set (0.00 sec)
+
+mysql> select name, marks, class from student where marks in (select max(marks) from student group by class);
++----------+-------+-------+
+| name     | marks | class |
++----------+-------+-------+
+| vishal   |    65 | T.E   |
+| Prashant |    85 | F.E   |
+| Harish   |    85 | F.E   |
+| Nayan    |   100 | S.E   |
++----------+-------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from student;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select distinct name, marks, class from student where marks in (select max(marks) from student group by class);
++----------+-------+-------+
+| name     | marks | class |
++----------+-------+-------+
+| vishal   |    65 | T.E   |
+| Prashant |    85 | F.E   |
+| Harish   |    85 | F.E   |
+| Nayan    |   100 | S.E   |
++----------+-------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select name, marks, distinct class from student where marks in (select max(marks) from student group by class);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'distinct class from student where marks in (select max(marks) from student group' at line 1
+mysql> select distinct class, name, marks from student where marks in (select max(marks) from student group by class);
++-------+----------+-------+
+| class | name     | marks |
++-------+----------+-------+
+| T.E   | vishal   |    65 |
+| F.E   | Prashant |    85 |
+| F.E   | Harish   |    85 |
+| S.E   | Nayan    |   100 |
++-------+----------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select class, name,distinct marks from student where marks in (select max(marks) from student group by class);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'distinct marks from student where marks in (select max(marks) from student group' at line 1
+mysql> select distinct marks,class, name from student where marks in (select max(marks) from student group by class);
++-------+-------+----------+
+| marks | class | name     |
++-------+-------+----------+
+|    65 | T.E   | vishal   |
+|    85 | F.E   | Prashant |
+|    85 | F.E   | Harish   |
+|   100 | S.E   | Nayan    |
++-------+-------+----------+
+4 rows in set (0.00 sec)
+
+mysql> use b1db;
+ERROR 1049 (42000): Unknown database 'b1db'
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cdacdb             |
+| college            |
+| college1           |
+| d1db               |
+| information_schema |
+| lalit_prashant     |
+| myXdata            |
+| mysql              |
+| performance_schema |
+| pgdac              |
+| sys                |
+| t2do               |
++--------------------+
+12 rows in set (0.00 sec)
+
+mysql> use d1db;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++----------------+
+| Tables_in_d1db |
++----------------+
+| dept           |
+| emp            |
++----------------+
+2 rows in set (0.00 sec)
+
+mysql> desc dept;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| deptid   | int         | NO   | PRI | NULL    |       |
+| deptname | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> create table tp 
+    -> ukey int unique key;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ukey int unique key' at line 2
+mysql> create table tp  (ukey int unique key);
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc tp;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| ukey  | int  | YES  | UNI | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into tp values (1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into tp values (3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into tp values (null);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from tp;
++------+
+| ukey |
++------+
+| NULL |
+|    1 |
+|    3 |
++------+
+3 rows in set (0.01 sec)
+
+mysql> insert into tp values (null);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from tp;
++------+
+| ukey |
++------+
+| NULL |
+| NULL |
+|    1 |
+|    3 |
++------+
+4 rows in set (0.00 sec)
+
+mysql> insert into tp values (1);
+ERROR 1062 (23000): Duplicate entry '1' for key 'tp.ukey'
+mysql> select * from tp;
++------+
+| ukey |
++------+
+| NULL |
+| NULL |
+|    1 |
+|    3 |
++------+
+4 rows in set (0.00 sec)
+
+mysql> use college;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_college |
++-------------------+
+| student           |
+| student1          |
++-------------------+
+2 rows in set (0.01 sec)
+
+mysql> select * from student;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select max(marks),class from student group by class;
++------------+-------+
+| max(marks) | class |
++------------+-------+
+|         85 | F.E   |
+|        100 | S.E   |
+|         65 | T.E   |
++------------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select max(marks),class from student group by class having marks < 80;
+ERROR 1054 (42S22): Unknown column 'marks' in 'having clause'
+mysql> select max(marks),class from student group by class having marks < 80;
+ERROR 1054 (42S22): Unknown column 'marks' in 'having clause'
+mysql> select marks , class from student having marks < 80;
++-------+-------+
+| marks | class |
++-------+-------+
+|    70 | S.E   |
+|    65 | T.E   |
+|    67 | S.E   |
+|    35 | S.E   |
++-------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select max(marks),class from student group by class having marks > avg(marks);
+ERROR 1054 (42S22): Unknown column 'marks' in 'having clause'
+mysql> select marks,class from student group by class having marks > avg(marks);
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'college.student.marks' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select class, max(marks) from student group by class;
++-------+------------+
+| class | max(marks) |
++-------+------------+
+| F.E   |         85 |
+| S.E   |        100 |
+| T.E   |         65 |
++-------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select class, max(marks) from student group by class having max(marks) > 80;
++-------+------------+
+| class | max(marks) |
++-------+------------+
+| F.E   |         85 |
+| S.E   |        100 |
++-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select name from student where name like "%bhai";
++------------+
+| name       |
++------------+
+| pasha bhai |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select name from student where name like "__yan";
++-------+
+| name  |
++-------+
+| Nayan |
++-------+
+1 row in set (0.00 sec)
+
+mysql> select name from student where name like "_yan";
+Empty set (0.00 sec)
+
+mysql> select name from student where name like "__yan";
++-------+
+| name  |
++-------+
+| Nayan |
++-------+
+1 row in set (0.00 sec)
+
+mysql> select distinct marks from student;
++-------+
+| marks |
++-------+
+|    80 |
+|    70 |
+|    65 |
+|    87 |
+|    83 |
+|    85 |
+|    67 |
+|   100 |
+|    35 |
++-------+
+9 rows in set (0.00 sec)
+
+mysql> select count(distinct marks) from student;
++-----------------------+
+| count(distinct marks) |
++-----------------------+
+|                     9 |
++-----------------------+
+1 row in set (0.00 sec)
+
+mysql> select distinct marks, name from student;
++-------+------------+
+| marks | name       |
++-------+------------+
+|    80 | Lalit      |
+|    70 | pasha bhai |
+|    65 | vishal     |
+|    87 | vaibhav    |
+|    83 | khagesh    |
+|    85 | Prashant   |
+|    67 | Yash       |
+|    85 | Harish     |
+|   100 | Nayan      |
+|    35 | krushna    |
++-------+------------+
+10 rows in set (0.00 sec)
+
+mysql> insert into student values (8,'Harish',85,'F.E',21);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select distinct marks, name from student;
++-------+------------+
+| marks | name       |
++-------+------------+
+|    80 | Lalit      |
+|    70 | pasha bhai |
+|    65 | vishal     |
+|    87 | vaibhav    |
+|    83 | khagesh    |
+|    85 | Prashant   |
+|    67 | Yash       |
+|    85 | Harish     |
+|   100 | Nayan      |
+|    35 | krushna    |
++-------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select distinct * from student;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select  * from student;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
+|      8 | Harish     |    85 | F.E   |   21 |
++--------+------------+-------+-------+------+
+11 rows in set (0.00 sec)
+
+mysql> delete from student where distinct rollno=8;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'distinct rollno=8' at line 1
+mysql> delete from student where rollno=8;
+Query OK, 2 rows affected (0.00 sec)
+
+mysql> select  * from student;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+9 rows in set (0.00 sec)
+
+mysql> desc student;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| rollno | int         | NO   |     | NULL    |       |
+| name   | varchar(10) | YES  |     | NULL    |       |
+| marks  | int         | YES  |     | NULL    |       |
+| class  | varchar(10) | YES  |     | NULL    |       |
+| age    | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table student add constraint primary key(name);
+Query OK, 9 rows affected (0.03 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| rollno | int         | NO   |     | NULL    |       |
+| name   | varchar(10) | NO   | PRI | NULL    |       |
+| marks  | int         | YES  |     | NULL    |       |
+| class  | varchar(10) | YES  |     | NULL    |       |
+| age    | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insert into student values (8,'Harish',85,'F.E',21);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into student values (8,'harish',85,'F.E',21);
+ERROR 1062 (23000): Duplicate entry 'harish' for key 'student.PRIMARY'
+mysql> insert into student values (8,"harish",85,'F.E',21);
+ERROR 1062 (23000): Duplicate entry 'harish' for key 'student.PRIMARY'
+mysql> select * from student order by marks;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|     10 | krushna    |    35 | S.E   |   23 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      9 | Nayan      |   100 | S.E   |   20 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select * from student order by marks desc;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      9 | Nayan      |   100 | S.E   |   20 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      3 | vishal     |    65 | T.E   |   27 |
+|     10 | krushna    |    35 | S.E   |   23 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select * from student order by class;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|     10 | krushna    |    35 | S.E   |   23 |
+|      3 | vishal     |    65 | T.E   |   27 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select * from student order by class, marks asc;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|     10 | krushna    |    35 | S.E   |   23 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|      3 | vishal     |    65 | T.E   |   27 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select * from student order by class, marks asc, age asc;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      8 | Harish     |    85 | F.E   |   21 |
+|     10 | krushna    |    35 | S.E   |   23 |
+|      7 | Yash       |    67 | S.E   |   20 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|      3 | vishal     |    65 | T.E   |   27 |
++--------+------------+-------+-------+------+
+10 rows in set (0.00 sec)
+
+mysql> select * from student where marks between 70 to 100;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to 100' at line 1
+mysql> select * from student where marks between 70 and 100;
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      1 | Lalit      |    80 | F.E   |   22 |
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      5 | khagesh    |    83 | S.E   |   23 |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|      9 | Nayan      |   100 | S.E   |   20 |
+|      8 | Harish     |    85 | F.E   |   21 |
++--------+------------+-------+-------+------+
+7 rows in set (0.00 sec)
+
+mysql> select * from student where roll in (2,4,6);
+ERROR 1054 (42S22): Unknown column 'roll' in 'where clause'
+mysql> select * from student where roll in(2,4,6);
+ERROR 1054 (42S22): Unknown column 'roll' in 'where clause'
+mysql> select * from student where rollno in(2,4,6);
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      6 | Prashant   |    85 | F.E   |   21 |
++--------+------------+-------+-------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from student where rollno in( rollno mod 2 = 0);
+Empty set (0.00 sec)
+
+mysql> select * from student where rollno in( select rollno from student where rollno mod 2 = 0);
++--------+------------+-------+-------+------+
+| rollno | name       | marks | class | age  |
++--------+------------+-------+-------+------+
+|      2 | pasha bhai |    70 | S.E   |   25 |
+|      4 | vaibhav    |    87 | S.E   | NULL |
+|      6 | Prashant   |    85 | F.E   |   21 |
+|     10 | krushna    |    35 | S.E   |   23 |
+|      8 | Harish     |    85 | F.E   |   21 |
++--------+------------+-------+-------+------+
+5 rows in set (0.00 sec)
+
+mysql> 
+
+

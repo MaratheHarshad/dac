@@ -1,0 +1,201 @@
+dac@dac-Veriton-M200-H310:~$ sudo mysql -u root
+[sudo] password for dac: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.34-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database assignment4
+    -> ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use assignment4;
+Database changed
+mysql> create table emp
+    -> (id int primary key,
+    -> name varchar(20),
+    -> deptid int,
+    -> birth date
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | NO   | PRI | NULL    |       |
+| name   | varchar(20) | YES  |     | NULL    |       |
+| deptid | int         | YES  |     | NULL    |       |
+| birth  | date        | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> create table dept
+    -> (deptid int primary key,
+    -> deptname varchar(30),
+    -> deptblock varchar(10));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc dept;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| deptid    | int         | NO   | PRI | NULL    |       |
+| deptname  | varchar(30) | YES  |     | NULL    |       |
+| deptblock | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> desc emp;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | NO   | PRI | NULL    |       |
+| name   | varchar(20) | YES  |     | NULL    |       |
+| deptid | int         | YES  |     | NULL    |       |
+| birth  | date        | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table emp add constraint fkemp foreign key emp(deptid) references dept(deptid);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;\
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | NO   | PRI | NULL    |       |
+| name   | varchar(20) | YES  |     | NULL    |       |
+| deptid | int         | YES  | MUL | NULL    |       |
+| birth  | date        | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into dept
+    -> values
+    -> (1, "Computer Science", "B-BLOCK"),
+    -> (2, "Information Technology", "C-BLOCK"),
+    -> (3, "Mechanical", "A-BLOCK"),
+    -> (4, "Electronic Communication", "D-BLOCK");
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from dept;
++--------+--------------------------+-----------+
+| deptid | deptname                 | deptblock |
++--------+--------------------------+-----------+
+|      1 | Computer Science         | B-BLOCK   |
+|      2 | Information Technology   | C-BLOCK   |
+|      3 | Mechanical               | A-BLOCK   |
+|      4 | Electronic Communication | D-BLOCK   |
++--------+--------------------------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> insert into emp 
+    -> values
+    -> (1, "Maria Gloria", 2 , "1994-03-12"),
+    -> (2, "John Smith", 1, "1993-02-07);
+    "> ^C
+mysql> insert into emp
+    -> values
+    -> (1, "Maria Gloria", 2 , "1994-03-12");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from emp;
++----+--------------+--------+------------+
+| id | name         | deptid | birth      |
++----+--------------+--------+------------+
+|  1 | Maria Gloria |      2 | 1994-03-12 |
++----+--------------+--------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into emp
+    -> values
+    -> (2, "John Smith", 1, "1993-02-07"),
+    -> (3, "Gal Rao", 4, "1992-09-11"),
+    -> (4, "Jakey Smith", 2, "1990-08-31"),
+    -> (5, "Rama Saho", 1, "1994-12-09");
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> insert into emp
+    -> values
+    -> (6, "Maria Gaga", 4, "1993-10-09");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from emp;
++----+--------------+--------+------------+
+| id | name         | deptid | birth      |
++----+--------------+--------+------------+
+|  1 | Maria Gloria |      2 | 1994-03-12 |
+|  2 | John Smith   |      1 | 1993-02-07 |
+|  3 | Gal Rao      |      4 | 1992-09-11 |
+|  4 | Jakey Smith  |      2 | 1990-08-31 |
+|  5 | Rama Saho    |      1 | 1994-12-09 |
+|  6 | Maria Gaga   |      4 | 1993-10-09 |
++----+--------------+--------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select name, birth, deptname , deptblock from emp inner join dept where emp.deptid = dept.deptid;
++--------------+------------+--------------------------+-----------+
+| name         | birth      | deptname                 | deptblock |
++--------------+------------+--------------------------+-----------+
+| Maria Gloria | 1994-03-12 | Information Technology   | C-BLOCK   |
+| John Smith   | 1993-02-07 | Computer Science         | B-BLOCK   |
+| Gal Rao      | 1992-09-11 | Electronic Communication | D-BLOCK   |
+| Jakey Smith  | 1990-08-31 | Information Technology   | C-BLOCK   |
+| Rama Saho    | 1994-12-09 | Computer Science         | B-BLOCK   |
+| Maria Gaga   | 1993-10-09 | Electronic Communication | D-BLOCK   |
++--------------+------------+--------------------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> select name, birth, deptname , deptblock from emp , dept where emp.deptid
+ = dept.deptid;
++--------------+------------+--------------------------+-----------+
+| name         | birth      | deptname                 | deptblock |
++--------------+------------+--------------------------+-----------+
+| Maria Gloria | 1994-03-12 | Information Technology   | C-BLOCK   |
+| John Smith   | 1993-02-07 | Computer Science         | B-BLOCK   |
+| Gal Rao      | 1992-09-11 | Electronic Communication | D-BLOCK   |
+| Jakey Smith  | 1990-08-31 | Information Technology   | C-BLOCK   |
+| Rama Saho    | 1994-12-09 | Computer Science         | B-BLOCK   |
+| Maria Gaga   | 1993-10-09 | Electronic Communication | D-BLOCK   |
++--------------+------------+--------------------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> select name, birth, deptname , deptblock from  dept, emp where emp.deptid
+ = dept.deptid;
++--------------+------------+--------------------------+-----------+
+| name         | birth      | deptname                 | deptblock |
++--------------+------------+--------------------------+-----------+
+| Maria Gloria | 1994-03-12 | Information Technology   | C-BLOCK   |
+| John Smith   | 1993-02-07 | Computer Science         | B-BLOCK   |
+| Gal Rao      | 1992-09-11 | Electronic Communication | D-BLOCK   |
+| Jakey Smith  | 1990-08-31 | Information Technology   | C-BLOCK   |
+| Rama Saho    | 1994-12-09 | Computer Science         | B-BLOCK   |
+| Maria Gaga   | 1993-10-09 | Electronic Communication | D-BLOCK   |
++--------------+------------+--------------------------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> select name, birth, deptname , deptblock from  dept, emp where dept.depti
+d = emp.deptid;
++--------------+------------+--------------------------+-----------+
+| name         | birth      | deptname                 | deptblock |
++--------------+------------+--------------------------+-----------+
+| Maria Gloria | 1994-03-12 | Information Technology   | C-BLOCK   |
+| John Smith   | 1993-02-07 | Computer Science         | B-BLOCK   |
+| Gal Rao      | 1992-09-11 | Electronic Communication | D-BLOCK   |
+| Jakey Smith  | 1990-08-31 | Information Technology   | C-BLOCK   |
+| Rama Saho    | 1994-12-09 | Computer Science         | B-BLOCK   |
+| Maria Gaga   | 1993-10-09 | Electronic Communication | D-BLOCK   |
++--------------+------------+--------------------------+-----------+
+6 rows in set (0.00 sec)
+
