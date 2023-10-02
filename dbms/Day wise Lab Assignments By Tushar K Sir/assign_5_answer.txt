@@ -18,6 +18,19 @@ Query OK, 1 row affected (0.01 sec)
 
 mysql> use assignment4;
 Database changed
+
+
+
+
+
+
+
+
+*****************************************************************************************
+Question 1) 
+*****************************************************************************************
+
+
 mysql> create table emp
     -> (id int primary key,
     -> name varchar(20),
@@ -197,5 +210,538 @@ d = emp.deptid;
 | Rama Saho    | 1994-12-09 | Computer Science         | B-BLOCK   |
 | Maria Gaga   | 1993-10-09 | Electronic Communication | D-BLOCK   |
 +--------------+------------+--------------------------+-----------+
+
+
+
+
+
+
+
+
+
+*****************************************************************************************
+Question 2)
+*****************************************************************************************
+
+
+
+mysql> create table student
+    -> (id int,
+    -> name varchar(20),
+    -> deptid int,
+    -> birth date);
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> 
+mysql> insert into student
+    -> values
+    -> (1, "Maria", 2 , "1994-03-12"),
+    -> (2, "John", 1, "1993-02-07"),
+    -> (3, "Gal", 4, "1992-09-11"),
+    -> (4, "Jakey", 2, "1990-08-31"),
+    -> (5, "Rama", 1, "1994-12-09"),
+    -> (6, "Maria", 4, "1993-10-09");
+Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++------+-------+--------+------------+
+| id   | name  | deptid | birth      |
++------+-------+--------+------------+
+|    1 | Maria |      2 | 1994-03-12 |
+|    2 | John  |      1 | 1993-02-07 |
+|    3 | Gal   |      4 | 1992-09-11 |
+|    4 | Jakey |      2 | 1990-08-31 |
+|    5 | Rama  |      1 | 1994-12-09 |
+|    6 | Maria |      4 | 1993-10-09 |
++------+-------+--------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select name from student where name like "____a";
++-------+
+| name  |
++-------+
+| Maria |
+| Maria |
++-------+
+2 rows in set (0.00 sec)
+
+mysql> 
+
+
+
+*****************************************************************************************
+Question 3)
+*****************************************************************************************
+
+
+mysql> drop table student;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> create table student select * from emp;
+Query OK, 7 rows affected (0.07 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+
+
+mysql> select * from student;
++----+----------------+--------+------------+
+| id | name           | deptid | birth      |
++----+----------------+--------+------------+
+|  1 | Maria Gloria   |      2 | 1994-03-12 |
+|  2 | John Smith     |      1 | 1993-02-07 |
+|  3 | Gal Rao        |      4 | 1992-09-11 |
+|  4 | Jakey Smith    |      2 | 1990-08-31 |
+|  5 | Rama Saho      |      1 | 1994-12-09 |
+|  6 | Maria Gaga     |      4 | 1993-10-09 |
+|  7 | Kartik Pardesi |      5 | 2001-01-10 |
++----+----------------+--------+------------+
+
+
+
+mysql> select id , name , deptid , date_format(from_days(datediff(now(), birth)), "%y") as age from student;
++----+----------------+--------+------+
+| id | name           | deptid | age  |
++----+----------------+--------+------+
+|  1 | Maria Gloria   |      2 | 29   |
+|  2 | John Smith     |      1 | 30   |
+|  3 | Gal Rao        |      4 | 31   |
+|  4 | Jakey Smith    |      2 | 33   |
+|  5 | Rama Saho      |      1 | 28   |
+|  6 | Maria Gaga     |      4 | 29   |
+|  7 | Kartik Pardesi |      5 | 22   |
+|  8 | Navendu Singh  |      2 | 21   |
++----+----------------+--------+------+
+8 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+*****************************************************************************************
+Question 4
+*****************************************************************************************
+
+
+
+mysql> create table employee
+    -> (Employee_id int,
+    -> First_name varchar(10),
+    -> Last_name varchar(10),
+    -> Salary int,
+    -> Joining_date date,
+    -> Department varchar(20)
+    -> );
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc employee;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| Employee_id  | int         | YES  |     | NULL    |       |
+| First_name   | varchar(10) | YES  |     | NULL    |       |
+| Last_name    | varchar(10) | YES  |     | NULL    |       |
+| Salary       | int         | YES  |     | NULL    |       |
+| Joining_date | date        | YES  |     | NULL    |       |
+| Department   | varchar(20) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> 
+mysql> insert into employee
+    -> values
+    -> (1, "Bob", "Kinto", 1000000, "2019-01-20", "Finance"),
+    -> (2, "Jerry", "Kansxo", 6000000, "2019-01-15", "IT"),
+    -> (3, "Philip", "Jose", 8900000, "2019-02-05", "Banking"),
+    -> (4, "John", "Abraham", 2000000, "2019-02-25", "Insurance"),
+    -> (5, "Michael", "Mathew", 2200000, "2019-02-28", "Finance"),
+    -> (6, "Alex", "chreketo", 4000000, "2019-05-10", "IT"),
+    -> (7, "Yohan", "Soso", 1230000, "2019-06-20", "Banking")
+    -> ;
+Query OK, 7 rows affected (0.02 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> select * from employee;
++-------------+------------+-----------+---------+--------------+------------+
+| Employee_id | First_name | Last_name | Salary  | Joining_date | Department |
++-------------+------------+-----------+---------+--------------+------------+
+|           1 | Bob        | Kinto     | 1000000 | 2019-01-20   | Finance    |
+|           2 | Jerry      | Kansxo    | 6000000 | 2019-01-15   | IT         |
+|           3 | Philip     | Jose      | 8900000 | 2019-02-05   | Banking    |
+|           4 | John       | Abraham   | 2000000 | 2019-02-25   | Insurance  |
+|           5 | Michael    | Mathew    | 2200000 | 2019-02-28   | Finance    |
+|           6 | Alex       | chreketo  | 4000000 | 2019-05-10   | IT         |
+|           7 | Yohan      | Soso      | 1230000 | 2019-06-20   | Banking    |
++-------------+------------+-----------+---------+--------------+------------+
+7 rows in set (0.00 sec)
+
+
+mysql> create table reward
+    -> (Employee_ref_id int,
+    -> date_reward date,
+    -> amount int);
+Query OK, 0 rows affected (0.07 sec)
+
+
+mysql> insert into reward
+    -> values
+    -> (1 , "2019-05-11", 1000),
+    -> (2, "2019-02-15", 5000),
+    -> (3, "2019-04-22", 2000),
+    -> (4, "2019-06-20", 8000)
+    -> ;
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from reward
+    -> ;
++-----------------+-------------+--------+
+| Employee_ref_id | date_reward | amount |
++-----------------+-------------+--------+
+|               1 | 2019-05-11  |   1000 |
+|               2 | 2019-02-15  |   5000 |
+|               3 | 2019-04-22  |   2000 |
+|               4 | 2019-06-20  |   8000 |
++-----------------+-------------+--------+
+4 rows in set (0.00 sec)
+
+
+
+
+
+1. Get all employees.
+
+mysql> select * from employee;
++-------------+------------+-----------+---------+--------------+------------+
+| Employee_id | First_name | Last_name | Salary  | Joining_date | Department |
++-------------+------------+-----------+---------+--------------+------------+
+|           1 | Bob        | Kinto     | 1000000 | 2019-01-20   | Finance    |
+|           2 | Jerry      | Kansxo    | 6000000 | 2019-01-15   | IT         |
+|           3 | Philip     | Jose      | 8900000 | 2019-02-05   | Banking    |
+|           4 | John       | Abraham   | 2000000 | 2019-02-25   | Insurance  |
+|           5 | Michael    | Mathew    | 2200000 | 2019-02-28   | Finance    |
+|           6 | Alex       | chreketo  | 4000000 | 2019-05-10   | IT         |
+|           7 | Yohan      | Soso      | 1230000 | 2019-06-20   | Banking    |
++-------------+------------+-----------+---------+--------------+------------+
+7 rows in set (0.00 sec)
+
+
+
+
+2. Display the first name and last name of all employees.
+
+mysql> select First_name, Last_name from employee;
++------------+-----------+
+| First_name | Last_name |
++------------+-----------+
+| Bob        | Kinto     |
+| Jerry      | Kansxo    |
+| Philip     | Jose      |
+| John       | Abraham   |
+| Michael    | Mathew    |
+| Alex       | chreketo  |
+| Yohan      | Soso      |
++------------+-----------+
+7 rows in set (0.00 sec)
+
+
+
+3. Display all the values of the “First_Name” column using the alias “Employee Name”
+
+
+mysql> select First_name as Employee_name from employee;
++---------------+
+| Employee_name |
++---------------+
+| Bob           |
+| Jerry         |
+| Philip        |
+| John          |
+| Michael       |
+| Alex          |
+| Yohan         |
++---------------+
+7 rows in set (0.00 sec)
+
+
+4. Get all “Last_Name” in lowercase.
+
+
+mysql> select lower(Last_name) from employee;
++------------------+
+| lower(Last_name) |
++------------------+
+| kinto            |
+| kansxo           |
+| jose             |
+| abraham          |
+| mathew           |
+| chreketo         |
+| soso             |
++------------------+
+7 rows in set (0.01 sec)
+
+
+
+
+
+5. Get all “Last_Name” in uppercase.
+
+
+mysql> select upper(Last_name) from employee;
++------------------+
+| upper(Last_name) |
++------------------+
+| KINTO            |
+| KANSXO           |
+| JOSE             |
+| ABRAHAM          |
+| MATHEW           |
+| CHREKETO         |
+| SOSO             |
++------------------+
+7 rows in set (0.00 sec)
+
+
+
+6. Get unique “DEPARTMENT”.
+
+
+
+mysql> select distinct Department from employee;
++------------+
+| Department |
++------------+
+| Finance    |
+| IT         |
+| Banking    |
+| Insurance  |
++------------+
+4 rows in set (0.01 sec)
+
+
+7. Get the first 4 characters of “FIRST_NAME” column.
+
+
+mysql> select * from employee;
++-------------+------------+-----------+---------+--------------+------------+
+| Employee_id | First_name | Last_name | Salary  | Joining_date | Department |
++-------------+------------+-----------+---------+--------------+------------+
+|           1 | Bob        | Kinto     | 1000000 | 2019-01-20   | Finance    |
+|           2 | Jerry      | Kansxo    | 6000000 | 2019-01-15   | IT         |
+|           3 | Philip     | Jose      | 8900000 | 2019-02-05   | Banking    |
+|           4 | John       | Abraham   | 2000000 | 2019-02-25   | Insurance  |
+|           5 | Michael    | Mathew    | 2200000 | 2019-02-28   | Finance    |
+|           6 | Alex       | chreketo  | 4000000 | 2019-05-10   | IT         |
+|           7 | Yohan      | Soso      | 1230000 | 2019-06-20   | Banking    |
++-------------+------------+-----------+---------+--------------+------------+
+7 rows in set (0.00 sec)
+
+mysql> select LEFT(first_name, 4) from employee;
++---------------------+
+| LEFT(first_name, 4) |
++---------------------+
+| Bob                 |
+| Jerr                |
+| Phil                |
+| John                |
+| Mich                |
+| Alex                |
+| Yoha                |
++---------------------+
+7 rows in set (0.00 sec)
+
+mysql> select substring(first_name, 1, 4) from employee;
++-----------------------------+
+| substring(first_name, 1, 4) |
++-----------------------------+
+| Bob                         |
+| Jerr                        |
+| Phil                        |
+| John                        |
+| Mich                        |
+| Alex                        |
+| Yoha                        |
++-----------------------------+
+7 rows in set (0.00 sec)
+
+
+
+
+8. Get the position of the letter ‘h’ in ‘John’.
+
+
+mysql> select first_name from employee;
++------------+
+| first_name |
++------------+
+| Bob        |
+| Jerry      |
+| Philip     |
+| John       |
+| Michael    |
+| Alex       |
+| Yohan      |
++------------+
+7 rows in set (0.00 sec)
+
+mysql> select position('h' in first_name) from employee;
++-----------------------------+
+| position('h' in first_name) |
++-----------------------------+
+|                           0 |
+|                           0 |
+|                           2 |
+|                           3 |
+|                           4 |
+|                           0 |
+|                           3 |
++-----------------------------+
+7 rows in set (0.00 sec)
+
+
+
+mysql> select position('h' in first_name) from employee where first_name = 'John';
++-----------------------------+
+| position('h' in first_name) |
++-----------------------------+
+|                           3 |
++-----------------------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+9. Get all values from the “FIRST_NAME” column after removing white space on the right.
+
+
+mysql> select ltrim(first_name) from employee;
++-------------------+
+| ltrim(first_name) |
++-------------------+
+| Bob               |
+| Jerry             |
+| Philip            |
+| John              |
+| Michael           |
+| Alex              |
+| Yohan             |
++-------------------+
+7 rows in set (0.00 sec)
+
+mysql> select rtrim(first_name) from employee;
++-------------------+
+| rtrim(first_name) |
++-------------------+
+| Bob               |
+| Jerry             |
+| Philip            |
+| John              |
+| Michael           |
+| Alex              |
+| Yohan             |
++-------------------+
+7 rows in set (0.00 sec)
+
+mysql> select trim(first_name) from employee;
++------------------+
+| trim(first_name) |
++------------------+
+| Bob              |
+| Jerry            |
+| Philip           |
+| John             |
+| Michael          |
+| Alex             |
+| Yohan            |
++------------------+
+7 rows in set (0.00 sec)
+
+
+
+
+
+10. Get all values from the “FIRST_NAME” column after removing white space on the left.
+
+
+
+mysql> select ltrim(first_name) from employee;
++-------------------+
+| ltrim(first_name) |
++-------------------+
+| Bob               |
+| Jerry             |
+| Philip            |
+| John              |
+| Michael           |
+| Alex              |
+| Yohan             |
++-------------------+
+7 rows in set (0.00 sec)
+
+mysql> select rtrim(first_name) from employee;
++-------------------+
+| rtrim(first_name) |
++-------------------+
+| Bob               |
+| Jerry             |
+| Philip            |
+| John              |
+| Michael           |
+| Alex              |
+| Yohan             |
++-------------------+
+7 rows in set (0.00 sec)
+
+mysql> select trim(first_name) from employee;
++------------------+
+| trim(first_name) |
++------------------+
+| Bob              |
+| Jerry            |
+| Philip           |
+| John             |
+| Michael          |
+| Alex             |
+| Yohan            |
++------------------+
+7 rows in set (0.00 sec)
+
+
+
+
+11. Write the syntax to create the “employee” table.
+
+
+
+
+create table employee
+(
+Employee_id int,
+First_name varchar(10),
+Last_name varchar(10),
+Salary int,
+Joining_date date,
+Department varchar(20)
+);
+
+
+
+
+
+
+
+
+
+
+
+
 6 rows in set (0.00 sec)
 

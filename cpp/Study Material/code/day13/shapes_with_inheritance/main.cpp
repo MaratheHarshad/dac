@@ -23,7 +23,8 @@ int main() {
     std::cout << "\nDraw all\n";
     // Draw all objects in the order of creation.
     for (int i = 0; i < objectCount; ++i) {
-        pObjects[i++]->Draw();
+        // pObjects[i++]->Draw(); // mistake by Navendu Singh sir
+        pObjects[i]->Draw();
     }
 
     std::cout << "\nDelete all\n";

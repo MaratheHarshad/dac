@@ -4,3 +4,33 @@ Design inheritance hierarchy for following (for at least one) and implement it. 
 - Computer printers
 - Bank accounts
 - Different type of persons - Student, Employee, Artist.
+
+
+
+
+
+Bank Accounts
+
+
+Account
+
+name, balance
+deposite(), withdraw(), display()
+virtual type()
+
+1) saving 
+
+
+default balance = 0
+type() saving
+	
+
+2) current
+
+default balance = 1000
+type() current
+
+
+
+
+

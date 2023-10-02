@@ -13,6 +13,9 @@ public:
     virtual ~Object();
     void Move(int cx, int cy);
     virtual void Draw();
+
+    // virtual keyword
+    // basically a virtual keyword is used to achieve the run time polymorphism
 };
 
 class Line : public Object {

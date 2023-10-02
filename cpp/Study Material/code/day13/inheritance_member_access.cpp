@@ -32,7 +32,7 @@ int main() {
 	//objD.b2 = 20; // protected member
 	//objD.d1 = 100; // private member
 	//objD.d2 = 200; // protected member
-	objD.f1();
+	// objD.f1(); // Base.f1() is protected inside derived class
 	objD.f2();
 	return 0;
 }
