@@ -1,0 +1,19 @@
+create procedure find_sum()
+ begin
+   declare ad int;
+   declare cnt int;
+   set ad = 0;
+   set cnt = 1;
+ 
+ loop_lable : loop 
+   set ad = ad + cnt;
+set cnt = cnt + 1;
+   if cnt > 10 then
+     leave loop_lable;
+end if;
+   iterate loop_lable;
+ end loop;
+
+select ad as 'Addition';
+
+ end &&
