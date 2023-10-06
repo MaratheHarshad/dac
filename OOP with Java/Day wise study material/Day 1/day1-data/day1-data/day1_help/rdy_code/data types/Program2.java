@@ -1,4 +1,4 @@
-package com.core.type;
+// package com.core.type;
 
 public class Program2 {
 	public static void main(String[] args) {

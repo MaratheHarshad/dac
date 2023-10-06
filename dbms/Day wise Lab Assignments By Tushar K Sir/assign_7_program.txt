@@ -1,0 +1,302 @@
+
+Table Name:- Employee
+
+
+
+Empid	 EmpName	 Department 	ContactNo    EmailId 		EmpHeadId
+
+101    	Isha 		E-101 	        1234567890   isha@gmail.com 	105
+102 	Priya 		E-104 	        1234567890  priya@yahoo.com 	103
+103 	Neha 		E-101 	        1234567890   neha@gmail.com 	101
+104 	Rahul 		E-102 	        1234567890   rahul@yahoo.com 	105
+105 	Abhishek	E-101 	        1234567890  abhishek@gmail.com 	102
+
+
+
+create table Employee
+(Empid int,
+EmpName varchar(15),
+Department varchar(10),
+ContactNo int,
+EmailId varchar(20),
+EmpHeadId int
+);
+
+
+insert into Employee 
+values
+(101, "Isha", "E-101", 1234567890, "isha@gmail.com", 105),
+(102, "Priya", "E-104", 1234567890, "priya@yahoo.com", 103),
+(103, "Neha", "E-101", 1234567890, "neha@gmail.com", 101),
+(104, "Rahul", "E-102", 1234567890, "rahul@yahoo.com", 105),
+(105, "Abhishek", "E-101", 1234567890, "abhishek@gmail.com", 102)
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table :- EmpDept
+
+DeptId DeptName Dept_off DeptHead
+
+E-101 HR Monday 105
+E-102 Development Tuesday 101
+E-103 Hous Keeping Saturday 103
+E-104 Sales Sunday 104
+E-105 Purchage Tuesday 104
+
+
+
+
+create table EmpDept
+(
+DeptId varchar(10),
+DeptName varchar(20),
+Dept_off varchar(10),
+DeptHead int
+);
+
+desc EmpDept;
+
+insert into EmpDept 
+values
+("E-101", "HR", "Monday", 105),
+("E-102", "Development", "Tuesday", 101),
+("E-103", "House Keeping", "Saturday", 103),
+("E-104", "Sales", "Sunday", 104),
+("E-105", "Purchage", "Tuesday", 104)
+;
+
+
+select * from EmpDept;
+
+
+
+
+
+
+
+Table :- EmpSalary
+
+EmpId Salary IsPermanent
+101 2000 Yes
+102 10000 Yes
+103 5000 No
+104 1900 Yes
+105 2300 Yes
+
+
+
+
+
+
+create table EmpSalary
+(
+EmpId int,
+Salary int,
+IsPermanent varchar(5)
+
+);
+
+desc EmpSalary;
+
+insert into EmpSalary
+values
+(101, 2000, "Yes"),
+(102, 10000, "Yes"),
+(103, 5000, "No"),
+(104, 1900, "Yes"),
+(105, 2300, "Yes")
+;
+
+select * from EmpSalary;
+
+
+
+
+
+
+Table :- Project
+
+ProjectId Duration
+p-1 23
+p-2 15
+p-3 45
+p-4 2
+p-5 30
+
+
+
+
+create table Project
+(ProjectId varchar(5),
+Duration int);
+
+
+
+desc Project;
+
+
+
+insert into Project
+values
+("p-1", 23),
+("p-2", 15),
+("p-3", 45),
+("p-4", 2),
+("p-5", 30);
+
+
+
+select * from Project;
+
+
+
+
+
+
+
+Table :- Country
+
+
+cid cname
+c-1 India
+c-2 USA
+c-3 China
+c-4 Pakistan
+c-5 Russia
+
+
+
+
+create table Country
+(cid varchar(5),
+cname varchar(10)
+);
+
+desc Country;
+
+insert into Country
+values
+("c-1", "India"),
+("c-2", "USA"),
+("c-3", "China"),
+("c-4", "Pakistan"),
+("c-5", "Russia");
+
+
+select * from Country;
+
+
+
+
+
+
+
+
+
+Table :- ClientTable
+
+ClientId ClientName cid
+cl-1 ABC Group c-1
+cl-2 PQR c-1
+cl-3 XYZ c-2
+cl-4 tech altum c-3
+cl-5 mnp c-5
+
+
+
+
+
+create table ClientTable
+(
+ ClientId varchar(5),
+ClientName varchar(15),
+cid varchar(10)
+);
+
+desc ClientTable;
+
+
+insert into ClientTable
+values
+("cl-1", "ABC Group", "c-1"),
+("cl-2", "PQR", "c-1"),
+("cl-3", "XYZ", "c-2"),
+("cl-4", "tech altum", "c-3"),
+("cl-5", "mnp", "c-5")
+;
+
+
+
+select * from ClientTable;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Table :- EmpProject
+
+EmpId ProjectId ClientID StartYear EndYear
+101 p-1 Cl-1 2010 2010
+102 p-2 Cl-2 2010 2012
+103 p-1 Cl-3 2013
+104 p-4 Cl-1 2014 2015
+105 p-4 Cl-5 2015
+
+
+
+
+
+
+
+create table EmpProject
+(
+EmpId int,
+ProjectId varchar(5),
+ClientId varchar(5),
+StartYear int,
+EndYear int
+);
+
+
+desc EmpProject;
+
+
+insert into EmpProject
+values
+(101, "p-1", "Cl-1", 2010, 2010),
+(102, "p-2", "Cl-2", 2010, 2012),
+(103, "p-1", "Cl-3", 2013, null),
+(104, "p-4", "Cl-1", 2014, 2015),
+(105, "p-4", "Cl-5", 2015, null)
+;
+
+select * from EmpProject;
+
+
+
+
+
