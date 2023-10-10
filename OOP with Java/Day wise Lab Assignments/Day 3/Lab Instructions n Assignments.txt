@@ -133,7 +133,6 @@ id :
 name : 
 noOfEmps : 
 
-
 6. In  code(line no 1--6) , how many classes are loaded ?
 how many objs ? 
 

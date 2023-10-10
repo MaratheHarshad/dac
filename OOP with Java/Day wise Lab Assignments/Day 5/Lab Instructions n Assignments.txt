@@ -133,7 +133,6 @@ id :
 name : 
 noOfEmps : 
 
-
 6. In  code(line no 1--6) , how many classes are loaded ?
 how many objs ? 
 
@@ -145,4 +144,138 @@ psvm(....) {
 5. String s;
 6. int[] data;
 }
+
+
+Day 4.
+Refer to today's sequence : 
+1. import day4.1 , in your IDE's workspace , to revise
+1.1 for-each loop with primitive arrays
+1.2 Array of references
+1.3 static data members , methods , init blocks , import static
+(refer to a readme)
+1.4 Constructor invocation , in the inheritance hierarchy
+(super(...)
+1.5 Method overriding basic example , to see run time polymorphism.
+
+Solve : 
+1.6 Continue with Box class n TestBox , from today's code.
+Solve :  
+ Double box width for all boxes having volume > 100.(Can you use for-each & solve this) 
+
+
+2. Solve (can be solved in IDE)
+Continue with Day 2' Point2D class.
+
+2.1   Create a driver  class(for UI)  , in the "tester" package "TestPoints" , with main(..)
+
+1. Prompt user , how many points to plot? 
+Create suitable array. (Hint : array of references)
+
+
+
+2. Show following options
+
+Options
+1. Plot a point
+Inputs : array index , x  ,y
+Check boundary conditions  , check if some point is already plotted at the same index , if not then store the point details.
+In case of any errors , display suitable error message.
+
+2.   Display x,y co-ordinates of all the points plotted so far ,using for-each loop.
+
+3.   Accept 2 indices from user .
+Find out if the points at these indices are same or different (Hint : isEqual)
+Print the message accordingly. 
+If points are not same , display distance between these 2 points.
+(Draw mem diagram for your clarity, if needed/)
+
+0. Exit 
+
+
+
+Day 5
+1. import day5.1 in your workspace , refer to today's sequence
+Revise
+types of polymorphism
+upcasting , downcasting n instanceof keyword
+Object class Methods : toString n equals
+
+2. Solve readymade code from 
+"day5-data\day5_help\ready code"
+
+Open these java src files n guess what will happen ?
+Compile time error
+Run time error
+If no errs , what will be o/p ?
+
+
+3. Answer this
+When you invoke System.out.println(Object ref) , how it auto calls ref.toString ?
+Hint : refer Java docs
+
+4. Try to complete , Day 4 point array assignment
+OPTIONAL WORK (after completing all of above, if time permits)
+
+
+Hands on 
+Read complete assignment n then only solve.
+
+4.1 Can you arrange Fruit,Apple,Orange,Mango in inheritance hierarchy ?
+Use tight encapsulation.
+
+4.2 Properties (instance variables)  : color : String , weight : double , name:String, fresh : boolean
+
+4.3 Add suitable constructor
+
+4.4 Override  toString correctly to return state of all fruits (return only  : name ,color , weight )
+
+4.5 Add a taste() method : public String taste()
+
+For Fruit : Can you identify taste of any general fruit ? NO
+So add a taste() with this definition : returns "no specific taste" 
+
+Apple : should return  "sweet n sour"
+Mango : should return  "sweet"
+Orange : should return  "sour"
+
+4.6 Add specific functionality , in the sub classes
+In Mango : public void pulp() {Display name n color of the fruit + a mesg  creating  pulp!}
+In Orange : public void juice() {Display name n weight of the fruit + a mesg extracting juice!}
+In Apple : public void jam() {Display name of the fruit + a mesg  making jam!}
+
+4.7 Add all of above classes under the package "com.app.fruits"
+4.8 Create java application FruitBasket , with main method , as a tester
+4.9 Prompt user for the basket size n create suitable data structure
+
+4.10 Supply options
+1. Add Mango
+2. Add Orange
+3. Add Apple
+NOTE : You will be ALWAYS adding a fresh fruit in the basket , in all of above options.
+
+4. Display names of all fruits in the basket.
+
+5. Display name,color,weight , taste of all fresh fruits , in the basket.
+
+
+6. Mark a fruit in a basket , as stale(=not fresh)
+i/p : index 
+o/p : error message (in case of invalid index) or mark it stale
+
+7. Mark all sour fruits stale 
+Hint : Use equals() method of the String class.
+
+8. Invoke fruit specific functionality (pulp / juice / jam)
+i/p : index
+Invoke correct functionality (pulp / juice / jam)
+
+9. Exit 
+
+
+
+
+
+
+
+
 
