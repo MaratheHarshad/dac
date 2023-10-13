@@ -10,23 +10,25 @@ public class Person {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
-	//overloaded def. ctor
+
+	// overloaded def. ctor
 //	public Person() {
 //		// TODO Auto-generated constructor stub
 //	}
-	//override inherited method from Object class : to  ret Person's details
+	// override inherited method from Object class : to ret Person's details
 	@Override
 	public String toString() {
-		return firstName+" "+lastName;
+		return firstName + " " + lastName;
 	}
-	//add a getter : last name
-	public String getLastName()
-	{
+
+	// add a getter : last name
+	public String getLastName() {
 		return lastName;
 	}
-	//add a getter : first name
+
+	// add a getter : first name
 	public String getFirstName() {
 		return firstName;
 	}
-	
+
 }

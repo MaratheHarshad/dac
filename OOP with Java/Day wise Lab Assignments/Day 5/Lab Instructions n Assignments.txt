@@ -212,6 +212,7 @@ If no errs , what will be o/p ?
 3. Answer this
 When you invoke System.out.println(Object ref) , how it auto calls ref.toString ?
 Hint : refer Java docs
+	 
 
 4. Try to complete , Day 4 point array assignment
 OPTIONAL WORK (after completing all of above, if time permits)

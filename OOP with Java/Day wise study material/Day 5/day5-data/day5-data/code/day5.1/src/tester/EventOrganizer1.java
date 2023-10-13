@@ -1,6 +1,6 @@
 package tester;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Scanner;
 import inheritance.*;
 
@@ -62,7 +62,7 @@ public class EventOrganizer1 {
 					// => seat no valid
 					Person person = members[index];
 					if (person instanceof Student)
-						((Student) person).study();
+						((Student) person).study(); // downcasting -> (generalizatio to specialization to invoke the sub class specific functionality
 					else
 						((Faculty) person).teach();
 
