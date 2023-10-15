@@ -1,0 +1,381 @@
+
+myIsam doesn't support primary key and foreign key relationship
+
+there is no undo in myIsam
+
+even if 
+
+set autocommit = 0
+
+automatically commits are made in myIsam
+
+
+***************************************************************8
+
+emp
+->
+
+empid,
+empname
+empaddr
+salary
+hiredate
+managerid
+deptid
+
+select *  from emp where empid in (101, 102, 103)
+
+
+NULL is not comapred with arithmetic operator
+
+.. where managerid=NULL 
+not work
+
+use
+... where managerid is NULL
+
+
+clause execution sequence
+
+from 
+where
+selection
+order by
+
+
+
+aggregate functions
+
+sum
+avg
+min
+max
+count
+
+
+non of group count(*) fun goes with null
+
+we cannot do any operation with null without count(*)
+
+
+
+
+count(column_name) -> never includes null
+
+
+every group fun is computed with column
+
+
+group function goes with column
+whereas
+insert, select goes with row
+
+
+
+
+** every non group col in select list must be the part of group by
+
+non group col -> col which is not part of sum, avg, max
+group col -> col which are part of group by
+
+
+
+having works on group by (having never works on table)
+where works on table 
+
+how to limit table -> where clause
+having going to limit the rows from group by
+
+
+
+
+
+
+
+
+oracle sql 9i vol 1 pdf -> google search
+chapter 5;
+
+
+
+
+4) ->
+
+
+select max(salary) as Maximum, min(salary) as Minimum, sum(salary) as Sum, avg(salary) 
+as Average from Employee;
+
+
+5) ->
+
+select JOB_ID, max(salary) as Maximum, min(salary) as Minimum, sum(salary) as Sum, avg(salary) 
+as Average 
+from Employee
+group by JOB_ID;
+
+
+6) ->
+
+select JOB_ID , count(*) from Employee group by JOB_ID
+
+
+
+7) ->
+
+
+select count(MANAGER_ID) as NumberOfMangers from Employee
+
+
+8) ->
+
+select max(salary) - min(salary) as DIFFERENCE from Employee
+
+
+9) -> 
+
+
+select MANAGER_ID, min(Salary) from Employee where MANAGER_ID is not null group by MANAGER_ID having min(Salary) > 6000 order by Salary desc;
+
+
+
+
+
+
+
+
+
+
+
+Joins
+
+types ->
+
+inner join
+outer join
+
+
+joins are never going to work on myIsam
+
+
+select empname, dname
+from emp e, dept d where e.deptid = d.deptid;
+
+
+above is a traditional joins
+this is a inner joins as well as equi join ( bcz equal sign is used )
+
+
+
+select empname, dname from 
+emp e join dept d
+on e.deptid = d.deptid
+
+(vendor specific syntax) above is for MySql
+
+// new way of writing joins just for readability purpose
+
+
+
+
+
+
+display all the employees with or without dept
+
+
+traditional syntax
+
+select empname, dname
+from emp e, dept d where e.deptid = d.deptid(+)
+
+(+) -> ANSI
+
+
+this is nothing but -> left outer join
+
+
+
+
+
+
+select empname, dname
+from emp e, dept d where d.deptid (+)= e.deptid
+
+(+) -> ANSI
+
+
+this is nothing but -> right outer join
+
+
+
+
+
+// never ever use cartesian product query
+//
+cross join (cartesian product)
+
+
+select empname, dname
+from emp e, dept d;
+
+
+
+
+
+**************************
+
+for joining req at least 2 tables
+
+to use join with 1 table alias is used
+
+self join
+
+(joining the table to itself)
+
+2 different aliases created to perform joiin operation
+
+
+Emp
+
+
+empid 	empname	 manager_id
+
+101    king		null
+102    kocchar   101
+103    smith      102
+
+
+display the managername for emp
+
+
+(traditional query)
+
+select e.empname "emp", m.empname "mgr" 
+from emp e, emp m
+where e.managerid = m.managerid
+
+
+
+
+
+oracle sql 9i vol 1 pdf 
+
+
+considering there are 2 tables
+-> emp
+-> dept
+
+chapter 4) exercise
+
+
+1)
+
+
+traditional query
+
+
+select e.Lastname, d.Department_id, d.Department_name 
+from emp e, dept d
+where e.deptid = d.deptid;
+
+
+or
+
+
+select e.Lastname, d.Department_id, d.Department_name 
+from emp e left join
+where dept d on e.deptid = d.deptid;
+
+
+
+2)
+
+select e.Job_id, d.Location_id FROM 
+Emp e
+inner join
+dept d
+on
+e.deptid = 80
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
