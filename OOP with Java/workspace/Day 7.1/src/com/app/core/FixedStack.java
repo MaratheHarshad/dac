@@ -1,5 +1,8 @@
 package com.app.core;
 
+import com.app.exceptions.CustomStackOverFlowException;
+import com.app.exceptions.CustomStackUnderflowException;
+
 public class FixedStack implements Stack{
 	
 	private final int SIZE;
@@ -14,12 +17,12 @@ public class FixedStack implements Stack{
 	}
 
 	@Override
-	public void push(Customer obj) {
+	public void push(Customer obj) throws CustomStackOverFlowException{
 		// TODO Auto-generated method stub
 		
 		if(this.isFull()) {
 //			throw exception stack is full or simply display message
-			throw new stackOverFlowException("stack is full");
+			throw new CustomStackOverFlowException("stack is full");
 			
 		}
 		
@@ -28,12 +31,13 @@ public class FixedStack implements Stack{
 	}
 
 	@Override
-	public Customer pop() {
+	public Customer pop() throws CustomStackUnderflowException{
 		// TODO Auto-generated method stub
 		
 		if(this.isEmpty()) {
 //			throw exception stack is empty or display message
-			return null;
+//			return null;
+			throw new CustomStackUnderflowException("Stack is empty");
 		}
 		
 		Customer obj = arr[count];

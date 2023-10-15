@@ -78,7 +78,7 @@ SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 
 2. Parsing (use inherited API) string ----> Date
 public Date parse(String s) throws ParseException
-Throws ParseException(checked exc) , in case of un parseable date.
+Throws ParseException(checked exc) , in case of un parse	able date.
 
 3. Formatting
 public String format(Date d)

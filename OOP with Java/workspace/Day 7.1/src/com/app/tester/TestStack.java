@@ -29,7 +29,8 @@ public class TestStack {
 					
 					if(obj == null) {
 						obj = new FixedStack();
-					
+					}else {
+						System.out.println("Already initialized ");
 					}
 					break;
 				}
@@ -38,7 +39,10 @@ public class TestStack {
 					if(obj == null) {
 						obj = new GrowableStack();
 				
+					}else {
+						System.out.println("Already initialized ");
 					}
+
 					break;
 				}
 				
@@ -62,16 +66,24 @@ public class TestStack {
 						System.out.println("select the stack first");
 					}else {
 						
+						
 
-						if(obj.isEmpty()) {
-							System.out.println("Empty !!, Cannot be popped");
-						}else {
-							
-							Customer c = obj.pop();
-							
-							System.out.println("Customer who is popped");
-							System.out.println(c);
-						}
+//						if(obj.isEmpty()) {
+//							System.out.println("Empty !!, Cannot be popped");
+//						}else {
+//							
+//							Customer c = obj.pop();
+//							
+//							System.out.println("Customer who is popped");
+//							System.out.println(c);
+//						}
+						
+//						after user defined exception added
+						
+						Customer c = obj.pop();
+						
+						System.out.println("Customer who is popped");
+						System.out.println(c);
 						
 					}
 					
