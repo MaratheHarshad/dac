@@ -2,7 +2,8 @@ package generic;
 
 //generic class T : Type
 public class Holder<T> {
-//HAS-A  Object type of a ref , that can refer to ANY type 
+	// generic class is a class with type parameter
+ 
 	private T ref;
 
 	public Holder(T ref) {

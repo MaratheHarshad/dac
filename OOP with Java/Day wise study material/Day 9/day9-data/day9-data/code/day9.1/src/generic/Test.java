@@ -12,7 +12,7 @@ public class Test {
 		// Create a Holder class instance to hold string "12345"
 		Holder<String> stringHolder=new Holder<>("12345");//impl conversion : NONE !
 		String s=stringHolder.getRef();
-	//	intHolder=stringHolder;//catching type mismatch errors @ compile time : generics !
+//		intHolder=stringHolder;//catching type mismatch errors @ compile time : generics !
 		//Javac err : Holder<String> is INCOMPATIBLE with Holder<Integer>
 	}
 
