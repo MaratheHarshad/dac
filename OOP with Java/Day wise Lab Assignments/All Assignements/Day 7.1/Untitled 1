@@ -1,0 +1,4 @@
+This Project is extended version of 
+Day 7 assignment
+by throwing some custom exceptions (unchecked exception)
+unchecked exception (javac doesn't force to handle this exceptions)

@@ -16,6 +16,9 @@ public class Test1 {
 		//cursor : before index 0 
 		while(stringItr.hasNext())
 			System.out.println(stringItr.next());
+			
+			
+		
 		
 
 	}

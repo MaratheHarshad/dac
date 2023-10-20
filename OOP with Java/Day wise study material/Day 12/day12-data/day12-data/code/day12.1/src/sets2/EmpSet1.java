@@ -32,3 +32,22 @@ public class EmpSet1 {
 	}
 
 }
+//internal working of hashset
+
+//(emp){
+//	 bi = emp.hashCode() % bucket.length
+//	 bi stores the head ref of linkedlist
+//	 
+//	 if bi is null , add new node in linked list as head
+//	 return true;
+//	 else
+//		 tmp = bi
+//	 while(tmp is not null)
+//		 if(tmp.equals())
+//			 return false
+//	tmp = tmp.next
+//	
+//	// other wise new node is created and inserted at tail
+//		 
+//	 
+//}

@@ -28,11 +28,11 @@ public class Employee {
 		return false;
 	}
 	//override hashCode : to satisfy the contract
-	@Override
+//	@Override
 	public int hashCode()
 	{
 		System.out.println("in hashCode");
-	//	return 100;
+//		return 100;
 		return empId.hashCode();
 	}
 	

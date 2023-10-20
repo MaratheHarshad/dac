@@ -14,6 +14,8 @@ public class TestDoubleSet {
 		System.out.println(hs.add(d3));//f
 		System.out.println(hs.size());//1
 		System.out.println(hs);//[100.0]
+		
+		
 
 	}
 

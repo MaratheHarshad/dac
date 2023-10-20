@@ -13,7 +13,7 @@ public class Test3 {
 			strings.add(s);
 		//display list elems using Iterator : forward manner
 		Iterator<String> stringItr=strings.iterator();
-		stringItr.remove();//IllegalStateExc
+//		stringItr.remove();//IllegalStateExc
 		//cursor : before index 0 
 		while(stringItr.hasNext()) {
 			System.out.println(stringItr.next());

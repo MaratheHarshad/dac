@@ -15,6 +15,7 @@ public class TestHashSet {
 		System.out.println("HS contains 10"+hs.contains(10.0));//t
 		System.out.println("HS remove "+hs.remove(10.0));//t
 		System.out.println("HS via for-each");
+//		for-each loop internally invoke implicit iterator
 		for(double d : hs)
 			System.out.print(d+" ");
 		//can u attach Iterator ? YES 

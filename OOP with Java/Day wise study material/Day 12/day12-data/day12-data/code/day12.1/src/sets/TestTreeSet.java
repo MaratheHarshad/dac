@@ -6,6 +6,7 @@ public class TestTreeSet {
 
 	public static void main(String[] args) {
 		// create empty HS<Double>
+//		TreeSet stores the elements in ascending order for wrappers (natural ordering) internally calls the compareTo of <Generic> class 
 		TreeSet<Double> hs = new TreeSet<>();// size=0, initCapa=16
 		double[] doubles = { 1, 2.4, 4.5, -67.89, 1, 10, 12.4, 1.4, 1 };
 		// populate the set
