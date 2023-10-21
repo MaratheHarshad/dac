@@ -17,8 +17,16 @@ public class GenericUtils {
 //			System.out.println(o);
 //		
 //	}
-	public static void printElements(Collection<?> collection) {
-		for(Object o : collection)
+//	public static void printElements(Collection<?> collection) {
+//		for(Object o : collection)
+//			System.out.println(o);
+//		
+//	}
+	
+//	using T
+	
+	public static <T> void printElements(Collection<T> collection) {
+		for(T o : collection)
 			System.out.println(o);
 		
 	}
@@ -28,6 +36,7 @@ Test cases : AL<Mgr> ,LL<Worker> , Vector<SM> ....
 	 */
 	
 
+//	restrict to a particular hierarchy
 	public static double sumOfSalaries(List<? extends Emp> list) {
 		double sum=0;
 		
@@ -37,6 +46,20 @@ Test cases : AL<Mgr> ,LL<Worker> , Vector<SM> ....
 		
 		return sum;
 	}
+	
+//	using T -> computeSalary() The method ocmputeSalary() is undefined for T
+	
+//	public static <T> double sumOfSalaries(List<T> list) {
+//		double sum=0;
+//		
+//		for (T e : list) 
+//			sum += e.computeSalary();
+//			
+//		
+//		return sum;
+//	}
+	
+	
 	
 	/* Add a method to find the occurrence of element in a list
 	 * */

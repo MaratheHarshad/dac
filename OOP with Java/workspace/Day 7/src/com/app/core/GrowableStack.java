@@ -69,5 +69,16 @@ public class GrowableStack implements Stack{
 		
 		return count == -1;
 	}
+	
+
+	@Override
+	public void display() {
+		
+		for(Customer cust : arr) {
+			if(cust != null) {
+				System.out.println(cust);
+			}
+		}
+	}
 
 }

@@ -1,5 +1,7 @@
 package com.app.core;
 
+import com.app.exceptions.CustomStackUnderflowException;
+
 public class GrowableStack implements Stack{
 	
 	private int SIZE;
@@ -45,7 +47,7 @@ public class GrowableStack implements Stack{
 		
 		if(this.isEmpty()) {
 //			throw exception stack is empty or display message
-			return null;
+			throw new CustomStackUnderflowException("Stack is empty");
 		}
 		
 		Customer obj = arr[count];

@@ -117,7 +117,7 @@ public class FruitBasket {
 				System.out.println("Enter Index ");
 				int index = sc.nextInt();
 				
-				if(index > 0 && index <= counter) {
+				if(index >= 0 && index <= counter) {
 					
 					basket[index].setFresh(false);
 					
@@ -158,7 +158,7 @@ public class FruitBasket {
 				
 				
 				
-				if(index > 0 && index <= counter) {
+				if(index >= 0 && index <= counter) {
 					
 					Fruit f = basket[index];
 					

@@ -17,6 +17,7 @@ Another example : Collections class : non generic class
 public static <T extends Comparable<? super T>> void sort​(List<T> list)
 ------------------------
 
+
 2. More about generic syntax : ? , extends ,super
 Given :
 Emp <---- Mgr <----SalesMgr

@@ -20,6 +20,7 @@ public class TestStack {
 				System.out.println("2. GrowableStack");
 				System.out.println("3. push");
 				System.out.println("4. pop");
+				System.out.println("5. Display");
 				System.out.print("Enter choice : ");
 				
 				switch(sc.nextInt()) {
@@ -49,7 +50,7 @@ public class TestStack {
 					if(obj == null) {
 						System.out.println("select the stack first");
 					}else {
-						System.out.println("Enter Customer Details ");
+						System.out.println("Enter Customer Details (id, name, address) ");
 						obj.push(new Customer(sc.nextInt(), sc.next(), sc.next()));
 					}
 									
@@ -73,6 +74,19 @@ public class TestStack {
 							System.out.println(c);
 						}
 						
+					}
+					
+					break;
+				}
+				
+				case 5: {
+					
+					// Display elements
+					
+					if(obj == null) {
+						System.out.println("Stack is not selected");
+					}else {
+						obj.display();
 					}
 					
 					break;

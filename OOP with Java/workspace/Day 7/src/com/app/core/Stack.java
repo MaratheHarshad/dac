@@ -7,4 +7,5 @@ public interface Stack {
 	Customer pop();
 	boolean isFull();
 	boolean isEmpty();
+	void display();
 }
