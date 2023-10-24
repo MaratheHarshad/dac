@@ -176,6 +176,8 @@ eg : MUST Collections.copy(Collection<? super T> dest ,Collection<? extends T> s
 3. Add a method to add a sales mgr to the list
 What should be the type of the List ?
 
+
+
 4. Add a method to add any worker to the list (i.e TempWorker | PermWorker)
 What should be the type of the List ?
 public static void addWorker(List<? super Worker> list)
