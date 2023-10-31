@@ -1,0 +1,24 @@
+package utils;
+
+import java.time.LocalDate;
+
+import enums.Brand;
+import enums.Color;
+
+public class PenValidationRules 
+{
+	public static Color parseAndCheckColor(String color) throws IllegalArgumentException
+	{
+		return Color.valueOf(color.toUpperCase());
+	}
+	
+	public static Brand praseAndCheckBrand(String brand) throws IllegalArgumentException
+	{
+		return Brand.valueOf(brand.toUpperCase());
+	}
+	
+	public static LocalDate parseAndCheckDate(String date) throws IllegalArgumentException
+	{
+		return LocalDate.parse(date);
+	}
+}

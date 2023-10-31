@@ -44,6 +44,7 @@ public class Test {
 //1. Display all student details from a student list
 
 			
+			System.out.println();
 			
 			System.out.println("populating data");
 			
@@ -65,6 +66,11 @@ public class Test {
 //2. Display all student details(list) sorted as per GPA 
 //Use custom ordering
 			
+			System.out.println();
+			
+			System.out.println("Students details as per sorted marks, desc");
+			
+			list.stream().sorted((o1,o2)-> ((Integer)o2.getMarks()).compareTo(o1.getMarks())).forEach(System.out::println);
 			
 			
 			
@@ -72,7 +78,9 @@ public class Test {
 	//3. Write a tester to print average of  gpa of students for the specified course/subject
 	//i/p : course
 			
-			System.out.println("Enter course name ");
+			System.out.println();
+			
+			System.out.println("Enter course name to find average of marks");
 			
 			Course crs = Course.valueOf(sc.next().toUpperCase());
 			System.out.println("Average of students marks");
@@ -81,8 +89,42 @@ public class Test {
 			
 			System.out.println(d);
 			
+			
 
+//4 Print name of specified subject  topper
+//Hint : studentList ---stream --filter --max(comp based on GPA)
+
+			System.out.println();
+			System.out.println("Enter name of course to get the topper ");
+			Course c =  Course.valueOf(sc.next().toUpperCase());
+			Student topper = list.stream().filter(student -> student.getEnrolledCourse() == c).max((o1,o2)-> ((Integer)o1.getMarks()).compareTo(o2.getMarks())).orElseThrow();
+			System.out.println("Topper is : " + topper);
+			
+			
+			
+
+//5 Print no of  failures for the specified subject chosen  from user , use student map
+//(gpa < 5 : failed case)
+			
+			System.out.println();
+			System.out.println("Enter name of course to get the list of failed students ");
+			Course cr =  Course.valueOf(sc.next().toUpperCase());
+			map.values().stream().filter(student -> student.getEnrolledCourse() == cr).filter(student -> student.getMarks() < 620).forEach(System.out::println);
+			
+			
+//			6. Display all student details from a student map
+//			Hint --studentMap--forEach
+			
+			System.out.println();
+			
+			System.out.println("Details of students from map");
+			map.forEach((k,v) -> System.out.println(v));
+			
 			
 		}
 	}
+	
 }
+
+
+

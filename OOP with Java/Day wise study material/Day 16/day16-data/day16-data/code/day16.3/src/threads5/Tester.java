@@ -12,7 +12,7 @@ public class Tester {
 		// start the same
 		t1.start();
 	//	Thread.sleep(1000);
-		// How many RUNNABLE(except GC) ? main + 3 child threads
+		// How many RUNNABLE(except GC) ? main + 1 child thread
 		System.out.println("main interrupting t1");
 		t1.interrupt();//main ---> interrupt ---> t1
 		System.out.println("main waiting for t1 ");

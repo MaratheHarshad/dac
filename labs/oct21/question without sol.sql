@@ -320,13 +320,16 @@
 -- Q-37. Write an SQL query to show one row twice in results from a table.
 
 
+--> select * from Worker UNION ALL select * from Worker;
+
+
 
 
 
 
 -- Q-38. Write an SQL query to list worker_id who does not get bonus.
 
-
+--> select WORKER_ID from Worker where WORKER_ID not in ( select WORKER_REF_ID from Bonus);
 
 
 
@@ -334,6 +337,8 @@
 
 
 -- Q-39. Write an SQL query to fetch the first 50% records from a table.
+
+--> select * from Worker where WORKER_ID <= (select max(WORKER_ID)/2 from Worker);
 
 
 
@@ -344,6 +349,21 @@
 -- Q-40. Write an SQL query to fetch the departments that have less than 4 people in it.
 
 
+--> select count(*), DEPARTMENT FROM Worker group by DEPARTMENT having count(*) < 4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -351,6 +371,7 @@
 -- Q-41. Write an SQL query to show all departments along with the number of people in there.
 
 
+--> select DEPARTMENT,  count(*) from Worker group by DEPARTMENT;
 
 
 
@@ -359,15 +380,41 @@
 -- Q-42. Write an SQL query to show the last record from a table.
 
 
+-- > select * from Worker where WORKER_ID in (select max(WORKER_ID) from Worker);
+
+
+
+
+
+
+
+
 -- Q-43. Write an SQL query to fetch the first row of a table.
+
+-- > select * from Worker where WORKER_ID in (select min(WORKER_ID) from Worker);
+
+
+
+
+
+
 
 
 -- Q-44. Write an SQL query to fetch the last five records from a table.
 
 
+-- > select * from Worker order by WORKER_ID desc limit 5 ;
+
+
+
+
 
 
 -- Q-45. Write an SQL query to print the name of employees having the highest salary in each department.
+
+-- > select * from Worker where SALARY in (select max(SALARY) from Worker group by DEPARTMENT);
+
+
 
 
 
@@ -377,16 +424,44 @@
 -- DRY RUN AFTER REVISING THE CORELATED SUBQUERY CONCEPT FROM LEC-9.
 
 
+-- > select * from (select * from Worker order by SALARY desc) as derived limit 3;
+
+
+
+
+
+
+
+
 -- Q-47. Write an SQL query to fetch three min salaries from a table using co-related subquery
+
+
+-- >  select * from (select * from Worker order by SALARY) as derived limit 3;
+
+
+
+
 
 
 -- Q-48. Write an SQL query to fetch nth max salaries from a table.
 
 
+
+
+
+
+
+
+
 -- Q-49. Write an SQL query to fetch departments along with the total salaries paid for each of them.
+
+-->  select sum(SALARY) , DEPARTMENT from Worker group by DEPARTMENT;
+
 
 
 
 
 
 -- Q-50. Write an SQL query to fetch the names of workers who earn the highest salary.
+
+-- > select Worker.* , SALARY + BONUS_AMOUNT as total  from Worker join  Bonus on WORKER_ID = WORKER_REF_ID order by total desc limit 3;

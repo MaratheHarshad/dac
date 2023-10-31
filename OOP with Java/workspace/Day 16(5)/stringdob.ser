@@ -1,0 +1,4 @@
+Customer [customerId=2, firstName=Amar, lastName=phadtare, email=amar@g.com, regAmount=10000.0, dob=2002-01-24, plan=PLATINUM cost 10000.0]
+Customer [customerId=1, firstName=jatin, lastName=mitrani, email=jatin@g.com, regAmount=10000.0, dob=2000-01-01, plan=PLATINUM cost 10000.0]
+Customer [customerId=4, firstName=prashant, lastName=phadtare, email=prashant@gmail.com, regAmount=10000.0, dob=2000-02-18, plan=PLATINUM cost 10000.0]
+Customer [customerId=3, firstName=manish, lastName=ahir, email=manishahir@gmail.com, regAmount=10000.0, dob=2000-01-15, plan=PLATINUM cost 10000.0]

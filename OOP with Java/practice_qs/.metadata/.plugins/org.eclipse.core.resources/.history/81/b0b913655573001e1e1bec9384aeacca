@@ -1,0 +1,9 @@
+package exceptions;
+
+public class InvalidPetId extends Exception {
+	
+	public InvalidPetId(String errMsg) {
+		super(errMsg);
+	}
+
+}

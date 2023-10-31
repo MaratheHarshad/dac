@@ -1,0 +1,20 @@
+package utils;
+
+import java.util.Locale.Category;
+
+public class PetValidations {
+	
+	public static boolean validateInputs(String name, String cat,double unitPrice,int  stocks) {
+		
+		
+		Category category = validateCategory(cat);
+		
+	
+		
+	}
+
+	private static Category validateCategory(String cat) {
+		return Category.valueOf(cat)
+	}
+
+}

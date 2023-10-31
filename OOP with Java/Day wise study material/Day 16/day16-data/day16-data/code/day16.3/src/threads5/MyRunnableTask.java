@@ -16,7 +16,7 @@ public class MyRunnableTask implements Runnable {
 			// B.L (thrd exec logic)
 			for (int i = 0; i < 10; i++) {
 				System.out.println(currentThread().getName() + " exec count " + i);
-		//		Thread.sleep(500);
+//				Thread.sleep(500);
 			}
 		} catch (Exception e) {
 			System.out.println("err in thread " + currentThread().getName() + " exc " + e);

@@ -1,0 +1,9 @@
+package exceptions;
+
+public class StockOutOfBoundException extends Exception {
+	
+	public UnauthorizedUserException(String errMsg) {
+		super(errMsg);
+	}
+
+}

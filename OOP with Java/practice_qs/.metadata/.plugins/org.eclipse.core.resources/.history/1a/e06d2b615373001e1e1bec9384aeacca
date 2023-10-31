@@ -1,0 +1,108 @@
+package tester;
+
+
+import static utils.UserValidation.*;
+import static utils.PetValidations.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import core.Pet;
+
+public class Test {
+
+	public static void main(String[] args) {
+//			Pet Store Application Menu: 
+//			Login
+//			Add new Pet (Admin only functionality)
+//			Update Pet details (Admin only functionality)
+//			Display all available pets
+//			Order a Pet
+//			Check order status by Order Id
+//			Update order status (Admin only functionality)
+//			Exit
+		
+		
+		List<Pet> petList = new ArrayList<Pet>();
+		
+		
+		try(Scanner sc = new Scanner(System.in)){
+			
+			boolean exit = false;
+			boolean isAdmin = false;
+			boolean isUser = false;
+			
+			while(!exit) {
+				
+				try {
+					switch(sc.nextInt()) {
+					
+					case 1:
+						
+//					login
+						
+						System.out.println("Enter username and password : ");
+						
+						String username = sc.next();
+						String password = sc.next();
+						
+						if(authenticateAdmin(username, password)) {
+							isAdmin = true;
+							isUser = false;
+						}else {
+							authenticateUser(username, password);
+							isUser = true;
+							isAdmin = false;
+						}
+						
+						sc.nextLine();
+						
+						
+						
+						break;
+						
+						
+						
+					case 2:
+						
+//					Add new Pet (Admin only functionality)
+						
+//					would throw an error if logged in person is not admin
+						authorizedAdmin(isAdmin, isUser);
+						
+						System.out.println("Enter name, category, unitPrice, stocks to add new pet ");
+						
+						String name = sc.nextLine();
+						sc.nextLine();
+						String cat = sc.next();
+						double unitPrice = sc.nextDouble();
+						int stocks = sc.nextInt();
+						
+						Pet newPet = validateInputs(name, cat.toUpperCase(), unitPrice , stocks);
+						
+						petList.add(newPet);
+						System.out.println("New Pet added " + newPet);
+						
+						
+						break;
+						
+						
+					}
+					
+				}catch(Exception e) {
+					
+					e.printStackTrace();
+					sc.nextLine(); // in case of invalid input written
+					
+				}
+				
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

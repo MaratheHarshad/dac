@@ -1,0 +1,8 @@
+package custom_exception;
+
+public class StyleWithPenException extends Exception {
+	
+	public StyleWithPenException(String errMsg) {
+		super(errMsg);
+	}
+}

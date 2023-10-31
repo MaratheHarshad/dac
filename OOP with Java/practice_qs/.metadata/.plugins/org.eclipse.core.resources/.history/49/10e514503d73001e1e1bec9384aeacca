@@ -1,0 +1,13 @@
+package utils;
+
+import exceptions.AuthenticationException;
+
+public class PetValidations {
+	
+	public static boolean validateInputs(String name, String cat,int unitPrice,int  stocks) {
+		
+	
+		
+	}
+
+}

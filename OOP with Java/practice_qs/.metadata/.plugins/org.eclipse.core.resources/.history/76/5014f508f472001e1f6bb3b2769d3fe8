@@ -1,0 +1,13 @@
+package core;
+
+public class Entry {
+	
+	
+	String transactionDate;
+	String narration;
+	double withdrawalAmount;
+	double depositAmount;
+	
+	
+	
+}

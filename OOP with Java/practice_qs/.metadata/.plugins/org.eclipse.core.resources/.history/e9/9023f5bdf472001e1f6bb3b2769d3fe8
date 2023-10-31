@@ -1,0 +1,22 @@
+package core;
+
+public class Entry {
+	
+	
+	String transactionDate;
+	String narration;
+	double withdrawalAmount;
+	double depositAmount;
+	
+	
+	public Entry(String transactionDate, String narration, double withdrawalAmount, double depositAmount) {
+		super();
+		this.transactionDate = transactionDate;
+		this.narration = narration;
+		this.withdrawalAmount = withdrawalAmount;
+		this.depositAmount = depositAmount;
+	}
+	
+	
+	
+}

@@ -1,0 +1,12 @@
+package core;
+
+public class Order {
+	
+//	Order (orderId, petId, quantity, status)
+	
+	int orderId;
+	int petId;
+	int quantity;
+	DeliveryStatus status;
+
+}

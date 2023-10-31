@@ -1,0 +1,9 @@
+package utils;
+
+public class PenValidationRules 
+{
+	public static Color parseAndCheckColor(String color) throws IllegalArgumentException
+	{
+		return color.valueOf(color.)
+	}
+}

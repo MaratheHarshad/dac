@@ -1,0 +1,17 @@
+package core;
+
+public class Pet {
+	
+//	Pet ( petId, name, category, unitPrice, stocks)
+	
+	int petId;
+	String name;
+	Category cat;
+	double unitPrice;
+	int stocks;
+	
+	
+	
+	
+
+}

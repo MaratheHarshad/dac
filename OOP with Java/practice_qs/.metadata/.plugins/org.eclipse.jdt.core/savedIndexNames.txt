@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+D:\Folders\dac\dac\OOP with Java\practice_qs\.metadata\.plugins\org.eclipse.jdt.core
+355862876.index
+2354892934.index
+3294775327.index
+1865797976.index
+247478313.index

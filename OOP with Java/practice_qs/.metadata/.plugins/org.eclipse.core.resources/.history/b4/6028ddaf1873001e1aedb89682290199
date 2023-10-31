@@ -1,0 +1,99 @@
+package core;
+
+import java.time.LocalDate;
+
+import enums.Brand;
+import enums.Color;
+import enums.Material;
+
+/*a.ID (unique identifier for each Pen, should be generated automatically)
+b.	Brand (Example:  Cello, Parker, Reynolds etc.)
+c.	Color
+d.	InkColor
+e.	Material (Example: Plastic, Alloy Steel, Metal etc.)
+f.	Stock (Available quantity)
+g.	Stock Update Date (it changed every time when admin update stock or user order executed)
+h.	Stock Listing Date (date on which product is added to site for sale)
+i.	Price (in INR) 
+j.	Discounts (in percentage)*/
+
+public class Pen {
+	private int id;
+	private Color color;
+	private Material material;
+	private Brand brand;
+	private int stock;
+	private LocalDate stockUpdateDate;
+	private LocalDate listingDate;
+	private int price;
+	private int discountPercent;
+
+	private static int DEFAULT;
+
+	static {
+		DEFAULT = 100;
+	}
+
+	public static int idGenerator() {
+		return ++DEFAULT;
+	}
+
+	public Pen(Color color, Material material, Brand brand, LocalDate stockUpdateDate, int price, int stock) 
+	{
+		super();
+		this.id = idGenerator();
+		this.stock = stock;
+		this.color = color;
+		this.material = material;
+		this.brand = brand;
+		this.stockUpdateDate = stockUpdateDate;
+		this.listingDate = LocalDate.now();
+		this.price = price;
+		this.discountPercent = 0;
+	}
+
+
+	public static void setStock(int stock) {
+		stock = stock;
+		this.stockUpdateDate(LocaDate.now());
+	}
+
+	public LocalDate getUpdateDate() {
+		return stockUpdateDate;
+	}
+
+	public void setUpdateDate(LocalDate updateDate) {
+		this.stockUpdateDate = updateDate;
+	}
+
+	public LocalDate getListingDate() {
+		return listingDate;
+	}
+
+	public void setListingDate(LocalDate listingDate) {
+		this.listingDate = listingDate;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public int getDiscountPercent() {
+		return discountPercent;
+	}
+
+	public void setDiscountPercent(int discountPercent) {
+		this.discountPercent = discountPercent;
+	}
+
+	@Override
+	public String toString() {
+		return "Pen [id=" + id + ", color=" + color + ", inkColor=" + inkColor + ", material=" + material + ", Brand="
+				+ Brand + ", updateDate=" + updateDate + ", listingDate=" + listingDate + ", price=" + price
+				+ ", discountPercent=" + discountPercent + "]";
+	}
+}

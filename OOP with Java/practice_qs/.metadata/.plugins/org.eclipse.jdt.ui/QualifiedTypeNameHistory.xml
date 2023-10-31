@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="core.Entry"/>
+    <fullyQualifiedTypeName name="enums.Color"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="utils.PenValidationRules"/>
+    <fullyQualifiedTypeName name="enums.Material"/>
+    <fullyQualifiedTypeName name="java.util.Locale.Category"/>
+    <fullyQualifiedTypeName name="core.Category"/>
+    <fullyQualifiedTypeName name="utils.PetValidations"/>
+    <fullyQualifiedTypeName name="exceptions.UnauthorizedUserException"/>
+    <fullyQualifiedTypeName name="exceptions.InvalidPetIdException"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,138 @@
+package core;
+
+import java.time.LocalDate;
+
+/*a.ID (unique identifier for each Pen, should be generated automatically)
+b.	Brand (Example:  Cello, Parker, Reynolds etc.)
+c.	Color
+d.	InkColor
+e.	Material (Example: Plastic, Alloy Steel, Metal etc.)
+f.	Stock (Available quantity)
+g.	Stock Update Date (it changed every time when admin update stock or user order executed)
+h.	Stock Listing Date (date on which product is added to site for sale)
+i.	Price (in INR) 
+j.	Discounts (in percentage)*/
+
+public class Pen {
+	private int id;
+	private String color;
+	private String inkColor;
+	private String material;
+	private String Brand;
+	private static int stock = 0;
+	private LocalDate updateDate;
+	private LocalDate listingDate;
+	private int price;
+	private int discountPercent;
+
+	private static int DEFAULT;
+
+	static {
+		DEFAULT = 100;
+	}
+
+	public static int idGenerator() {
+		return ++DEFAULT;
+	}
+
+	public Pen(int id, String color, String inkColor, String material, String brand, LocalDate updateDate,
+			LocalDate listingDate, int price, int discountPercent) {
+		super();
+		this.id = id;
+		this.color = color;
+		this.inkColor = inkColor;
+		this.material = material;
+		Brand = brand;
+		this.updateDate = updateDate;
+		this.listingDate = listingDate;
+		this.price = price;
+		this.discountPercent = discountPercent;
+	}
+
+	public int getId() {
+		return id = idGenerator();
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getInkColor() {
+		return inkColor;
+	}
+
+	public void setInkColor(String inkColor) {
+		this.inkColor = inkColor;
+	}
+
+	public String getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(String material) {
+		this.material = material;
+	}
+
+	public String getBrand() {
+		return Brand;
+	}
+
+	public void setBrand(String brand) {
+		Brand = brand;
+	}
+
+	public static int getStock() {
+		return stock;
+	}
+
+	public static void setStock(int stock) {
+		Pen.stock = stock;
+	}
+
+	public LocalDate getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(LocalDate updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	public LocalDate getListingDate() {
+		return listingDate;
+	}
+
+	public void setListingDate(LocalDate listingDate) {
+		this.listingDate = listingDate;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public int getDiscountPercent() {
+		return discountPercent;
+	}
+
+	public void setDiscountPercent(int discountPercent) {
+		this.discountPercent = discountPercent;
+	}
+
+	@Override
+	public String toString() {
+		return "Pen [id=" + id + ", color=" + color + ", inkColor=" + inkColor + ", material=" + material + ", Brand="
+				+ Brand + ", updateDate=" + updateDate + ", listingDate=" + listingDate + ", price=" + price
+				+ ", discountPercent=" + discountPercent + "]";
+	}
+}

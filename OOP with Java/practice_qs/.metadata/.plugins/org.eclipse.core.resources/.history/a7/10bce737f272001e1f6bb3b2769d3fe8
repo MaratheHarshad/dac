@@ -1,0 +1,43 @@
+package tester;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		try(
+			BufferedReader bf = new BufferedReader(new FileReader("D:\\java\\practice_qs\\BankAccount\\src\\data"))){
+			
+			List<Double> depositeAmounts = new ArrayList<>();
+			List<Double> withdrawalAmounts = new ArrayList<>();
+			
+			String s = bf.readLine();
+			
+			
+			
+			while((s = bf.readLine()) != null) {
+
+				String []  str = s.split(",");
+			
+				depositeAmounts.add(Double.parseDouble(str[str.length - 1]));
+				withdrawalAmounts.add(Double.parseDouble(str[str.length - 2]));
+			}
+			
+			
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("main over");
+		
+	}
+
+}

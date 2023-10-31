@@ -33,10 +33,13 @@ class A
   }
 }
 
+// Overriding form of a method cannot throw new checked exception
+
+
 class B extends A
 {
   @Override
-  void show() throws Exception 
+  void show() throws /*Exception ,*/  NullPointerException
   {
 	  System.out.println("2");
 	  throw new NullPointerException();

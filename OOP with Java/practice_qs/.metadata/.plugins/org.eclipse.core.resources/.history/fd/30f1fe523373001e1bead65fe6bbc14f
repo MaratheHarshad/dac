@@ -1,0 +1,30 @@
+package utils;
+
+import exceptions.AuthenticationException;
+
+public class UserValidation {
+	
+	
+	public static 
+
+	public static boolean authenticateAdmin(String username, String password) {
+
+		if (username.equals("admin") && password.equals("admin")) {
+
+			return true;
+		} else {
+
+			return false;
+		}
+	}
+
+	public static boolean authenticateUser(String username, String password) throws AuthenticationException {
+
+		if (username.equals("c1") && password.equals("c1")) {
+			return true;
+		}
+
+		throw new AuthenticationException("invalid username or password");
+
+	}
+}

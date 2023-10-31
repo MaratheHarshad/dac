@@ -1,0 +1,92 @@
+package core;
+
+import java.time.LocalDate;
+
+import enums.Brand;
+import enums.Color;
+
+public class Pen {
+
+	private int id;
+	private Brand brand;
+	private Color color;
+	private String material;
+	private int stock;
+	private LocalDate stockUpdateDate;
+	private LocalDate stockListingDate;
+	private double price;
+	private int discountPercent;
+
+	private static int DEFAULT;
+
+	static {
+		DEFAULT = 1000;
+	}
+
+	private static int idGenerator() {
+		return ++DEFAULT;
+	}
+
+	public Pen(Brand brand, Color color, String material, int stock, LocalDate stockUpdateDate, double price) {
+		super();
+		this.id = idGenerator();
+		this.brand = brand;
+		this.color = color;
+		this.material = material;
+		this.stock = stock;
+		this.stockUpdateDate = stockUpdateDate;
+		this.stockListingDate = LocalDate.now();
+		this.price = price;
+		this.discountPercent = 0;
+	}
+
+	@Override
+	public String toString() {
+		return "Pen [id=" + id + ", brand=" + brand + ", color=" + color + ", material=" + material + ", stock=" + stock
+				+ ", stockUpdateDate=" + stockUpdateDate + ", stockListingDate=" + stockListingDate + ", price=" + price
+				+ ", discountPercent=" + discountPercent + "%]";
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+		this.setStockUpdateDate(LocalDate.now());
+	}
+
+	public LocalDate getStockUpdateDate() {
+		return stockUpdateDate;
+	}
+
+	public void setStockUpdateDate(LocalDate stockUpdateDate) {
+		this.stockUpdateDate = stockUpdateDate;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getDiscountPercent() {
+		return discountPercent;
+	}
+
+	public void setDiscountPercent(int discountPercent) {
+		this.discountPercent = discountPercent;
+		this.price = price * (1.0 - discountPercent / 100);
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+}

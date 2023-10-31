@@ -1,0 +1,28 @@
+package core;
+
+import java.time.LocalDate;
+
+/*a.ID (unique identifier for each Pen, should be generated automatically)
+b.	Brand (Example:  Cello, Parker, Reynolds etc.)
+c.	Color
+d.	InkColor
+e.	Material (Example: Plastic, Alloy Steel, Metal etc.)
+f.	Stock (Available quantity)
+g.	Stock Update Date (it changed every time when admin update stock or user order executed)
+h.	Stock Listing Date (date on which product is added to site for sale)
+i.	Price (in INR) 
+j.	Discounts (in percentage)*/
+
+public class Pen 
+{
+	private int ID;
+	private String color;
+	private String inkColor;
+	private String material;
+	private String Brand;
+	private static int stock;
+	private LocalDate updatedate;
+	private LocalDate listingdate;
+	private int price;
+	private int discountPercent;
+}

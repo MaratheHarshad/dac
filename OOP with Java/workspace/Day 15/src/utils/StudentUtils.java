@@ -28,6 +28,8 @@ public class StudentUtils {
 		list.add(new Student("100", "Manish", "Ahir", 630, Course.DAC , LocalDate.parse("2002-02-10")));
 		list.add(new Student("200", "Amey", "Pote", 600, Course.DBDA, LocalDate.parse("2002-02-10")));
 		list.add(new Student("201", "Raj", "Rajput", 700, Course.DBDA, LocalDate.parse("2002-02-10")));
+		list.add(new Student("82", "Jatin", "Mitrani", 104, Course.DAC , LocalDate.parse("2002-02-10")));
+		list.add(new Student("24", "kunal", "ahirrat", 240, Course.DAC , LocalDate.parse("2002-02-10")));
 		
 		return list;
 		

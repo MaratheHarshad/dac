@@ -1,0 +1,26 @@
+package utils;
+
+import core.Category;
+
+import core.Pet;
+
+public class PetValidations {
+	
+	public static Pet validateInputs(String name, String cat,double unitPrice,int  stocks) {
+		
+		
+		Category category = validateCategory(cat);
+		
+		return new Pet(name, category, unitPrice, stocks);
+		
+		
+		
+	
+		
+	}
+
+	private static Category validateCategory(String cat) {
+		return Category.valueOf(cat);
+	}
+
+}

@@ -1,0 +1,16 @@
+package utils;
+
+public class PetValidations {
+	
+	public static boolean authenticateAdmin(String username, String password) {
+		
+		if (username.equals("admin") && password.equals("admin")) {
+			
+			return true;
+		}else {
+			
+			return false;
+		}
+	}
+
+}

@@ -1,0 +1,12 @@
+package custom_exception;
+
+public class StyleWithPenException extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public StyleWithPenException(String errMsg) {
+		super(errMsg);
+	}
+}

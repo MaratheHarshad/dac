@@ -108,7 +108,7 @@ why ?
 Think -- what is the need of constructor? 
 Constructor initializes the object variables with either default values or values which is assigned inside constructor. BUT we want to initialize the state of the object from binary stream.
 
----------------
+---------------9
 
 What are pre-requisites for de-serialization?
 Byte codes (.class file) for entire object graph to be de-serialized + Bin data stream containing state.

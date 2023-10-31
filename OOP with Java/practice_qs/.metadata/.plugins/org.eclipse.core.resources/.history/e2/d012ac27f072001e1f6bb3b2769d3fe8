@@ -1,0 +1,48 @@
+package tester;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		try(
+			BufferedReader bf = new BufferedReader(new FileReader("D:\\java\\practice_qs\\BankAccount\\src\\data"))){
+			
+			List<Double> salaries = new ArrayList<>();
+			
+//			String s = bf.readLine();
+			
+			String s;
+			while((s = bf.readLine()) != null) {
+			
+				Scanner sc = new Scanner(s).useDelimiter(",");
+				
+				sc.nextLine();
+				sc.nextLine();
+				double salary = sc.nextDouble();
+				System.out.println(salary);
+				salaries.add(salary);
+				
+				sc.close();
+				
+				
+			}
+			
+			
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("main over");
+		
+	}
+
+}

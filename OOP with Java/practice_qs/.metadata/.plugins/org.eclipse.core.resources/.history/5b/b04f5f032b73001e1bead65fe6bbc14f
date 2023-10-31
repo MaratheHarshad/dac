@@ -1,0 +1,44 @@
+package core;
+
+public class Pet {
+	
+//	Pet ( petId, name, category, unitPrice, stocks)
+	
+	int petId;
+	String name;
+	Category cat;
+	double unitPrice;
+	int stocks;
+	
+	
+	public int getPetId() {
+		return petId;
+	}
+	public void setPetId(int petId) {
+		this.petId = petId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Category getCat() {
+		return cat;
+	}
+	public void setCat(Category cat) {
+		this.cat = cat;
+	}
+	public double getUnitPrice() {
+		return unitPrice;
+	}
+	public void setUnitPrice(double unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+	public int getStocks() {
+		return stocks;
+	}
+	public void setStocks(int stocks) {
+		this.stocks = stocks;
+	}
+}
