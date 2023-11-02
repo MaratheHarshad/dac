@@ -15,10 +15,11 @@ public class Main {
 			while (!exit) {
 
 				System.out.println("Enter choice : ");
-				System.out.println("Show the contents of linkedlist ");
-				System.out.println("Insert the data in the linkedlist ");
-				System.out.println("size of linkedlist ");
-				System.out.println("check is linkedlist empty ");
+				System.out.println("1.Show the contents of linkedlist ");
+				System.out.println("2.Insert the data in the linkedlist ");
+				System.out.println("3.size of linkedlist ");
+				System.out.println("4.check is linkedlist empty ");
+				System.out.println("5.Show the contents of linkedlist (Reverse) ");
 
 				switch (sc.nextInt()) {
 				case 1:
@@ -44,6 +45,12 @@ public class Main {
 
 					System.out.println("Empty : " + ll.isEmpty());
 
+					break;
+				
+				case 5:
+					
+					ll.displayReverse();
+					
 					break;
 
 				default:
