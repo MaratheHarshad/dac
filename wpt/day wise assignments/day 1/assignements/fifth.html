@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+
+    <style>
+      table {
+        border-collapse: collapse;
+        background-color: pink;
+      }
+
+      tr,
+      td {
+        border: 2px solid black;
+      }
+
+      ul {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="get" action="#">
+      <table>
+        <tr>
+          <td>
+            <label for="name">Name</label>
+          </td>
+          <td>
+            <input type="text" name="name" id="name" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="emp-code">Employee Code</label>
+          </td>
+
+          <td>
+            <input type="number" name="empCode" id="emp-code" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="department">Department</label>
+          </td>
+          <td>
+            <ul type="none">
+              <li>
+                <input
+                  type="radio"
+                  name="department"
+                  id="admin"
+                  value="ADMIN"
+                />
+                <label for="admin">ADMIN</label>
+              </li>
+              <li>
+                <input type="radio" name="department" id="hr" value="HR" />
+                <label for="hr">HR</label>
+              </li>
+
+              <li>
+                <input
+                  type="radio"
+                  name="department"
+                  id="technical"
+                  value="TECHNICAL"
+                />
+                <label for="technical">TECHNICAL</label>
+              </li>
+
+              <li>
+                <input
+                  type="radio"
+                  name="department"
+                  id="accounts"
+                  value="ACCOUNTS"
+                />
+                <label for="accounts">ACCOUNTS</label>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="joining-date">Date of Joining</label></td>
+          <td>
+            <input type="date" name="joiningDate" id="joining-date" />
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="address">Address</label></td>
+          <td>
+            <textarea name="address" id="address" cols="30" rows="5"></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="training-programs-attended">
+              Training programs Attended
+            </label>
+          </td>
+          <td>
+            <ul type="none">
+              <li>
+                <input
+                  type="checkbox"
+                  name="trainingProgramsAttended"
+                  id="HTML/DHTML"
+                />
+                <label for="HTML/DHTML">HTML/DHTML</label>
+              </li>
+
+              <li>
+                <input
+                  type="checkbox"
+                  name="trainingProgramsAttended"
+                  id="JAVA"
+                />
+                <label for="JAVA"> JAVA </label>
+              </li>
+
+              <li>
+                <input
+                  type="checkbox"
+                  name="trainingProgramsAttended"
+                  id="CLIENT/SERVER"
+                />
+                <label for="CLIENT/SERVER"> CLIENT-SERVER</label>
+              </li>
+
+              <li>
+                <input
+                  type="checkbox"
+                  name="trainingProgramsAttended"
+                  id=".NET"
+                />
+                <label for=".NET"> .NET</label>
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="training-programs-needed"
+              >Training program Attended</label
+            >
+          </td>
+          <td>
+            <select
+              name="training-programs-needed"
+              id="training-programs-needed"
+              size="2"
+            >
+              <option value="HTML/DHTML">JAVASCRIPT</option>
+              <option value="JAVA">JSTRUTS</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Send the information at</td>
+          <td><a href="#">empinfo@patni.com</a></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

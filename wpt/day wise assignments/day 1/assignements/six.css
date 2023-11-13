@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  border: 2px solid black;
+  margin: 5px;
+}
+
+fieldset {
+  /* background-color: gray; */
+  /* padding-left: 10px; */
+  padding: 50px;
+  width: fit-content;
+}
+
+.buttons {
+  text-align: center;
+  /* margin: 20px; */
+  /* padding: 20px; */
+}
+
+button {
+  margin: 25px;
+  margin-bottom: 5px;
+}
