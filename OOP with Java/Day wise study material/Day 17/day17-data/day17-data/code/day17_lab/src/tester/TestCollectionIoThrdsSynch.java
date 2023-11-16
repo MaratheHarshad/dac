@@ -29,9 +29,17 @@ public class TestCollectionIoThrdsSynch {
 			for (Thread t : thrds)
 				t.start(); // runnable : 4
 			System.out.println("Main waiting for child thrds to finish exec");
-			for (Thread t : thrds)
-				t.join();// replace it by a lambda expression : will have to add a try-cathc block :
+//			for (Thread t : thrds)
+//				t.join();// replace it by a lambda expression : will have to add a try-cathc block :
 							// since un handled chked esc : InterruptedExc
+
+			thrds.forEach(thread -> {
+				try {
+					thread.join();
+				} catch (InterruptedException e) {
+					System.out.println(e);
+				}
+			});
 			System.out.println("main over.....");
 		} catch (Exception e) {
 			e.printStackTrace();

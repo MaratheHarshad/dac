@@ -19,6 +19,7 @@ public class Test2 {
 			if (!cls.isInterface()) {
 				// display the modifiers
 				int modifiers = cls.getModifiers();
+			
 				System.out.println(Modifier.isPublic(modifiers) ? "Public" : "Pkg-private");
 				System.out.println(Modifier.isAbstract(modifiers) ? "Abstract" : "Concrete");
 				System.out.println(Modifier.isFinal(modifiers) ? "Final" : "Not final");

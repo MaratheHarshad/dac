@@ -1,5 +1,7 @@
 package daemon_thrds;
 
+import java.util.Scanner;
+
 public class RunnableTask implements Runnable {
 
 //overriding form of the run() can't add any NEW checked excs

@@ -32,5 +32,25 @@ public class JointAccount {
 		return balance;
 
 	}
+	
+//	without synchronized keyword
+	
+//	// update balance orig bal =10000 n amt=500
+//	public  void   updateBalance(double amt) throws Exception {
+//		System.out.println("Updating bal : " + currentThread().getName());
+//		balance = balance + amt;//10500
+//		System.out.println("Cancelling updates, after a delay");
+//		Thread.sleep(17);//simulates think time of user | context switching
+//		balance = balance - amt;//10000
+//		System.out.println("Updations over by " + currentThread().getName());
+//	}//10,000
+//
+//	// chk balance
+//	public double checkBalance() throws Exception {
+//		System.out.println("Checking balance : by " + currentThread().getName());
+//		Thread.sleep(37);
+//		return balance;
+//
+//	}
 
 }
