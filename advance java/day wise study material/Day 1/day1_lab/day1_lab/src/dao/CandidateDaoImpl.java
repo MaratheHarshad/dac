@@ -25,6 +25,7 @@ public class CandidateDaoImpl implements CandidateDao {
 		List<Candidate> candidates = new ArrayList<>();
 		try (ResultSet rst = pst1.executeQuery()) {
 			while (rst.next())
+				// ORM (Object Relational Mapping)
 				candidates.add(new Candidate(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getInt(4)));
 		}
 		return candidates;

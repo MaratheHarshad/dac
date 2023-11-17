@@ -10,4 +10,8 @@ public interface UserDao {
 //add a method to get user details under specific role n dob range
 	List<User> getSelectedUsers(String role,Date begin,Date end)
 			throws SQLException;
+	
+// hw , add a method to authenticate the user
+	
+	User authenticateUser(String email, String password) throws SQLException;
 }
