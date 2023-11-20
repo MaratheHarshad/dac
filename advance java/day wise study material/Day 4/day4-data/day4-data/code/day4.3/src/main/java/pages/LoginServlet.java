@@ -1,13 +1,14 @@
 package pages;
 
+import static utils.DBUtils.closeConnection;
+import static utils.DBUtils.openConnection;
+
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 
-import javax.servlet.ServletConfig;
+import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +17,6 @@ import javax.servlet.http.HttpSession;
 import dao.CandidateDaoImpl;
 import dao.UserDaoImpl;
 import pojos.User;
-import static utils.DBUtils.*;
 
 /**
  * Servlet implementation class LoginServlet

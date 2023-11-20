@@ -32,6 +32,9 @@ public class CandidateListPage extends HttpServlet {
 			// debug/understanding
 			System.out.println("From list page : Session is new " + session.isNew());// f => cookies are enabled , t =>
 			// cookies are blocked
+			
+			// t => if client directly sends request to an -> host:port/cnt_root/candidate_list without login
+			
 			System.out.println("Session ID " + session.getId());// same : enabled cookies or different : blocked
 			// 2. get user details from session scope
 			User validUser = (User) session.getAttribute("clnt_details");
