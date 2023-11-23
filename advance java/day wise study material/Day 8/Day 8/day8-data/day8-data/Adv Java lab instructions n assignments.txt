@@ -1,0 +1,235 @@
+Download n extract day1-data please! (Currently uploaded under core java g drive)
+
+Day 1
+1. import day1.2 , to revise DB layered application
+(Edit JDBC connector n user name , password)
+
+Hands on : 
+1. Refer to online voting case study
+Prepare DAO, POJO layers , Write a simple tester/s to test it in standalone application.
+
+1.1 User Authentication(validation)
+(You can continue with day1.2)
+OR
+List all candidates
+day1_lab
+Table : candidates
+POJO : Candidate
+DBUtils : copy/ or write
+DAO : CandidateDao i/f
+List<Candidate> getAllCandidates() throws SE
+CandidateDaoImpl
+1. import : java.sql , import static : utils
+2. state : cn , pst1
+3. def ctor : openCn , pst1=cn.prepareStatement(sql);
+4. clean up : close pst1, cn
+5. getAllCandidates() : exec query --RST --while loop --ORM 
+
+
+1.2 Add new Candidate
+
+2. Add tomcat web server in Eclipse(STS 3.9.18) IDE.
+(Refer : "day1-data\day1_help\Web Server n Java EE docs\Installation steps for Tomcat.txt")
+
+Optional Hands on
+
+1. Get all candidates.
+2. Update Voting status
+3. Increment candidate votes
+
+Reading H.W
+Revise JDBC drivers 
+SQL Injection readme.
+
+
+Day 2
+IMPORTANT 
+Please complete below steps (if  needed  : with lab faculty's help.)
+Every one MUST have Tomcat server added in the workspace , created 1st web app with HTML n Servlet.
+Servlet concepts are not yet covered , BUT you should create one servlet , to generate dyn. resp 
+
+Detailed steps 
+1.Confirm that you have extracted tomcat zip file.
+
+2. Confirm 
+2.1 JDK version : JDK 11
+2.2 IDE : Eclipse STS 3.9.18
+2.3 Create NEW workspace , for advanced java.
+2.4 Add Apache Tomcat web server , in the new workspace
+2.5 Confirm if server is  starting properly , without any exceptions
+2.6 Create dynamic web app n test index.html (eg : day2_web_lab project)
+
+3. Extract Java EE docs from : "day1-data\day1_help\Web Server n Java EE docs\javaee-api-8.0-javadoc.jar"
+
+4. In index.html , add a link to test the servlet , deployed using annotations
+(Servlet1)
+Confirm complete servlet life cycle (init , service , destroy)
+(by printing messages on the server console)
+
+
+6. Copy day1_lab project as day2_lab n continue.
+Complete DAO , POJO layer for Online voting assignment (at least the voter flow)
+6.1 Voter authentication
+i/p : email , password
+o/p : User (containing complete voter details) (already done)
+6.2 Get all candidates. (already done)
+6.3 Update Voting status
+6.4 Increment candidate votes
+
+7. Optional work 
+Execute a stored function.
+Refer : "day1-data\day1_help\jdbc help\sql\sql cmds.txt"
+Look for "transfer_funds_func" .
+Copy accounts table n stored function.
+Write layered java app to invoke a stored function.
+
+
+Day 3
+1. import day3.1 in your adv java workspace.
+Open index.html n trace all the links , to revise
+Servlet creation , deployments , lazy vs eager loading
+
+2. import day3.2 in your adv java workspace.
+Open login.html(welcome page) n trace the flow
+Revise Servlet -JDBC integration , centralized exc handling , page navigation(redirect)
+
+
+Hands on (Completely OPTIONAL) Even if you revise n understand servlets today, it's fine !
+
+New Voter registration
+Add a Voter SignUp link in login.html
+Accept : first_name , last_name , email, password , dob .
+(Refer : register.html , already supplied)
+Submit it to RegisterVoterServlet
+Read request parameters.
+Add a validation rule. 
+Voter's age must be > 21 .
+If yes insert voter details in DB (using DAO n POJO , DBUtils)
+id : will be auto incremented , role assigned should be voter , the status : false (i.e not yet voted) . Send registration success message to the client
+
+Otherwise , send  suitable error mesg to the client.
+
+
+Day 4
+
+1. import day4.1 in your workspace to revise cookie based session tracking.
+2. import day4.2 in your workspace to revise HttpSession  based session tracking.
+3. import day4.3 to revise , voter flow of the Online voting case study.
+
+Suggestions for the quick n smart revision
+Refer to day wise sequence , open the code n read required java docs.
+eg : While revising cookies , open day4.1 , refer to our cookie flow diagrams n session tracking readme n if required go throught corresponding javadocs (Cookie class n it's methods)
+
+Hands on 
+Options
+Easiest 1st option.
+1. Try to solve voter part of the case study , on your own  ,as already discussed n shown.
+
+2. Next level 
+Try to add Voter registration
+
+3. Try something completely new ! 
+IPL assignment . Use supplied tables (teams n players) , follow assignment help n try it out
+
+Even if you solve one of above , you will get confidence in servlets.
+
+Reading H.W 
+1. "day3-data\day3_help\page navigation\page navigation techniques.txt"
+client pull part
+
+2. "day4-data\day4_help\session tracking\regarding session tracking.txt"
+cookie based n HttpSession i/f based techniques.
+
+
+Day 5
+Hands on first !
+1. Start n complete 2 page based IPL assignment
+
+2. import day5.1 , to revise online voting case study (voter flow)
+
+3. import day5.2 , to revise , ServletConfig , init params , DB independent web app.
+
+4. import day5.3 to revise server pull (Request Dispatching) : forward technique.
+
+5. import day5.4 to revise server pull (Request Dispatching) :include technique.
+(Differentiate between forward vs include)
+
+
+6. Try to complete pending work
+If you have completed all of the earlier work , try admin flow of the case study.
+
+OR Take student admission n fit it with DB
+(i.e students , courses tables
+E-R 
+courses 1----->* students (one-to-many , with FK)
+
+OR you can also go for 
+
+courses *----->* students (many-to-many , with link table : admissions)
+
+Reading H.W
+Pls go through
+"day5-data\day5_help\diagrams\page navigation summary.png" , 
+"day5-data\day5_help\diagrams\HttpSession Internals.png"
+
+Readmes : 
+"day5-data\day5_help\diagrams\page navigation techniques.txt"
+"day5-data\day5_help\readmes\regarding servletconfig.txt"
+
+Day 6
+Special request to lab faculties
+1. Please revise 
+ JSP syntax : comments , JSP implicit objects ,  scripting elements n EL syntax
+(import day6.2 in your workspace n trace all the links from index.jsp)
+
+2. Discuss n solve with the students , JSP assignment
+Refer to : 
+"JSP basic assignment.png"
+(Initially solve it using client pull n then with server pull)
+
+3. Discuss day5's student admission assignment
+(refer : "student admission.png")
+Help students to solve the same.
+
+After this complete pending work !
+
+
+Day 7
+
+1. import day7.1 to revise JSP basics
+JSP error handling , Request Dispatching related actions
+
+2. import day7.2 to revise advanced JSP 
+Flow : JSP -- Java Bean -- DAO -- POJO --DB
+
+Mandatory Hands on (To be done with the help of Lab Faculty)
+New Voter registration.
+Complete it with : JSP -- Java Bean -- DAO -- POJO --DB
+
+3. With the help of lab faculty , import Maven projects n keep the hibernate dependencies downloaded.
+Tomorrow , we are definitely entring hibernate.
+Reference project : "day7-data\code\test_hibernate"
+
+
+Day 8
+
+Hands on first
+With the help of lab faculty : 
+1. Create hibernate based standalone Java application , for inserting a new record in IPL teams table
+1.1 Continue with test_hibernate (or copy test_hibernate in day8_lab)
+1.2 Follow the steps in : "day8-data\hibernate steps.txt"
+1.3 Create hibernate utils , Team POJO , Team DAO n insert a record.
+
+
+2. Revise
+2.1 import day8.2 , for revising URL rewriting , along with basic JSP assignment.
+2.2 import day8.1 , to revise JSTL n admin flow of the voting case study.
+
+
+
+
+
+
+
+
+
