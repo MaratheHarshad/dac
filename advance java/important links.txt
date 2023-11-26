@@ -1,0 +1,2 @@
+https://vladmihalcea.com/orphanremoval-jpa-hibernate/
+
