@@ -119,6 +119,8 @@ public class UserBean {
 		 * create user (voter) instance --invoke dao's method
 		 * ret status to the caller
 		 */
+		
+		System.out.println("Inside reg new voter, from UserBean");
 		LocalDate date=LocalDate.parse(dob);
 		int age=Period.between(date, LocalDate.now()).getYears();
 		if(age >= 21)

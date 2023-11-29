@@ -1,6 +1,6 @@
 <%@page import="java.util.Date"%>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,9 +13,7 @@
 <jsp:useBean id="team" class="beans.TeamBean" scope="session" />
 <jsp:useBean id="player" class="beans.PlayerBean" scope="session" />
 <body>
-	<h3>
-		Welcome 2 Web App with Hibernate @
-		<%=new Date()%></h3>
+	
 
 	<!-- display teams abbreviation in select input type-->
 
@@ -28,18 +26,20 @@
 				<!-- incomplete display list dynamically -->
 				<%-- invoke B.L of JB from here --%>
 
+
+
+
 				<c:forEach var="abr" items="${sessionScope.team.teamsAbr()}">
 
-					<%-- <option value="${abr}">${abr}</option> --%>
-					<h3>printing</h3>
+					<option value="${abr}">${abr}</option>
+
 
 				</c:forEach>
 
 
-
-
-
 			</select>
+
+
 		</h5>
 
 		<h5>

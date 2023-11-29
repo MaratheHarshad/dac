@@ -1,0 +1,4 @@
+ insert into teams values(default,'CSK',60.5,30,'CHENNAI SUPER KINGS','SRK',25);
+
+
+ insert into teams values(default,'KKR',50.5,27,'Kolkatta Night Riders','owner2',28);

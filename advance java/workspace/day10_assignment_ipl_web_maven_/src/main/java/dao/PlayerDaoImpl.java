@@ -53,23 +53,6 @@ public class PlayerDaoImpl implements PlayerDao{
 		return "Player added with id : " + p.getPlayerId();
 	}
 
-	@Override
-	public Team getTeamByAbbreviation(String abr) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public List<Team> getTeamsByMaxAge(int age) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void updateTeamWicketsNBattingAvg(int teamId, int wickets, double minBattingAvg) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 	
 }

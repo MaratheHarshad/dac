@@ -173,6 +173,8 @@ public class TeamDaoImpl implements TeamDao {
 			
 			teams = session.createQuery(jpql, String.class).getResultList();
 			
+			tx.commit();
+			
 		} catch (RuntimeException e) {
 			
 			// in case of failure

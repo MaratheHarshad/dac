@@ -7,7 +7,7 @@ Steps for Hibernate + Java SE
 2. Create Maven Project ---skip archetype selection --
 grp id,artifact id , packaging option : jar --finish
 
-3. Creates default pom.xml . Add <build> n <dependencies> tags from day8_help\hibernate-help\config-files\pom.xml
+3. Creates default pom.xml . Add <build> n <dependencies> tags from day7_help\hibernate-help\config-files\pom.xml
 
 4. Update the project .
 R click on the project --> Maven --> Update Project -->select Force update checkbox -->Finish
