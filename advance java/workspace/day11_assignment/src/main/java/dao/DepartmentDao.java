@@ -19,4 +19,7 @@ public interface DepartmentDao {
 
 	// add a method to display dept + emp information
 	List<Department> getDeptAndEmployees();
+	
+	// add a method to delete department by dept name
+	String deleteDepartmentByName(String deptName);
 }

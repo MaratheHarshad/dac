@@ -119,8 +119,6 @@ public class DepartmentDaoImpl implements DepartmentDao {
 			
 			deptments = session.createQuery(jpql, Department.class).getResultList();
 			
-			
-			
 		} catch (RuntimeException e) {
 			
 			if(tx != null) {
@@ -132,6 +130,52 @@ public class DepartmentDaoImpl implements DepartmentDao {
 		
 		
 		return deptments;
+	}
+
+	@Override
+	public String deleteDepartmentByName(String deptName) {
+		
+		String msg = "Department deletion failed";
+		
+		
+//		1. write jpql
+		String jpql = "select d from Department d where d.name = :deptName";
+		
+//		2. get the current session
+		Session session = getFactory().getCurrentSession();
+		
+		
+//		3. begin the transaction
+		Transaction tx = session.beginTransaction();
+		
+//		4. try catch
+		
+		try {
+			
+			// if single dept with name found , no Exc would be thrown
+			Department dept = session.createQuery(jpql, Department.class).setParameter("deptName", deptName).getSingleResult();
+			
+			// delete the department from the db
+			// CASCADE.delete removes all the employee entries associated with this department
+			
+			session.delete(dept);
+			
+			
+			tx.commit();
+			
+			msg = "Dept deletion successful "; 
+			
+		} catch (RuntimeException e) {
+			if(tx != null) {
+				tx.rollback();
+			}
+			
+			throw e;
+		}
+		
+		return msg;
+		
+		
 	}
 
 
