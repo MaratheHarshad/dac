@@ -21,6 +21,23 @@ namespace ClassBasics
             Console.WriteLine(o.Add(10, 20));
             Console.WriteLine(o.Add(10, 20, 30));
 
+            System.Console.WriteLine("printing message using System");
+
+            /*
+             
+            string[] array = new string[5];
+
+            for (int i = 0 ; i < array.Length; i++)
+            {
+                array[i] = Console.ReadLine();
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+
+            */
         }
     }
 

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "cSyWBuesQPlXaA2pptIBJZHZzrBjytfWJIr3+7/0XzNcXWnJDqsYSB5bQczJgy3mjA6pqK2Pe/x4YFcb3Htcww==",
+  "dgSpecHash": "Lo4M11sfShDuTD2L/VMykif8sK1WnV6RkrNICD+PE2DYcFJwvOCWgYFaMZPBOloUmkvTnyEw4Lw9+bSaU6hg9A==",
   "success": true,
-  "projectFilePath": "D:\\Trainings\\ActsDec2023\\Day1\\ClassBasics\\ClassBasics.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Folders\\dac\\pg-dac\\dac\\MS.NET\\day wise study material\\Day1-20231210T130446Z-001\\Day1\\ClassBasics\\ClassBasics.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+  ],
   "logs": []
 }

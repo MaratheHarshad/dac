@@ -1,0 +1,30 @@
+D:\Trainings\ActsDec2023\Day8\FileHandling\bin\Debug\net7.0\FileHandling.exe
+D:\Trainings\ActsDec2023\Day8\FileHandling\bin\Debug\net7.0\FileHandling.deps.json
+D:\Trainings\ActsDec2023\Day8\FileHandling\bin\Debug\net7.0\FileHandling.runtimeconfig.json
+D:\Trainings\ActsDec2023\Day8\FileHandling\bin\Debug\net7.0\FileHandling.dll
+D:\Trainings\ActsDec2023\Day8\FileHandling\bin\Debug\net7.0\FileHandling.pdb
+D:\Trainings\ActsDec2023\Day8\FileHandling\obj\Debug\net7.0\FileHandling.csproj.AssemblyReference.cache
+D:\Trainings\ActsDec2023\Day8\FileHandling\obj\Debug\net7.0\FileHandling.GeneratedMSBuildEditorConfig.editorconfig
+D:\Trainings\ActsDec2023\Day8\FileHandling\obj\Debug\net7.0\FileHandling.AssemblyInfoInputs.cache
+D:\Trainings\ActsDec2023\Day8\FileHandling\obj\Debug\net7.0\FileHandling.AssemblyInfo.cs
+D:\Trainings\ActsDec2023\Day8\FileHandling\obj\Debug\net7.0\FileHandling.csproj.CoreCompileInputs.cache
+D:\Trainings\ActsDec2023\Day8\FileHandling\obj\Debug\net7.0\FileHandling.dll
+D:\Trainings\ActsDec2023\Day8\FileHandling\obj\Debug\net7.0\refint\FileHandling.dll
+D:\Trainings\ActsDec2023\Day8\FileHandling\obj\Debug\net7.0\FileHandling.pdb
+D:\Trainings\ActsDec2023\Day8\FileHandling\obj\Debug\net7.0\FileHandling.genruntimeconfig.cache
+D:\Trainings\ActsDec2023\Day8\FileHandling\obj\Debug\net7.0\ref\FileHandling.dll
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\obj\Debug\net7.0\FileHandling.dll
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\obj\Debug\net7.0\refint\FileHandling.dll
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\obj\Debug\net7.0\FileHandling.pdb
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\bin\Debug\net7.0\FileHandling.exe
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\bin\Debug\net7.0\FileHandling.deps.json
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\bin\Debug\net7.0\FileHandling.runtimeconfig.json
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\bin\Debug\net7.0\FileHandling.dll
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\bin\Debug\net7.0\FileHandling.pdb
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\obj\Debug\net7.0\FileHandling.GeneratedMSBuildEditorConfig.editorconfig
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\obj\Debug\net7.0\FileHandling.AssemblyInfoInputs.cache
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\obj\Debug\net7.0\FileHandling.AssemblyInfo.cs
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\obj\Debug\net7.0\FileHandling.csproj.CoreCompileInputs.cache
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\obj\Debug\net7.0\FileHandling.sourcelink.json
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\obj\Debug\net7.0\FileHandling.genruntimeconfig.cache
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Day8-20231213T182639Z-001\Day8\FileHandling\obj\Debug\net7.0\ref\FileHandling.dll

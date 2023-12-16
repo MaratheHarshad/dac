@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "Yfj02kjqo9BelDWGMjmmc48XgZgMC6QRHac3jsfiu8LIkMRfbI7rfJxAbZ1uOjO9Yan+A3ZyTCUdm+XXlEFdPA==",
+  "success": true,
+  "projectFilePath": "D:\\Folders\\dac\\pg-dac\\dac\\MS.NET\\day wise study material\\Day8-20231213T182639Z-001\\Day8\\ReflectionExample\\ReflectionExample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

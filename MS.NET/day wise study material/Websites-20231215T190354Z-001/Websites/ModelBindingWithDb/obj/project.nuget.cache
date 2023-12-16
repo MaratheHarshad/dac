@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "dgSpecHash": "DkIFUSAMzVw3REO3cqxX4FVIAfY8wt/kuKsgrz5KtNah8TjUBf0EAte3g4TqLetxzO5/4pU/ymgHvDiR4jRJMQ==",
+  "success": false,
+  "projectFilePath": "D:\\Folders\\dac\\pg-dac\\dac\\MS.NET\\day wise study material\\Websites-20231215T190354Z-001\\Websites\\ModelBindingWithDb\\ModelBinding.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Error",
+      "message": "Failed to download package 'Microsoft.CodeAnalysis.Common.4.4.0' from 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.common/4.4.0/microsoft.codeanalysis.common.4.4.0.nupkg'.\r\nAn error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'"
+    },
+    {
+      "code": "Undefined",
+      "level": "Error",
+      "message": "Failed to download package 'Microsoft.CodeAnalysis.Features.4.4.0' from 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.features/4.4.0/microsoft.codeanalysis.features.4.4.0.nupkg'.\r\nAn error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'"
+    },
+    {
+      "code": "Undefined",
+      "level": "Error",
+      "message": "Failed to download package 'Microsoft.CodeAnalysis.CSharp.Workspaces.4.4.0' from 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.csharp.workspaces/4.4.0/microsoft.codeanalysis.csharp.workspaces.4.4.0.nupkg'.\r\nAn error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'"
+    },
+    {
+      "code": "Undefined",
+      "level": "Error",
+      "message": "Failed to download package 'Microsoft.CodeAnalysis.Workspaces.Common.4.4.0' from 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.workspaces.common/4.4.0/microsoft.codeanalysis.workspaces.common.4.4.0.nupkg'.\r\nAn error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'System.Security.Cryptography.Pkcs' from remote source 'https://api.nuget.org/v3-flatcontainer/system.security.cryptography.pkcs/index.json'.",
+      "libraryId": "System.Security.Cryptography.Pkcs"
+    },
+    {
+      "code": "Undefined",
+      "level": "Error",
+      "message": "Failed to download package 'Microsoft.CodeAnalysis.Common.4.0.0' from 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.common/4.0.0/microsoft.codeanalysis.common.4.0.0.nupkg'.\r\nAn error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'"
+    },
+    {
+      "code": "Undefined",
+      "level": "Error",
+      "message": "Failed to download package 'Microsoft.Build.17.3.2' from 'https://api.nuget.org/v3-flatcontainer/microsoft.build/17.3.2/microsoft.build.17.3.2.nupkg'.\r\nAn error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'"
+    },
+    {
+      "code": "Undefined",
+      "level": "Error",
+      "message": "Failed to download package 'NuGet.Versioning.6.6.1' from 'https://api.nuget.org/v3-flatcontainer/nuget.versioning/6.6.1/nuget.versioning.6.6.1.nupkg'.\r\nAn error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'"
+    },
+    {
+      "code": "Undefined",
+      "level": "Error",
+      "message": "Failed to download package 'Microsoft.CodeAnalysis.CSharp.4.4.0' from 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.csharp/4.4.0/microsoft.codeanalysis.csharp.4.4.0.nupkg'.\r\nAn error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.Build' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.build/index.json'.",
+      "libraryId": "Microsoft.Build"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.CodeAnalysis.CSharp.Workspaces' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.csharp.workspaces/index.json'.",
+      "libraryId": "Microsoft.CodeAnalysis.CSharp.Workspaces"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.CodeAnalysis.CSharp.Workspaces' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.csharp.workspaces/index.json'.",
+      "libraryId": "Microsoft.CodeAnalysis.CSharp.Workspaces"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.CodeAnalysis.Common' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.common/index.json'.",
+      "libraryId": "Microsoft.CodeAnalysis.Common"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.CodeAnalysis.Workspaces.Common' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.workspaces.common/index.json'.",
+      "libraryId": "Microsoft.CodeAnalysis.Workspaces.Common"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.CodeAnalysis.Features' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.features/index.json'.",
+      "libraryId": "Microsoft.CodeAnalysis.Features"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.CodeAnalysis.CSharp' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.csharp/index.json'.",
+      "libraryId": "Microsoft.CodeAnalysis.CSharp"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.CodeAnalysis.CSharp' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.csharp/index.json'.",
+      "libraryId": "Microsoft.CodeAnalysis.CSharp"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'Microsoft.CodeAnalysis.Common' from remote source 'https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.common/index.json'.",
+      "libraryId": "Microsoft.CodeAnalysis.Common"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Failed to retrieve information about 'NuGet.Versioning' from remote source 'https://api.nuget.org/v3-flatcontainer/nuget.versioning/index.json'.",
+      "libraryId": "NuGet.Versioning"
+    },
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: An error occurred while sending the request."
+    }
+  ]
+}

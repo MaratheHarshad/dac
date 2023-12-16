@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+  <NewDataSet>
+    <Emps diffgr:id="Emps1" msdata:rowOrder="0">
+      <EmpNo>1</EmpNo>
+      <Name>Khagesh</Name>
+      <Basic>111111.00</Basic>
+      <DeptNo>1</DeptNo>
+    </Emps>
+    <Emps diffgr:id="Emps2" msdata:rowOrder="1">
+      <EmpNo>5</EmpNo>
+      <Name>D'Silva</Name>
+      <Basic>1111.00</Basic>
+      <DeptNo>2</DeptNo>
+    </Emps>
+    <Emps diffgr:id="Emps3" msdata:rowOrder="2" diffgr:hasChanges="modified">
+      <EmpNo>7</EmpNo>
+      <Name>Manish</Name>
+      <Basic>111111</Basic>
+      <DeptNo>3</DeptNo>
+    </Emps>
+    <Deps diffgr:id="Deps1" msdata:rowOrder="0">
+      <DeptNo>1</DeptNo>
+      <DeptName>cs</DeptName>
+    </Deps>
+    <Deps diffgr:id="Deps2" msdata:rowOrder="1">
+      <DeptNo>2</DeptNo>
+      <DeptName>it</DeptName>
+    </Deps>
+    <Deps diffgr:id="Deps3" msdata:rowOrder="2">
+      <DeptNo>3</DeptNo>
+      <DeptName>hr</DeptName>
+    </Deps>
+  </NewDataSet>
+  <diffgr:before>
+    <Emps diffgr:id="Emps3" msdata:rowOrder="2">
+      <EmpNo>7</EmpNo>
+      <Name>Manish</Name>
+      <Basic>59999.00</Basic>
+      <DeptNo>3</DeptNo>
+    </Emps>
+  </diffgr:before>
+</diffgr:diffgram>
