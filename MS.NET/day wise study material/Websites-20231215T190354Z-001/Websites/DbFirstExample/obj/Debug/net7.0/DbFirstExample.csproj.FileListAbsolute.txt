@@ -251,3 +251,15 @@ D:\Trainings\ActsDec2023\Websites\DbFirstExample\bin\Debug\net7.0\ru\Microsoft.C
 D:\Trainings\ActsDec2023\Websites\DbFirstExample\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Trainings\ActsDec2023\Websites\DbFirstExample\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Trainings\ActsDec2023\Websites\DbFirstExample\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.dll
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\refint\DbFirstExample.dll
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.pdb
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.csproj.AssemblyReference.cache
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.AssemblyInfoInputs.cache
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.AssemblyInfo.cs
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.csproj.CoreCompileInputs.cache
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.MvcApplicationPartsAssemblyInfo.cache
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.RazorAssemblyInfo.cache
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.RazorAssemblyInfo.cs
+D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\DbFirstExample\obj\Debug\net7.0\DbFirstExample.sourcelink.json

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function changeString() {
+        var str = document.getElementById("str").innerHTML;
+        var op = document.getElementById("op");
+
+        //alert(op.selectedIndex);
+
+        var pos = op.selectedIndex;
+
+        var choice = op.options[pos].value;
+
+        //alert(choice);
+
+        //let result = "";
+
+        switch (choice) {
+          case "upper":
+            var result = str.toUpperCase();
+            break;
+
+          case "lower":
+            result = str.toLowerCase();
+            break;
+        }
+
+        //document.getElementById("res").innerText = "34343";
+        //document.getElementById("res").innerHTML = "34343";
+        document.getElementById("res").value = str.toString() + " ";
+        //document.getElementById("mydiv").innerText = result;
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      String : <input type="text" name="str" id="str" /><br />
+      result : <input type="text" name="res" id="res" /><br />
+
+      <!-- <div id="mydiv">result :</div> -->
+      Operations :
+      <select name="op" id="op">
+        <option value="lower">lower</option>
+        <option value="upper">upper</option>
+        <option value="slice">slice</option>
+        <option value="replace">replace</option>
+        <option value="length">length</option>
+      </select>
+
+      <button type="button" onclick="changeString()">submit</button>
+    </form>
+
+    <!-- <div id="mydiv"></div> -->
+  </body>
+</html>

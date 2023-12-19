@@ -56,11 +56,25 @@ namespace DbFirstExample.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+
+        /*  
+         // what we're doing
+
+        public IActionResult Create(Employee employee)
+
+
+         */
+
+        // Bind -> Bind all the properties we want in to the model
         public async Task<IActionResult> Create([Bind("EmpNo,Name,Basic,DeptNo")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(employee);
+                // code generated
+                //_context.Add(employee);
+
+                // prefered way
+                _contenxt.Employees.Add(employee);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -141,9 +155,9 @@ namespace DbFirstExample.Controllers
         }
 
         // POST: Employees/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Delete")] // if 2 or more methods have the same natio in that case , ActionName Annotaion is used
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int? id)
         {
             if (_context.Employees == null)
             {

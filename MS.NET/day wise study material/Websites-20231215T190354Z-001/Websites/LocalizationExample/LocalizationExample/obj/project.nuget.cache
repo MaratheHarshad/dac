@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "AI1/H9GVsIHFSlw4VlumbZNRIAKW1i9Dyxb0gRj13k83PPHsynnoRxFiXZ9t00rpHJmbrxI4Av24DDb25+MMCA==",
+  "success": true,
+  "projectFilePath": "D:\\Folders\\dac\\pg-dac\\dac\\MS.NET\\day wise study material\\Websites-20231215T190354Z-001\\Websites\\LocalizationExample\\LocalizationExample\\LocalizationExample.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
+  "logs": []
+}

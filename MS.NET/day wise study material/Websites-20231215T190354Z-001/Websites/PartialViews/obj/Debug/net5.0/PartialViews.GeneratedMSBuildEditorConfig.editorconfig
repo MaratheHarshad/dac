@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PartialViews
-build_property.ProjectDir = C:\Users\vikra\Desktop\ActsDec2023\ASPNETMVC\drive-download-20231215T054736Z-001\PartialViews\
+build_property.ProjectDir = D:\Folders\dac\pg-dac\dac\MS.NET\day wise study material\Websites-20231215T190354Z-001\Websites\PartialViews\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
