@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "QuONpS7W5UuHRcQ7OZCEgfWIwiTpQzqrzZgIU3UDcD0Nfkt2ulVKr2bEt9y87zFFQS4HnxmJKTlq1uIgDdGPUA==",
+  "success": true,
+  "projectFilePath": "D:\\Folders\\dac\\pg-dac\\dac\\MS.NET\\lab exam practice\\MinimalApi\\MinimalApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\8.0.0\\microsoft.dotnet.ilcompiler.8.0.0.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.0\\microsoft.net.illink.tasks.8.0.0.nupkg.sha512",
+    "C:\\Users\\harsh\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\8.0.0\\runtime.win-x64.microsoft.dotnet.ilcompiler.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

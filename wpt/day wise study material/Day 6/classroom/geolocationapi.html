@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function findLocation() {
+        // internet should be connected
+
+        if (navigator.geolocation) {
+          // if supported by browser
+          //   asynchronous function
+          // parallel function , non blocking function
+
+          navigator.geolocation.getCurrentPosition(showposition, showerr);
+          // if success -> execute showposition fun
+          // if error -> execute showerr fun
+        } else {
+          document.getElementById("mydiv").innerHTML =
+            "geolocation is not supported by browser";
+        }
+      }
+
+      function showposition(pos) {
+        document.getElementById("mydiv").innerHTML = "Lattitude : ";
+      }
+      function showerr() {
+        alert("err");
+      }
+    </script>
+  </head>
+  <body>
+    <button type="button" name="btn" id="btn" onclick="findLocation()">
+      Get Location
+    </button>
+    <div id="mydiv"></div>
+  </body>
+</html>

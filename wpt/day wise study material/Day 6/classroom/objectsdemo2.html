@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // constructor function
+
+      const Person = function (id, name, mobile) {
+        this.id = id;
+        this.name = name;
+        this.mobile = mobile;
+      };
+
+      const Employee = function (dept, desg) {
+        this.dept = dept;
+        this.desg = desg;
+      };
+
+      // person object
+      const p1 = new Person(12, "abc", 34343);
+      const e1 = new Employee("hr", "mgr");
+
+      // all the properties of p1 will be assigned into the person object p1
+      // p1 act as a parent of e1
+      e1.__proto__ = p1;
+
+      for (var p in e1) {
+        if (e1.hasOwnProperty(p)) {
+          console.log("Own property : " + p + " --> " + e1[p]);
+        } else {
+          console.log("Parent property : " + p + " --> " + e1[p]);
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

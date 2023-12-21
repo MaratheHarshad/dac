@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      class Person {
+        // JS Is Object Based Language not an OOP bcz,
+
+        // all properties are public in js
+        // access modifiers are not allowed
+        // interface, abstract, virtual is not available in js
+        // no type checking js
+
+        // in js to write the constructor
+        // constructor keyword/method is used
+
+        constructor(id, name, mobile) {
+          this.id = id;
+          this.name = name;
+          this.mobile = mobile;
+        }
+
+        display() {
+          //   console.log(
+          //     "id: " +
+          //       this.id +
+          //       " name : " +
+          //       this.name +
+          //       " Mobile: " +
+          //       this.mobile
+          //   );
+
+          // ` -> is called as template operator
+          console.log(
+            `id:${this.id} name :${this.name} Mobile: ${this.mobile}`
+          );
+        }
+      }
+
+      class Employee extends Person {
+        constructor(id, name, mobile, dept, desg) {
+          super(id, name, mobile);
+          this.dept = dept;
+          this.desg = desg;
+        }
+
+        display() {
+          // calls person's display function
+          super.display();
+          console.log(`Dept : ${this.dept} Designation : ${this.desg}`);
+        }
+      }
+
+      e1 = new Employee(1, "jatin", 10, "dev", "sde");
+
+      e1.display();
+
+      // adding new property after creating a object
+      e1.sal = 11111111;
+    </script>
+  </head>
+  <body></body>
+</html>

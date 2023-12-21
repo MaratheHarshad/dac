@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // JSON comes into picture for WEB SERVICES
+
+      // heterogeneous comunication between b2b - common language - JSON/XML/text
+
+      // why this is given name as JSON
+      // bcz it is string looking like JS object
+      // "{"id":1,"name":"aaaa","mobile":3333434}"
+
+      emp = { id: 1, name: "aaaa", mobile: 3333434 };
+
+      // converting the javascript object in JSON object
+      // JSON object is always a string
+
+      jsonob = JSON.stringify(emp);
+      alert(jsonob);
+
+      // now we can not retrive the property
+      // to access properties we have to convert it into the JS OBJECT
+
+      alert(JSON.parse(jsonob));
+    </script>
+  </body>
+</html>

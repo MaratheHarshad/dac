@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      emparr = [
+        { id: 1, name: "Rahul", mob: 333333 },
+        { id: 2, name: "Prashant", mob: 111111 },
+      ];
+
+      const displayTable = () => {
+        var str =
+          "<table ><tr><th>EmployeeId</th><th>Name</th><th>Mobile</th></tr>";
+
+        for (var e of emparr) {
+          str += `<tr><td>${e.id}</td><td>${e.name}</td><td>${e.mob}</td></tr><br />`;
+        }
+
+        str += "</table>";
+
+        document.getElementById("mydiv").innerHTML = str;
+      };
+
+      const addEmployee = () => {};
+    </script>
+  </head>
+  <body onload="displayTable()">
+    <form>
+      Employee id : <input type="text" name="id" id="id" /><br />
+      Employee Name: <input type="text" name="name" id="name" /><br />
+      Employee Mob: <input type="text" name="mobile" id="mobile" /><br />
+      <button type="submit" onclick="addEmployee()">Add</button>
+    </form>
+
+    <div id="mydiv"></div>
+  </body>
+</html>

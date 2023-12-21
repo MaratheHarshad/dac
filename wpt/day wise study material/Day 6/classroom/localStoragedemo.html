@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      function getcount() {
+        // to check whether storage API is supported or not
+        if (typeof Storage !== undefined) {
+          if (localStorage.count !== undefined) {
+            // localStorage.count = parseInt(localStorage.count) + 1;
+
+            // using getter
+
+            localStorage.count = parseInt(localStorage.count) + 1;
+          } else {
+            localStorage.count = 1;
+          }
+
+          alert(localStorage.count);
+        } else {
+          alert("not supported");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button type="button" id="btn" onclick="getcount()">click me</button>
+  </body>
+</html>

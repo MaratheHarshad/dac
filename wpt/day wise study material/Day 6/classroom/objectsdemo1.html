@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // Object in Js
+      // to store the multiple properties inside single variable
+      // objects are dynamic in js, we can insert the properties in js
+
+      var emp = { empid: 2, enmae: "kishori", dept: "dev" };
+      console.log(emp.empid);
+      //   alert(emp); [object object] // because internally it stores the objects differently
+
+      // it is possible to have functions as property in object
+      emp.display = () => {};
+
+      // Another way of declaring object is constructor function
+      const Employee = function (id, name, dept) {
+        this.id = id;
+        this.name = name;
+        this.dept = dept;
+      };
+
+      empObj = new Employee(4, "Harshad", "dev");
+
+      console.log(empObj);
+      // how to access the properties of object
+      // object loop
+      for (var property in empObj) {
+        // Accessing the property value using property name as 'string' literal
+        // empObj[property]
+        console.log(property + "-----> " + empObj[property]);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,13 @@
+Database Name : EmployeesDatabaseLabExam
+
+Table Structure :
+
+
+CREATE TABLE [dbo].[Employees]
+(
+    [EmployeeId] INT NOT NULL PRIMARY KEY IDENTITY (1,1), 
+    [EmployeeName] VARCHAR(50) NOT NULL, 
+    [EmployeeCity] VARCHAR(50) NOT NULL, 
+    [EmployeeAddress] VARCHAR(500) NOT NULL,
+
+)
