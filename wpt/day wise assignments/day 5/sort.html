@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <title>Sorting</title>
+
+  <script>
+    let arr = [4, 2, 6, 2, 6, 37, 194, 2];
+
+    console.log("Array Original : " + arr);
+    arr.sort(); // by default sort according to the first character in ascending order
+    console.log("Array after default sorting : " + arr);
+
+    arr.sort((a, b) => a - b); // sort in ascending order
+    console.log("Array using compare fn (ascending) : " + arr);
+
+    arr.sort((a, b) => b - a);
+    console.log("Array using compare fn (descending) : " + arr);
+
+    let fruits = ["Banana", "Mango", "Alpine", "Apple"];
+
+    // console.log("fruits array Original : " + fruits);
+    // fruits.sort();
+    // console.log("fruits array after default sorting : " + fruits);
+
+    // alert();
+    fruits.sort((a, b) => a - b); // sort in ascending order
+    console.log("fruits Array using compare fn (ascending) : " + fruits);
+
+    fruits.sort((a, b) => {
+      for (let i = 0; i < Math.min(a.length, b.length); i++) {
+        if (a.charCodeAt(i) != b.charCodeAt(i)) {
+          return b.charCodeAt(i) - a.charCodeAt(i);
+        }
+      }
+
+      return a.length < b.length ? 1 : -1;
+    }); // sort in descending order
+
+    console.log("fruits Array using compare fn (descending) : " + fruits);
+
+    const emp = { id: 1, name: "harshad" };
+
+    //    emp.sort();
+
+    console.log(emp);
+  </script>
+</head>
+<body></body>
