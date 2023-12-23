@@ -83,10 +83,9 @@ function combination(n, r) {
     return f;
   }
 
-  var ans = nf / nrf;
+  return nf / nrf;
 }
-
-combination();
+console.log(combination());
 
 // self calling function
 // gets executed only once

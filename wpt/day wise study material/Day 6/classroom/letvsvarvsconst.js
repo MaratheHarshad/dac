@@ -39,7 +39,7 @@ f1();
 // variable hoisting is possible in var
 // hoisting is not possible in let
 
-//var p;
+// var p;
 console.log("variable without declaration", p);
 var p = 23;
 

@@ -15,7 +15,16 @@
       //   alert(emp); [object object] // because internally it stores the objects differently
 
       // it is possible to have functions as property in object
-      emp.display = () => {};
+      emp.display = () => {
+        for (var property in emp) {
+          // Accessing the property value using property name as 'string' literal
+          // empObj[property]
+
+          console.log(property + "-----> " + emp[property]);
+        }
+      };
+
+      //emp.display();
 
       // Another way of declaring object is constructor function
       const Employee = function (id, name, dept) {

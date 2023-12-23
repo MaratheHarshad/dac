@@ -38,9 +38,15 @@
 
     console.log("fruits Array using compare fn (descending) : " + fruits);
 
-    const emp = { id: 1, name: "harshad" };
+    const emp = [
+      { id: 2, name: "nikhil" },
+      { id: 1, name: "harshad" },
+      { id: 4, name: "manish" },
+      { id: 3, name: "prashant" },
+    ];
 
-    //    emp.sort();
+    //emp.sort();
+    emp.sort((a, b) => a.id - b.id);
 
     console.log(emp);
   </script>

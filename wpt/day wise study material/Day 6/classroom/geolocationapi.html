@@ -24,7 +24,12 @@
       }
 
       function showposition(pos) {
-        document.getElementById("mydiv").innerHTML = "Lattitude : ";
+        console.log(pos);
+        document.getElementById("mydiv").innerHTML =
+          "Lattitude : " +
+          pos.coords.latitude +
+          ", Longitude: " +
+          pos.coords.longitude;
       }
       function showerr() {
         alert("err");

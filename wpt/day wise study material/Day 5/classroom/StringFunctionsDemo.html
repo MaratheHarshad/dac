@@ -7,7 +7,7 @@
 
     <script>
       function changeString() {
-        var str = document.getElementById("str").innerHTML;
+        var str = document.getElementById("str").value;
         var op = document.getElementById("op");
 
         //alert(op.selectedIndex);
@@ -32,8 +32,8 @@
 
         //document.getElementById("res").innerText = "34343";
         //document.getElementById("res").innerHTML = "34343";
-        document.getElementById("res").value = str.toString() + " ";
-        //document.getElementById("mydiv").innerText = result;
+        document.getElementById("res").value = result;
+        document.getElementById("mydiv").innerText = result;
       }
     </script>
   </head>
@@ -55,6 +55,6 @@
       <button type="button" onclick="changeString()">submit</button>
     </form>
 
-    <!-- <div id="mydiv"></div> -->
+    <div id="mydiv"></div>
   </body>
 </html>
