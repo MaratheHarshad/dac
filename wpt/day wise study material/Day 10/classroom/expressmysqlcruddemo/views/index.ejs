@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <header>
+      <h1>Product Management System</h1>
+
+      <form action="displayaddform">
+        <button type="submit" name="btn" id="btn" value="add">
+          add product
+        </button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Product id</th>
+            <th>Product Name</th>
+            <th>Product qty</th>
+            <th>Product price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for(let i = 0; i < prodData.length; i++){ %>
+          <tr>
+            <td><%= prodData[i].id %></td>
+            <td><%= prodData[i].name %></td>
+            <td><%= prodData[i].qty %></td>
+            <td><%= prodData[i].price %></td>
+            <td>
+              <a href="delete/<%= prodData[i].id %>">delete</a>
+              |
+              <a href="edit/<%= prodData[i].id %>">edit</a>
+            </td>
+          </tr>
+          <%} %>
+        </tbody>
+      </table>
+    </header>
+  </body>
+</html>

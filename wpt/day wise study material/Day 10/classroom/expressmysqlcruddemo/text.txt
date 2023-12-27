@@ -1,0 +1,7 @@
+
+folder structure
+
+db -> db connectivity stuff
+public -> static files, like -> css, js may be for client side JS
+routes -> all the route handling logic
+views -> view for the application

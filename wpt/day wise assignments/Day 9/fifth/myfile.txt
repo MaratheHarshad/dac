@@ -1,0 +1,3 @@
+myfile line 1
+myfile line 2
+myfile line 3

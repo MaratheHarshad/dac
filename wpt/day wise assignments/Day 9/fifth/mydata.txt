@@ -1,0 +1,3 @@
+mydata    line 1
+mydata line 2
+mydata line 3
