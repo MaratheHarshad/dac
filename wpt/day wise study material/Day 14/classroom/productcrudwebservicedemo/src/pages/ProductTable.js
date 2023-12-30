@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductService from "../service/ProductService";
 
 import { Link, Outlet } from "react-router-dom";
+import { type } from "@testing-library/user-event/dist/type";
 
 export default function ProductTable() {
   // create a array as state
@@ -9,6 +10,10 @@ export default function ProductTable() {
   const [prodarr, setprodarr] = useState([]);
   const [searcharr, setsearcharr] = useState([]);
   const [searchtxt, setsearchtxt] = useState([]);
+
+  // state for filter type, initially set filter by pname
+
+  const [filtertype, setfiltertype] = useState("pname");
 
   // this is equivalent to componentDidMount
 
@@ -33,7 +38,12 @@ export default function ProductTable() {
       setsearcharr([...prodarr]);
     } else {
       // find all product which has searchtext in the product pname
-      let newarr = prodarr.filter((p) => p.pname.includes(searchtxt));
+      // let newarr = prodarr.filter((p) => p.pname.includes(searchtxt));
+
+      // convert filtertype to string , in case filter type is pid (Number)
+      let newarr = prodarr.filter((p) =>
+        String(p[filtertype]).includes(searchtxt)
+      );
 
       // at time of componentMount the length of prodarr is empty, i.e it sets searcharr as empty as well
       // so check (for first time when in prodarr the data is not filled )
@@ -64,6 +74,34 @@ export default function ProductTable() {
     setsearcharr([...arr]);
   };
 
+  // method to select the filtering criterial
+
+  const handleselect = (event) => {
+    // gives the selected index from the select list
+    const { selectedIndex } = event.target;
+
+    console.log(selectedIndex);
+
+    // if selected index != 0 (means not an placeholder type option)
+
+    if (selectedIndex !== 0) {
+      // find by which type we have to apply the filter
+      // event.target[selectedIndex].value -> returns an type prefixes with search-[type]
+      console.log(event.target[selectedIndex].value);
+
+      // separate the prefix-type
+      // Array destructuring
+      const [prefix, type] = event.target[selectedIndex].value.split("-");
+
+      // apply the filter criteria on type now , in short set(update) the filter type
+
+      setfiltertype(type);
+    } else {
+      // if filter type is not selected then select it by "pname"
+      setfiltertype("pname");
+    }
+  };
+
   return (
     <div>
       {/* use Link compoenent if you want to change the link after clicking the button */}
@@ -80,6 +118,18 @@ export default function ProductTable() {
         onChange={handlechange}
         value={searchtxt}
       />
+
+      <select
+        name="searchby"
+        id="searchby"
+        className="ml-1"
+        onChange={handleselect}
+      >
+        <option value="">select filter</option>
+        <option value="search-pid">pid</option>
+        <option value="search-pname">pname</option>
+      </select>
+
       <table className="table table-scripted">
         <thead>
           <tr>
