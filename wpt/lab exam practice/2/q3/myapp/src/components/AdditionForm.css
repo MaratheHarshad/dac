@@ -1,0 +1,11 @@
+#addition-form {
+  display: flex;
+  justify-content: center;
+  /* width: max-content; */
+}
+
+#table {
+  border: 5px solid;
+  padding: 15px;
+  /* width: max-content; */
+}

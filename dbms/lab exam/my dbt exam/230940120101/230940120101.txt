@@ -1,0 +1,567 @@
+mysql> create database org;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use org;
+Database changed
+
+mysql> create table dept
+    -> (
+    -> deptno int primary key,
+    -> dname varchar(255),
+    -> loc varchar(255)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+
+mysql> insert into dept values(10, "ACCOUNTING", "NEW YORK");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into dept values(20, "RESEARCH", "DALLAS");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into dept values(30, "SALES", "CHICAGO");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into dept values(40, "OPERATIONS", "BOSTON");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from dept;
++--------+------------+----------+
+| deptno | dname      | loc      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+4 rows in set (0.00 sec)
+
+
+create table emp
+    -> (
+    -> empno int primary key,
+    -> ename varchar(255),
+    -> job varchar(255),
+    -> mgr int,
+    -> hiredate date,
+    -> sal int,
+    -> comm int,
+    -> deptno int
+    -> );
+
+
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| empno    | int          | NO   | PRI | NULL    |       |
+| ename    | varchar(255) | YES  |     | NULL    |       |
+| job      | varchar(255) | YES  |     | NULL    |       |
+| mgr      | int          | YES  |     | NULL    |       |
+| hiredate | date         | YES  |     | NULL    |       |
+| sal      | int          | YES  |     | NULL    |       |
+| comm     | int          | YES  |     | NULL    |       |
+| deptno   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+
+
+mysql> alter table emp add constraint foreign key(deptno) references dept(deptno);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+
+
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| empno    | int          | NO   | PRI | NULL    |       |
+| ename    | varchar(255) | YES  |     | NULL    |       |
+| job      | varchar(255) | YES  |     | NULL    |       |
+| mgr      | int          | YES  |     | NULL    |       |
+| hiredate | date         | YES  |     | NULL    |       |
+| sal      | int          | YES  |     | NULL    |       |
+| comm     | int          | YES  |     | NULL    |       |
+| deptno   | int          | YES  | MUL | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+
+-- insert records in emp table
+
+
+insert into emp values (7839, "KING", "PRESIDENT" , null, "1981-11-17", 5000, null, 10);
+insert into emp values (7698, "BLAKE","MANAGER" , 7839, "1981-5-1", 2850, null, 30);
+insert into emp values (7782, "CLARK", "MANAGER" , 7839, "1981-6-9", 2450, null, 10);
+insert into emp values (7566, "JONES", "MANAGER" , 7839, "1981-4-2", 2975, null, 20);
+insert into emp values (7788, "SCOTT", "ANALYST" , 7566, "1887-7-13", 3000, null, 20);
+insert into emp values (7902, "FORD", "ANALYST" , 7566, "1981-12-3", 3000, null, 20);
+insert into emp values (7369, "SMITH", "CLERK" , 7902, "1980-12-17", 800, null, 20);
+insert into emp values (7499, "ALLEN", "SALESMAN" , 7698, "1981-2-20", 1600, 300, 30);
+insert into emp values (7521, "WARD", "SALESMAN" , 7698, "1984-2-22", 1250, 500, 30);
+insert into emp values (7654, "MARTIN", "SALESMAN" , 7698, "1982-9-28", 1250, 1400, 30);
+insert into emp values (7844, "TURNER", "SALESMAN" , 7698, "1981-9-8", 1500, 0, 30);
+insert into emp values (7876, "ADAMS", "CLERK" , 7788, "1983-7-17", 1100, null, 20);
+insert into emp values (7900, "JAMES", "CLERK" , 7698, "1981-12-3", 950, null, 30);
+insert into emp values (7934, "MILLER", "CLERK" , 7782, "1982-1-23", 1300, null, 10);
+
+
+mysql> select * from emp;
++-------+--------+-----------+------+------------+------+------+--------+
+| empno | ename  | job       | mgr  | hiredate   | sal  | comm | deptno |
++-------+--------+-----------+------+------------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1984-02-22 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1982-09-28 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1887-07-13 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-07-17 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300 | NULL |     10 |
++-------+--------+-----------+------+------------+------+------+--------+
+
+-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Q.1
+
+i)
+->
+
+select e.empno, e.ename, d.loc, d.dname from emp e left join dept d using (deptno) where e.sal > 2975;
+
+
+mysql> select e.empno, e.ename, d.loc, d.dname from emp e left join dept d using (deptno) where e.sal > 2975;
++-------+-------+----------+------------+
+| empno | ename | loc      | dname      |
++-------+-------+----------+------------+
+|  7788 | SCOTT | DALLAS   | RESEARCH   |
+|  7839 | KING  | NEW YORK | ACCOUNTING |
+|  7902 | FORD  | DALLAS   | RESEARCH   |
++-------+-------+----------+------------+
+3 rows in set (0.00 sec)
+
+
+
+
+ii)
+
+->
+
+SELECT e.empno, e.ename, d.dname, e.sal, d.deptno FROM emp e LEFT JOIN dept d USING (deptno) HAVING d.dname = 'RESEARCH';
+
+
+mysql> SELECT e.empno, e.ename, d.dname, e.sal, d.deptno FROM emp e LEFT JOIN dept d USING (deptno) HAVING d.dname = 'RESEARCH';
++-------+-------+----------+------+--------+
+| empno | ename | dname    | sal  | deptno |
++-------+-------+----------+------+--------+
+|  7369 | SMITH | RESEARCH |  800 |     20 |
+|  7566 | JONES | RESEARCH | 2975 |     20 |
+|  7788 | SCOTT | RESEARCH | 3000 |     20 |
+|  7876 | ADAMS | RESEARCH | 1100 |     20 |
+|  7902 | FORD  | RESEARCH | 3000 |     20 |
++-------+-------+----------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+iii)
+
+->
+
+SELECT e.* FROM emp e LEFT JOIN dept d USING (deptno) where d.dname = 'ACCOUNTING';
+
+
+mysql> SELECT e.* FROM emp e LEFT JOIN dept d USING (deptno) where d.dname = 'ACCOUNTING';
++-------+--------+-----------+------+------------+------+------+--------+
+| empno | ename  | job       | mgr  | hiredate   | sal  | comm | deptno |
++-------+--------+-----------+------+------------+------+------+--------+
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450 | NULL |     10 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300 | NULL |     10 |
++-------+--------+-----------+------+------------+------+------+--------+
+3 rows in set (0.00 sec)
+
+
+
+iv)
+
+->
+
+
+SELECT UPPER(e.ename) as Name, LOWER(d.dname) as DeptName, LENGTH(e.ename) as NameLength FROM emp e LEFT JOIN dept d USING (deptno);
+
+
+mysql> SELECT UPPER(e.ename) as Name, LOWER(d.dname) as DeptName, LENGTH(e.ename) as NameLength FROM emp e LEFT JOIN dept d USING (deptno);
++--------+------------+------------+
+| Name   | DeptName   | NameLength |
++--------+------------+------------+
+| SMITH  | research   |          5 |
+| ALLEN  | sales      |          5 |
+| WARD   | sales      |          4 |
+| JONES  | research   |          5 |
+| MARTIN | sales      |          6 |
+| BLAKE  | sales      |          5 |
+| CLARK  | accounting |          5 |
+| SCOTT  | research   |          5 |
+| KING   | accounting |          4 |
+| TURNER | sales      |          6 |
+| ADAMS  | research   |          5 |
+| JAMES  | sales      |          5 |
+| FORD   | research   |          4 |
+| MILLER | accounting |          6 |
++--------+------------+------------+
+14 rows in set (0.00 sec)
+
+
+
+
+
+
+v)
+
+->
+
+SELECT empno, ename , If(job = 'MANAGER' , 'BOSS', job) AS job, mgr , hiredate, sal, comm, deptno FROM emp;
+
+
+
+mysql> SELECT empno, ename , If(job = 'MANAGER' , 'BOSS', job) AS job, mgr , hiredate, sal, comm, deptno FROM emp;
++-------+--------+-----------+------+------------+------+------+--------+
+| empno | ename  | job       | mgr  | hiredate   | sal  | comm | deptno |
++-------+--------+-----------+------+------------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1984-02-22 | 1250 |  500 |     30 |
+|  7566 | JONES  | BOSS      | 7839 | 1981-04-02 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1982-09-28 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | BOSS      | 7839 | 1981-05-01 | 2850 | NULL |     30 |
+|  7782 | CLARK  | BOSS      | 7839 | 1981-06-09 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1887-07-13 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-07-17 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300 | NULL |     10 |
++-------+--------+-----------+------+------------+------+------+--------+
+14 rows in set (0.00 sec)
+
+
+
+
+
+
+
+-- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Q2)
+
+i) 
+
+->
+
+SELECT e.ename, d.loc, d.dname FROM emp e LEFT JOIN dept d USING (deptno);
+
+
+mysql> SELECT e.ename, d.loc, d.dname FROM emp e LEFT JOIN dept d USING (deptno);
++--------+----------+------------+
+| ename  | loc      | dname      |
++--------+----------+------------+
+| SMITH  | DALLAS   | RESEARCH   |
+| ALLEN  | CHICAGO  | SALES      |
+| WARD   | CHICAGO  | SALES      |
+| JONES  | DALLAS   | RESEARCH   |
+| MARTIN | CHICAGO  | SALES      |
+| BLAKE  | CHICAGO  | SALES      |
+| CLARK  | NEW YORK | ACCOUNTING |
+| SCOTT  | DALLAS   | RESEARCH   |
+| KING   | NEW YORK | ACCOUNTING |
+| TURNER | CHICAGO  | SALES      |
+| ADAMS  | DALLAS   | RESEARCH   |
+| JAMES  | CHICAGO  | SALES      |
+| FORD   | DALLAS   | RESEARCH   |
+| MILLER | NEW YORK | ACCOUNTING |
++--------+----------+------------+
+14 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+ii) 
+
+->
+
+
+SELECT job, SUM(sal) as total_salary FROM emp GROUP BY job;
+
+
+
+mysql> SELECT job, SUM(sal) as total_salary FROM emp GROUP BY job;
++-----------+--------------+
+| job       | total_salary |
++-----------+--------------+
+| CLERK     |         4150 |
+| SALESMAN  |         5600 |
+| MANAGER   |         8275 |
+| ANALYST   |         6000 |
+| PRESIDENT |         5000 |
++-----------+--------------+
+5 rows in set (0.00 sec)
+
+
+
+
+
+
+
+iii) 
+
+->
+
+
+
+SELECT deptno, dname FROM dept WHERE deptno in (SELECT deptno  as emp_count FROM emp group by deptno having COUNT(*) > 3) ;
+
+
+mysql> SELECT deptno, dname FROM dept WHERE deptno in (SELECT deptno  as emp_count FROM emp group by deptno having COUNT(*) > 3) ;
++--------+----------+
+| deptno | dname    |
++--------+----------+
+|     20 | RESEARCH |
+|     30 | SALES    |
++--------+----------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+iv)
+
+->
+
+
+SELECT * FROM emp WHERE empno NOT IN (SELECT mgr FROM emp);
+
+
+
+
+
+
+
+-- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Q3
+
+->
+
+DROP FUNCTION IF EXISTS fullName;
+
+DELIMITER &&
+
+    CREATE FUNCTION fullName(eno int)
+    RETURNS VARCHAR(255)
+    DETERMINISTIC
+ 
+    BEGIN
+
+	DECLARE name VARCHAR(255);
+
+                  SELECT CONCAT(ename, " ") INTO name FROM emp WHERE empno = eno;
+
+ 	RETURN (name);
+
+    END &&
+	
+  
+DELIMITER ;
+
+
+
+
+
+
+-- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Q4
+
+->
+
+
+DROP TRIGGER IF EXISTS AFTER_UPDATE_EMP_SALARY;
+
+
+CREATE TABLE sal_update(
+
+prev_sal INT,
+new_sal INT
+);
+
+
+DELIMITER &&
+
+CREATE TRIGGER AFTER_UPDATE_EMP_SALARY
+AFTER UPDATE ON emp for each row
+
+BEGIN 
+	  INSERT INTO sal_update values ((old.sal) , (new.sal) );
+    
+END &&
+
+
+DELIMITER ;
+
+
+
+
+
+-- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+Q5
+
+
+->
+
+
+use SAMPLE_DB;
+
+db.createCollection("mycol");
+
+db.mycol.insert([
+
+{
+title : "MongoDB Overview", description : "MongoDB is no SQL database", by : "tutorials point", url : "http://www.tutorialspoint.com", tags : ["mongodb", "database", "NoSQL"], likes : 100 
+
+},
+
+{
+title : "NoSQL Database", description : "NoSQL database doesn't have tables", by: "tutorials point", url : "http://www.tutorialspoint.com", tags:
+["mongodb", "database", "NoSQL"], likes : 20,
+comments : [ 
+{
+user : "user1",
+message : "My first comment",
+dataCreated : new Date(2013,11,10,2,35),
+like : 0
+
+
+}
+]
+}
+
+
+])
+
+
+
+
+
+
+
+1) ->
+
+db.mycol.updateOne({"comments.user" : "user1"}, { $set : { url : "www.google.com"}})
+
+
+
+
+
+sample_db> db.mycol.updateOne({"comments.user" : "user1"}, { $set : { url : "www.google.com"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+sample_db> db.mycol.find().pretty();
+[
+  {
+    _id: ObjectId('6592aecd4b4a6931b81494e8'),
+    title: 'MongoDB Overview',
+    description: 'MongoDB is no SQL database',
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  },
+  {
+    _id: ObjectId('6592aecd4b4a6931b81494e9'),
+    title: 'NoSQL Database',
+    description: "NoSQL database doesn't have tables",
+    by: 'tutorials point',
+    url: 'www.google.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 20,
+    comments: [
+      {
+        user: 'user1',
+        message: 'My first comment',
+        dataCreated: ISODate('2013-12-09T21:05:00.000Z'),
+        like: 0
+      }
+    ]
+  }
+]
+
+
+
+
+
+
+
+
+
+2) ->
+
+
+db.mycol.find({ likes : { $gt : 20}}).pretty()
+
+
+
+
+sample_db> db.mycol.find({ likes : { $gt : 20}}).pretty()
+[
+  {
+    _id: ObjectId('6592aecd4b4a6931b81494e8'),
+    title: 'MongoDB Overview',
+    description: 'MongoDB is no SQL database',
+    by: 'tutorials point',
+    url: 'http://www.tutorialspoint.com',
+    tags: [ 'mongodb', 'database', 'NoSQL' ],
+    likes: 100
+  }
+]
+sample_db>

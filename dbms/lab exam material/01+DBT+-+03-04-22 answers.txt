@@ -1,0 +1,324 @@
+1 SOLVE THE BELOW QUESTIONS EACH QUESTION OF 2 MARKS
+
+i. WRITE AN SQL QUERY TO FETCH FULLNAME , SALARY , JOINING_DATE AND DEPARTMENT FROM
+WORKER TABLE.
+
+
+
+
+
+ii.WRITE AN SQL QUERY TO FETCH ID , FULLNAME , SALARY AND DEPARTMENT WHOSE DEPARTMENT
+IS HR OR ADMIN
+
+
+
+
+
+
+iii.WRITE AN SQL QUERY TO FETCH ID , FULLNAME , SALARY WHOSE FIRST_NAME ENDS WITH 'a'
+
+
+->
+
+select WORKER_ID, CONCAT(FIRST_NAME, ' ', LAST_NAME) AS FULL_NAME, SALARY from worker where FIRST_NAME like "%a";
+
+
+iv. WRITE AN SQL QUERY TO FEACH ALL RECORDS OF WORKER TABLE WHO HAVE JOIN IN FEB 2020
+
+
+
+
+V. WRITE AN SQL QUERY TO FEACH ALL RECORDS OF WORKER TABLE WHO HAVE SALARY >=50000
+AND <=100000.
+
+->
+select * from worker where SALARY between 50000 and 10
+0000;
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+2 SOLVE THE BELOW QUESTIONS EACH QUESTION OF 3 MARKS
+
+i. WRITE AN SQL QUERY TO DISPLAY NUMBER OF WORKER IN EACH DEPARTMENT ALONG WITH
+UNIQUE DEPARTMENT NAME
+
+->
+
+select DEPARTMENT,count(*) from worker group by DEPARTMENT;
+
+
+ii.WRITE AN SQL QUERY TO DISPLAY DEPARTMENT NAME AND TOTAL BONUS AMOUNT TO BE PAID IN
+EACH DEPARTMENT
+
+->
+
+select DEPARTMENT , sum(BONUS_AMOUNT) as TOTAL_BONUS from (select w.WORKER_ID, w.DEPARTMENT, b.BONUS_AMOUNT from worker w right join bonus b on w.WORKER_ID = b.WORKER_REF_ID) as T group by DEPARTMENT;
+
+
+
+
+iii.WRITE AN SQL QUERY TO DISPALY THE FULLNAME , SALARY , TOTAL YEARS OF EXPERIANCE OF
+EACH WORKER
+
+->
+
+select concat(FIRST_NAME, ' ', LAST_NAME) as FULLNAME, SALARY, (year(now())- year((JOINING_DATE))) as YOE from worker;
+
+
+
+
+
+
+iv.WRITE AN SQL QUERY TO DISPALY THE DETAILS OF THE WORKER WHO IS MANAGER
+
+->
+
+select w.* from worker as w left join title as t on w.WORKER_ID = t.WORKER_REF_ID where t.WORKER_TITLE = 'Manager';
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+3 SOLVE THE BELOW QUESTIONS EACH QUESTION OF 4 MARKS
+
+
+
+
+
+
+
+i. CREATE SAMPLE_DB IN MONGO DATABASE
+-CREATE COLLECTION IN SIMPLE_DB AS MY_COL
+INSERT THE BELOW DATA
+db.mycol.insert([
+{
+title: "MongoDB Overview",
+description: "MongoDB is no SQL database",
+by: "tutorials point",
+url: "http://www.tutorialspoint.com",
+tags: ["mongodb", "database", "NoSQL"],
+likes: 100
+},
+{
+title: "NoSQL Database",
+description: "NoSQL database doesn't have tables",
+by: "tutorials point",
+url: "http://www.tutorialspoint.com",
+tags: ["mongodb", "database", "NoSQL"],
+likes: 20,
+comments: [
+{
+user:"user1",
+message: "My first comment",
+dateCreated: new Date(2013,11,10,2,35),
+like: 0
+}
+]
+}
+])
+
+
+1.SHOW THE DOCUMENTS THAT HAS LIKES GREATER THAN 10
+
+
+->  
+
+db.mycol.find({ likes : { $gt : 10}},{}).pretty()
+
+
+2.SHOW THE DOCUMENTS THAT HAS USER NAME AS ‘user1’
+
+->
+
+db.mycol.find({ comments : { $elemMatch :  { user : "user1" }}}).pretty()
+
+
+
+
+
+
+
+ii. CREATE A FUNCTION IN MYSQL THAT WILL ACCEPT THE ONE INPUT PARAMETER AS WORKER ID
+AND BASED ON THE ID
+RETURN THE TOTAL SALARY IN EACH DEPARTMENTS
+
+->
+
+DELIMITER &&
+CREATE FUNCTION GetTotalSalaryByDepartment(workerId INT)
+RETURNS VARCHAR(255)
+DETERMINISTIC
+BEGIN
+    DECLARE result VARCHAR(255);
+    DECLARE DEP VARCHAR(255);
+
+    SELECT DEPARTMENT into DEP from worker where WORKER_ID = workerId;
+    
+    SELECT CONCAT('Department: ', DEPARTMENT, ', Total Salary: ', SUM(SALARY))
+    INTO result
+    FROM worker
+    WHERE DEPARTMENT = DEP
+    GROUP BY DEPARTMENT;
+    
+    RETURN result;
+END &&
+DELIMITER ;
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+4 CREATE A CURSOR IN MYSQL, BY USING THE CURSOR RETURN THE COMMA SEPRATED LIST OF
+WORKER NAMES 5 MARKS
+eg. Monika , Vishal , Satish , Vipul ......
+
+
+
+->
+
+DELIMITER &&
+
+CREATE PROCEDURE TotalSalary()
+BEGIN
+	
+	-- declare variables
+	DECLARE flag INT DEFAULT 0;
+	
+	DECLARE workerName VARCHAR(255);	
+
+	-- declare cursor
+	
+	DECLARE mycursor CURSOR FOR SELECT FIRST_NAME FROM worker;
+
+	-- declare continue handler
+
+	DECLARE CONTINUE HANDLER FOR NOT FOUND SET flag = 1;
+
+	-- open cursor
+	
+	OPEN mycursor;
+
+	-- set empty string
+
+	SET @workerNames = "";
+
+	-- loop the cursor
+
+	
+
+	-- Loop to fetch and concatenate worker names
+   	label:loop
+		
+	  FETCH mycursor INTO workerName;
+	 
+          IF flag = 1 THEN
+		LEAVE label;
+	  END IF;
+	 
+	  
+	  SET @workerNames = CONCAT(@workerNames, ", ", workerName);
+ 	
+	END loop;
+
+
+
+
+
+	-- close cursor
+
+	CLOSE mycursor;
+
+
+	-- remove first , and " " from result
+	
+	SET @workerNames = SUBSTRING(@workerNames, 3);
+	
+	
+
+	-- print result
+
+	SELECT @workerNames as Names;
+
+END &&
+DELIMITER ;
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+5) 
+
+CREATE A AFTER INSERT TRIGGER IN MYSQL .. 5 MARKS
+CREATE AN EMP_DETAILS TABLES AS FOLLOWS
+ID , FIRST_NAME , LAST_NAME , DEPARTMENT_ID ,SALARY
+WHEN AN INSERT HAPPEN INTO THE EMP_DETAILS TABLE INSERT THE FIRST_NAME , LAST_NAME
+AND SALARY INTO THE
+EMP_LOG_DETAILS TABLE
+
+
+-> 
+
+create table EMP_DETAILS 
+(
+ID int,
+FIRST_NAME varchar(255),
+LAST_NAME varchar(255),
+DEPARTMENT_ID int,
+SALARY float
+);
+
+
+create table EMP_LOG_DETAILS 
+(
+	FIRST_NAME varchar(255),
+	LAST_NAME varchar(255),	
+	SALARY float
+);
+
+
+
+-- creating trigger
+
+delimiter &&
+
+create trigger AFTER_INSERT_EMP_DETAILS
+after insert on EMP_DETAILS for each row
+begin
+
+
+
+insert into EMP_LOG_DETAILS values (new.FIRST_NAME, new.LAST_NAME, new.SALARY);
+
+end &&
+
+delimiter ;
+
+
+
+
+
+
+
+

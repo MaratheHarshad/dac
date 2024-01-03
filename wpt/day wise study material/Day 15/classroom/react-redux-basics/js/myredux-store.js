@@ -32,22 +32,23 @@ const cancel_booking = (id, name, amt) => {
 // write reducers (reducer functios for every state propert)
 
 // this reducers manages reservation list
-const managereservation = (olderreservation = [], action) => {
+const managereservation = (oldreservation = [], action) => {
+  console.log(action.type);
   console.log("in managereservation reducer");
   switch (action.type) {
     case "newbooking":
       // add new object
-      return [...olderreservation, { ...action.payload }];
+      return [...oldreservation, { ...action.payload }];
 
     case "cancelbooking":
       // delet the given object
-      return olderreservation.filter(
+      return oldreservation.filter(
         (ob) => ob.id !== parseInt(action.payload.id)
       );
 
     default:
       // keep the state as it is
-      return olderreservation;
+      return oldreservation;
   }
 };
 
@@ -78,9 +79,12 @@ const manageamount = (amount = 3000, action) => {
   }
 };
 
-// create store
+// createStore and combinerReducers are essential functions use to set up and manage the Redux store.
 
-// create store is a funciton in which we're storing the createStore funciton  and combineReducers function from Redux
+// createStore is a part of Redux library which holds the complete state tree of application
+
+// In larger applications, you might have multiple slices of the state managed by different reducer functions. combineReducers is used to combine these reducer functions into a single reducer that can be passed to createStore
+
 const { createStore, combineReducers } = Redux;
 
 // to generate this as a state object -> combineReducers
@@ -93,7 +97,18 @@ const ticketbooking = combineReducers({
 // use store
 
 const store = createStore(ticketbooking);
-// use store bycreation and dispatching action
+// use store by creating and dispatching action
 const action = new_booking(12, "Mugdha", 300);
 // dispatch the action to the store
 store.dispatch(action);
+
+console.log(store.getState());
+
+// create action to cancel booking
+
+const cancelAction = cancel_booking(12, "Mugdha", 200);
+
+// dispatch is a special type of function provided by store, which updates the state
+store.dispatch(cancelAction);
+
+console.log(store.getState());

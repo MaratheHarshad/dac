@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seminar Registration form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="seminar-form">
+      <h1>Seminar Registration form</h1>
+
+      <!-- table tag for form -->
+
+      <form id="myform">
+        <table>
+          <tr>
+            <td>
+              <label for="pname">Participant name: </label>
+            </td>
+            <td>
+              <select>
+                <option value="Title">Title</option>
+              </select>
+            </td>
+            <td>
+              <input
+                class="input-names"
+                type="text"
+                name="firstName"
+                id="first-name"
+                placeholder="First Name"
+                required
+              />
+            </td>
+            <td>
+              <input
+                class="input-names"
+                type="text"
+                name="lastName"
+                id="last-name"
+                placeholder="Last Name"
+                required
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="email">Email-ID:</label>
+            </td>
+            <td>
+              <input type="email" name="email" id="email" required />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="confirm-email">Confirm EmailId:</label>
+            </td>
+            <td>
+              <input type="email" name="email" id="confirm-email" required />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="seminar-type">Seminars:</label>
+            </td>
+            <td>
+              <select name="seminarType" id="seminar-type">
+                <option value="SOA">SOA</option>
+                <option value="Design Patterns">Design Patterns</option>
+                <option value="Business Intelligence">
+                  Business Intelligence
+                </option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Level:</td>
+            <td>
+              <input
+                type="radio"
+                name="level"
+                id="introductor"
+                value="Introductor"
+                required
+              />
+              <label for="introductor"> Introductor </label>
+              <input
+                type="radio"
+                name="level"
+                id="intermediate"
+                value="Intermediate"
+                required
+              />
+              <label for="intermediate"> Intermediate </label>
+              <input
+                type="radio"
+                name="level"
+                id="advance"
+                value="Advance"
+                required
+              />
+              <label for="advance"> Advance </label>
+              <p id="levelErr"></p>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button type="button" id="calculate-training-cost">
+                calculate Training Cost
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Cost of Seminar:</td>
+            <td>
+              <input
+                type="text"
+                name="costOfSeminar"
+                id="cost-of-seminar"
+                readonly
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button type="button" id="display">Display Details</button>
+            </td>
+            <td>
+              <button type="button" id="submit">Submit</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
+
+<!-- jquery CDN src -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js"></script> -->
+<script src="jquery.js"></script>
+<!-- local script -->
+
+<script src="index.js"></script>

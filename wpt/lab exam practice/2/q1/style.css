@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#seminar-form {
+  margin: 3%;
+  padding: 2%;
+  border: 2px solid;
+}
+
+input {
+  padding: 1%;
+}
+
+select {
+  padding: 2%;
+}
+#first-name {
+  margin: 5px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 18px;
+}
+
+button {
+  padding: 3px;
+}
+
+.show-err {
+  color: red;
+}

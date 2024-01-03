@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import MainNavBar from "./components/MainNavBar";
 import Footer from "./components/Footer";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import ProductTable from "./pages/ProductTable";
 import ProductList from "./pages/ProductList";
 import ProductForm from "./pages/ProductForm";
@@ -17,6 +17,7 @@ function App() {
       <Header />
       <MainNavBar />
       <Routes>
+        <Route path="/" element={<Navigate replace to="/table"></Navigate>} />
         <Route path="/table" element={<ProductTable></ProductTable>}>
           <Route path=":pid" element={<ProductDetails></ProductDetails>} />
         </Route>
