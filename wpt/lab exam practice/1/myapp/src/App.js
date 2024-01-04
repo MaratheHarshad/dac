@@ -1,16 +1,17 @@
 import { useState } from "react";
 import axios from "axios";
 import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import { formAction } from "./redux/actions/formaction";
 
 function App() {
   // state for books
   const [books, setBooks] = useState([]);
 
-  const [formdetails, setFormdetails] = useState({
-    Name: "",
-    Author: "",
-    Price: "",
-  });
+  // dispatch from react-redux, to dispatch the action to redux store and accordingly reducers will get executed
+  const dispatch = useDispatch();
+
+  const formdetails = useSelector((state) => state.formdetails);
 
   // function to handle change on input elements
   const handlechange = (e) => {
@@ -19,7 +20,11 @@ function App() {
     // object dereferencing {}
     const { name, value } = e.target;
 
-    setFormdetails({ ...formdetails, [name]: value });
+    console.log(name, value);
+
+    const action = formAction(name, value);
+    dispatch(action);
+    // setFormdetails({ ...formdetails, [name]: value });
   };
 
   // function to validate and add new book to server array

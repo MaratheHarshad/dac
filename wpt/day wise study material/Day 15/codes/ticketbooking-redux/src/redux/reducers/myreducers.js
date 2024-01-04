@@ -1,8 +1,12 @@
-import { combineReducers} from 'redux';
-import { manageCancellation,manageReservation,manageamount } from './reservationreducers';
+import { combineReducers } from "redux";
+import {
+  manageCancellation,
+  manageReservation,
+  manageamount,
+} from "./reservationreducers";
 
-export const railwayStore=combineReducers({
-    reservationList:manageReservation,
-    cancellationList:manageCancellation,
-    amount:manageamount
-})
+export const railwayStore = combineReducers({
+  reservationList: manageReservation,
+  cancellationList: manageCancellation,
+  amount: manageamount,
+});
