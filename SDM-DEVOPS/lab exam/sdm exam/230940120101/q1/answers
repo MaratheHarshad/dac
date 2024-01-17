@@ -1,0 +1,37 @@
+Q1)
+
+1) -> 
+
+compare_strings.sh
+
+
+	#1/bin/bash
+
+	read -p "Enter first string : "  first
+	read -p "Enter second string : " second
+
+	if [ "$first" = "$second" ]; then
+		echo "The two strings match";
+	else 
+		echo "The two strings do not match";
+	fi;
+        
+
+
+
+2) ->
+
+i) cat cdac.txt | grep -c "Bash"
+
+ii) 
+
+	touch cdac.jsp
+	mv cdac.jsp dac.jsp
+	
+
+iii) ps -p 2391
+
+
+
+
+

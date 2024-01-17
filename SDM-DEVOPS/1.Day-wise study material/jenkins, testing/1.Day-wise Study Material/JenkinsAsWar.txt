@@ -1,0 +1,6 @@
+
+1) Download Jenkins.war from Jenkins's official site. (If already installed just go to the folder where Jenkins has installed default path as "C:\Program Files (x86)\Jenkins\")
+
+2) Deploy it by the command prompt : java -jar {directoryOfJenkinsFileInWindows}/jenkins.war
+
+3) Now you can access Jenkins administration on http://localhost:8080

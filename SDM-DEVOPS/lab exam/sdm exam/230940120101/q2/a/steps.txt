@@ -1,0 +1,8 @@
+-> create a docker image using Dockerfile
+
+docker build -t sum-of-three .
+
+
+-> create a container from image
+
+docker run -it --rm --name my-running-app sum-of-three

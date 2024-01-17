@@ -6,6 +6,7 @@ public:
 
 class Lion : public Animals {
     int j;
+    
 public:
     const char* getName() const;    
 };

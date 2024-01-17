@@ -1,0 +1,5 @@
+Bash scripting lets you automate repetitive tasks
+Bash scripting is incredibly versatile
+Fascinating world of Bash scripting
+line number 4
+line number 5
